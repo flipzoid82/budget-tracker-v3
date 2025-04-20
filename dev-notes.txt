@@ -1,0 +1,5 @@
+TODO:
+- Add IncomeTable and MiscTable
+- Add routing later (optional)
+- Implement dark mode
+- Replace localStorage with SQLite (optional)
