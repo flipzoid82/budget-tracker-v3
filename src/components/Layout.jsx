@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
-import Navigation from "./Navigation";
+import Toolbar from "./Toolbar";
 
 const Layout = () => {
   return (
-    <>
-      <Navigation />
+    <div>
+      <Toolbar />
       <main style={{ padding: "1.5rem" }}>
         <Outlet />
       </main>
-    </>
+    </div>
   );
 };
 
