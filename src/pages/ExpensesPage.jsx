@@ -102,7 +102,7 @@ const ExpensesPage = () => {
               const isPaid = !!item.paidDate;
               return (
                 <tr key={index} style={{ borderBottom: "1px solid #ddd" }}>
-                  <td style={{ position: "relative", paddingLeft: 0, width: "1px" }}>
+                  <td style={{ position: "relative", textAlign: "center" }}>
                     <button
                       onClick={() => toggleMenu(index)}
                       className="btn btn-muted"
