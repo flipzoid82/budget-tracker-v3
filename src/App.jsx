@@ -3,18 +3,21 @@ import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
 import ExpensesPage from "./pages/ExpensesPage";
 import IncomePage from "./pages/IncomePage";
+import { BudgetProvider } from "./core/BudgetProvider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="expenses" element={<ExpensesPage />} />
-          <Route path="income" element={<IncomePage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <BudgetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="expenses" element={<ExpensesPage />} />
+            <Route path="income" element={<IncomePage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </BudgetProvider>
   );
 }
 

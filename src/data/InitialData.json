@@ -1,0 +1,350 @@
+{
+  "currentMonth": "APR2025",
+  "months": {
+    "DEC2024": {
+      "income": [
+        {
+          "source": "Other",
+          "amount": 2822.46,
+          "date": "12/09/2024"
+        },
+        {
+          "source": "Other",
+          "amount": 3579.23,
+          "date": "12/20/2024"
+        }
+      ],
+      "expenses": [
+        {
+          "name": "Utilities",
+          "amount": 185.86,
+          "dueDate": "12/13/2024",
+          "paidDate": "12/25/2024",
+          "confirmation": "CONF6265"
+        },
+        {
+          "name": "Utilities",
+          "amount": 60.43,
+          "dueDate": "12/05/2024",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Utilities",
+          "amount": 1131.48,
+          "dueDate": "12/13/2024",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Phone",
+          "amount": 1021.31,
+          "dueDate": "12/23/2024",
+          "paidDate": "12/10/2024",
+          "confirmation": "CONF4086"
+        },
+        {
+          "name": "Streaming",
+          "amount": 446.6,
+          "dueDate": "12/28/2024",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Insurance",
+          "amount": 840.72,
+          "dueDate": "12/28/2024",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Insurance",
+          "amount": 1300.13,
+          "dueDate": "12/25/2024",
+          "paidDate": "12/16/2024",
+          "confirmation": "CONF1914"
+        }
+      ],
+      "misc": [
+        {
+          "description": "Uber",
+          "amount": 21.13
+        }
+      ]
+    },
+    "JAN2025": {
+      "income": [
+        {
+          "source": "Other",
+          "amount": 3375.33,
+          "date": "01/11/2025"
+        },
+        {
+          "source": "VA Comp",
+          "amount": 1897.2,
+          "date": "01/07/2025"
+        }
+      ],
+      "expenses": [
+        {
+          "name": "Utilities",
+          "amount": 1270.23,
+          "dueDate": "01/08/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Groceries",
+          "amount": 550.51,
+          "dueDate": "01/14/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Internet",
+          "amount": 330.68,
+          "dueDate": "01/18/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Gas",
+          "amount": 677.92,
+          "dueDate": "01/05/2025",
+          "paidDate": "01/08/2025",
+          "confirmation": "CONF5853"
+        },
+        {
+          "name": "Phone",
+          "amount": 542.81,
+          "dueDate": "01/28/2025",
+          "paidDate": "01/23/2025",
+          "confirmation": "CONF8141"
+        },
+        {
+          "name": "Insurance",
+          "amount": 1244.06,
+          "dueDate": "01/15/2025",
+          "paidDate": "01/03/2025",
+          "confirmation": "CONF8230"
+        }
+      ],
+      "misc": [
+        {
+          "description": "Snacks",
+          "amount": 31.05
+        }
+      ]
+    },
+    "FEB2025": {
+      "income": [
+        {
+          "source": "Freelance",
+          "amount": 2959.14,
+          "date": "02/07/2025"
+        },
+        {
+          "source": "Freelance",
+          "amount": 2103.98,
+          "date": "02/06/2025"
+        },
+        {
+          "source": "Other",
+          "amount": 3211.16,
+          "date": "02/03/2025"
+        }
+      ],
+      "expenses": [
+        {
+          "name": "Internet",
+          "amount": 453.35,
+          "dueDate": "02/23/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Internet",
+          "amount": 358.44,
+          "dueDate": "02/16/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Rent",
+          "amount": 288.23,
+          "dueDate": "02/15/2025",
+          "paidDate": "02/27/2025",
+          "confirmation": "CONF2078"
+        },
+        {
+          "name": "Rent",
+          "amount": 989.68,
+          "dueDate": "02/11/2025",
+          "paidDate": "02/05/2025",
+          "confirmation": "CONF6083"
+        },
+        {
+          "name": "Rent",
+          "amount": 982.92,
+          "dueDate": "02/15/2025",
+          "paidDate": "02/09/2025",
+          "confirmation": "CONF4185"
+        }
+      ],
+      "misc": [
+        {
+          "description": "Books",
+          "amount": 29.85
+        },
+        {
+          "description": "Books",
+          "amount": 23.49
+        }
+      ]
+    },
+    "MAR2025": {
+      "income": [
+        {
+          "source": "Paycheck",
+          "amount": 2538.75,
+          "date": "03/22/2025"
+        },
+        {
+          "source": "VA Comp",
+          "amount": 2339.9,
+          "date": "03/11/2025"
+        },
+        {
+          "source": "VA Comp",
+          "amount": 3524.03,
+          "date": "03/23/2025"
+        }
+      ],
+      "expenses": [
+        {
+          "name": "Internet",
+          "amount": 1166.11,
+          "dueDate": "03/04/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Groceries",
+          "amount": 1154.95,
+          "dueDate": "03/21/2025",
+          "paidDate": "03/14/2025",
+          "confirmation": "CONF9002"
+        },
+        {
+          "name": "Internet",
+          "amount": 976.03,
+          "dueDate": "03/19/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Streaming",
+          "amount": 902.02,
+          "dueDate": "03/20/2025",
+          "paidDate": "03/22/2025",
+          "confirmation": "CONF9119"
+        },
+        {
+          "name": "Gas",
+          "amount": 432.93,
+          "dueDate": "03/18/2025",
+          "paidDate": "",
+          "confirmation": ""
+        }
+      ],
+      "misc": [
+        {
+          "description": "Coffee",
+          "amount": 39.2
+        }
+      ]
+    },
+    "APR2025": {
+      "income": [
+        {
+          "source": "VA Comp",
+          "amount": 2408.64,
+          "date": "04/10/2025"
+        },
+        {
+          "source": "VA Comp",
+          "amount": 2030.41,
+          "date": "04/07/2025"
+        }
+      ],
+      "expenses": [
+        {
+          "name": "Phone",
+          "amount": 1105.64,
+          "dueDate": "04/05/2025",
+          "paidDate": "04/15/2025",
+          "confirmation": "CONF6265"
+        },
+        {
+          "name": "Phone",
+          "amount": 555.99,
+          "dueDate": "04/12/2025",
+          "paidDate": "04/19/2025",
+          "confirmation": "CONF4303"
+        },
+        {
+          "name": "Groceries",
+          "amount": 1190.77,
+          "dueDate": "04/01/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Phone",
+          "amount": 260.84,
+          "dueDate": "04/05/2025",
+          "paidDate": "04/08/2025",
+          "confirmation": "CONF7076"
+        },
+        {
+          "name": "Groceries",
+          "amount": 870.6,
+          "dueDate": "04/12/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Rent",
+          "amount": 343.71,
+          "dueDate": "04/24/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Streaming",
+          "amount": 1217.83,
+          "dueDate": "04/16/2025",
+          "paidDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Gas",
+          "amount": 1170.75,
+          "dueDate": "04/22/2025",
+          "paidDate": "04/02/2025",
+          "confirmation": "CONF7800"
+        }
+      ],
+      "misc": [
+        {
+          "description": "Snacks",
+          "amount": 48.83
+        },
+        {
+          "description": "Gaming",
+          "amount": 14.59
+        }
+      ]
+    }
+  }
+}
