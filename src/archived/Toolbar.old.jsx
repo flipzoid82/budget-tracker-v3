@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useBudget } from "../core/BudgetProvider";
 
 const Toolbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { state, dispatch } = useBudget();
   const fileInputRef = useRef(null);
 
@@ -11,14 +12,13 @@ const Toolbar = () => {
     return localStorage.getItem("theme") === "dark";
   });
 
-  // Toggle body class and persist theme
   useEffect(() => {
     document.body.classList.toggle("dark-mode", darkMode);
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
   const handleSave = () => {
-    console.log("💾 Save triggered (hook up storage logic)");
+    console.log("💾 Save triggered");
   };
 
   const handlePrint = () => window.print();
@@ -53,6 +53,9 @@ const Toolbar = () => {
     reader.readAsText(file);
   };
 
+  // Helper to determine active route
+  const isActive = (path) => location.pathname === path;
+
   return (
     <nav style={{
       display: "flex",
@@ -63,18 +66,24 @@ const Toolbar = () => {
       borderBottom: "1px solid var(--color-muted)",
       color: "var(--color-text)"
     }}>
-      <div style={{ display: "flex", gap: "1rem" }}>
-        <button className="btn btn-muted" style={{ color: 'var(--color-text)' }} onClick={() => navigate("/")}>🏠 Dashboard</button>
-        <button className="btn btn-muted" style={{ color: 'var(--color-text)' }} onClick={() => navigate("/expenses")}>💸 Expenses</button>
-        <button className="btn btn-muted" style={{ color: 'var(--color-text)' }} onClick={() => navigate("/income")}>💰 Income</button>
+      {/* Tab-style navigation buttons */}
+      <div style={{ display: "flex", gap: "0.5rem" }}>
+        <button className={isActive("/") ? "tab-button active" : "tab-button"} onClick={() => navigate("/")}>
+          🏠 Dashboard
+        </button>
+        <button className={isActive("/expenses") ? "tab-button active" : "tab-button"} onClick={() => navigate("/expenses")}>
+          💸 Expenses
+        </button>
+        <button className={isActive("/income") ? "tab-button active" : "tab-button"} onClick={() => navigate("/income")}>
+          💰 Income
+        </button>
       </div>
 
+      {/* Action buttons */}
       <div style={{ display: "flex", gap: "0.5rem" }}>
-        <button className="btn btn-muted" style={{ color: 'var(--color-text)' }} onClick={handleSave}>💾 Save</button>
-        <button className="btn btn-muted" style={{ color: 'var(--color-text)' }} onClick={handlePrint}>🖨️ Print</button>
-        <button className="btn btn-muted" style={{ color: 'var(--color-text)' }} onClick={() => fileInputRef.current?.click()}>
-          📥 Import
-        </button>
+        <button className="btn btn-muted" onClick={handleSave}>💾 Save</button>
+        <button className="btn btn-muted" onClick={handlePrint}>🖨️ Print</button>
+        <button className="btn btn-muted" onClick={() => fileInputRef.current?.click()}>📥 Import</button>
         <input
           ref={fileInputRef}
           type="file"
@@ -82,8 +91,8 @@ const Toolbar = () => {
           onChange={handleImport}
           style={{ display: "none" }}
         />
-        <button className="btn btn-muted" style={{ color: 'var(--color-text)' }} onClick={handleExport}>📤 Export</button>
-        <button className="btn btn-muted" style={{ color: 'var(--color-text)' }} onClick={() => setDarkMode(!darkMode)}>
+        <button className="btn btn-muted" onClick={handleExport}>📤 Export</button>
+        <button className="btn btn-muted" onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? "☀️ Light" : "🌙 Dark"}
         </button>
       </div>

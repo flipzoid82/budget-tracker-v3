@@ -2,15 +2,13 @@
 
 A local-first, dark-mode-ready budgeting app built with React + Electron.
 
-## 🚀 Version 3.02 Highlights
+## 🚀 Version 3.03 Highlights
 
-- 🔧 **Modular Toolbar** component for easy reuse and clean layout
-- 🌙 **Dark Mode Toggle** with theme variable support and localStorage persistence
-- ✏️ **Expenses Edit Menu** UI redesign with pencil icon and better alignment
-- 🧱 Styled dropdown for editing fields (Confirmation, URL, Due Date)
-- 🖱️ Auto-close on outside click for expense menus
-- 🛠️ Clean, theme-compatible updates to all navigation and tables
-- 💄 Flush icon alignment in Expenses table for a polished look
+- 🎯 Seamless tab + toolbar + layout background alignment
+- 🧱 Tab design split into modular `ToolbarTabs` and `toolbar-actions`
+- 🎨 Unified dark mode color scheme for all header elements
+- 🧼 Removed unnecessary styles and spacing for a flush top UI
+- ✨ Final tab illusion is perfect — active tab shares layout background
 
 ---
 
@@ -18,9 +16,8 @@ A local-first, dark-mode-ready budgeting app built with React + Electron.
 
 - **React** (Vite)
 - **Electron** (desktop native runtime)
-- **SQLite (coming soon)** for local persistent data
 - **Vitest** for testing
-- **Modular Components**: `Toolbar`, `PromptModal`, `BudgetProvider`
+- **Modular Components**: `ToolbarTabs`, `PromptModal`, `BudgetProvider`
 
 ---
 
