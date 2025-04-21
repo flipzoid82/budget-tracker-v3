@@ -1,41 +1,7 @@
-# 💰 Budget Tracker
 
-A local-first, dark-mode-ready budgeting app built with React + Electron.
+## 🚀 Version 3.04 Highlights
 
-## 🚀 Version 3.03 Highlights
-
-- 🎯 Seamless tab + toolbar + layout background alignment
-- 🧱 Tab design split into modular `ToolbarTabs` and `toolbar-actions`
-- 🎨 Unified dark mode color scheme for all header elements
-- 🧼 Removed unnecessary styles and spacing for a flush top UI
-- ✨ Final tab illusion is perfect — active tab shares layout background
-
----
-
-## 🛠️ Tech Stack
-
-- **React** (Vite)
-- **Electron** (desktop native runtime)
-- **Vitest** for testing
-- **Modular Components**: `ToolbarTabs`, `PromptModal`, `BudgetProvider`
-
----
-
-## 📦 How to Run
-
-```bash
-npm install
-npm run dev
-```
-
-To launch with Electron:
-
-```bash
-npm run start
-```
-
----
-
-## 📄 License
-
-MIT
+- 🔁 Income page now visually and structurally matches Expenses page
+- 🧾 Table headers, row spacing, and edit menus fully unified
+- ✏️ Edit button in Income uses consistent styling (`btn btn-muted`)
+- ➕ Add button now centered and styled identically to Expenses
