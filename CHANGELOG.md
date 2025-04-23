@@ -2,7 +2,20 @@
 
 ---
 
-## v3.04 - [Latest]
+## v3.05 - [Latest]
+**Date:** 2025-04-21
+
+### ✨ Added
+- Light mode and dark mode inactive tab shape control (flat-bottom)
+- Clear contrast between active/inactive tabs across themes
+
+### 🧼 Changed
+- Reorganized `theme.css` with sections and comments
+- Unified tab-button styling and removed shadow artifacts
+
+---
+
+## v3.04
 **Date:** 2025-04-20
 
 ### ✨ Added

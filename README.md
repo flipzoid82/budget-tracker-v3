@@ -4,6 +4,14 @@ A local-first, dark-mode-ready budgeting app built with React + Electron.
 
 ---
 
+## 🚀 Version 3.05 Highlights
+
+- 🎨 Improved contrast for active/inactive tabs in light and dark mode
+- 🔲 Inactive tabs now have flat bottoms for clean separation
+- 🧼 Fully reorganized and commented `theme.css` for clarity and maintainability
+
+---
+
 ## 🚀 Version 3.04 Highlights
 
 - 🔁 Income page now visually and structurally matches Expenses page
