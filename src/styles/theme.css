@@ -1,4 +1,6 @@
-
+/* ========================================================
+   💡 Global Theme Variables
+======================================================== */
 body {
   --color-bg: #fdfdfd;
   --color-surface: #ffffff;
@@ -28,6 +30,9 @@ body.dark-mode {
   --color-warning: #fdd835;
 }
 
+/* ========================================================
+   🌍 Base Typography & Layout
+======================================================== */
 body {
   font-family: 'Segoe UI', sans-serif;
   font-size: 16px;
@@ -37,43 +42,14 @@ body {
   padding: 0;
 }
 
+/* ========================================================
+   🧱 Components
+======================================================== */
 .card {
   background: var(--color-surface);
   padding: var(--padding-md);
   border-radius: var(--radius);
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.btn {
-  padding: 0.4rem 0.75rem;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.btn-primary {
-  background-color: var(--color-primary);
-  color: white;
-}
-
-.btn-danger {
-  background-color: var(--color-danger);
-  color: white;
-}
-
-.btn-muted {
-  background-color: var(--color-muted);
-  color: #333;
-}
-
-.input {
-  padding: 0.5rem;
-  border: 1px solid var(--color-muted);
-  border-radius: var(--radius);
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 0.5rem;
 }
 
 .table-container {
@@ -90,10 +66,37 @@ body {
   margin: auto;
 }
 
+/* ========================================================
+   🔘 Buttons
+======================================================== */
+.btn {
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
 
 .btn-primary:hover {
   filter: brightness(1.1);
 }
+
+.btn-danger {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+.btn-muted {
+  background-color: var(--color-muted);
+  color: #333;
+}
+
+/* Dark mode button adjustments */
 body.dark-mode .btn-primary {
   background-color: #367cd6;
   color: white;
@@ -104,13 +107,25 @@ body.dark-mode .btn-muted {
   color: white;
 }
 
+/* ========================================================
+   ✏️ Inputs
+======================================================== */
+.input {
+  padding: 0.5rem;
+  border: 1px solid var(--color-muted);
+  border-radius: var(--radius);
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+}
 
-
+/* ========================================================
+   📑 Tab Navigation
+======================================================== */
 .tab-button {
   background: transparent;
   border: none;
   padding: 0.5rem 1.25rem;
-  border-radius: 999px;
   font-weight: 500;
   color: var(--color-text);
   cursor: pointer;
@@ -120,8 +135,6 @@ body.dark-mode .btn-muted {
 .tab-button:hover {
   background-color: var(--color-muted);
 }
-
-
 
 .tab-button.active {
   background-color: var(--color-bg);
@@ -134,6 +147,41 @@ body.dark-mode .btn-muted {
   position: relative;
 }
 
+/* 🔳 Tab Contrast (Light Mode Only) */
+body:not(.dark-mode) .tab-button {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+}
+
+body:not(.dark-mode) .tab-button:hover {
+  background-color: #eee;
+}
+
+body:not(.dark-mode) .tab-button.active {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+body:not(.dark-mode) .tab-button:not(.active) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* 🔳 Tab Contrast (Dark Mode) */
+.dark-mode .tab-button {
+  border-radius: 8px 8px 0 0;
+}
+
+.dark-mode .tab-button:not(.active) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* ========================================================
+   🧰 Toolbars
+======================================================== */
 .toolbar-tabs {
   background-color: var(--color-bg);
   border-bottom: none;
