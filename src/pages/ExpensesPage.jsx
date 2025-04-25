@@ -19,11 +19,13 @@ const ExpensesPage = () => {
   const monthData = state.months[state.currentMonth] || {};
   const expenses = monthData.expenses || [];
 
-  const toggleMenu = (index) => {
+  // 💬 Toggle visibility of dropdown
+const toggleMenu = (index) => {
     setMenuIndex(prev => prev === index ? null : index);
   };
 
-  const updateField = (index, field, value) => {
+  // 💬 Update a specific field for the selected row
+const updateField = (index, field, value) => {
     const updated = [...expenses];
     updated[index][field] = value;
     dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, expenses: updated } });
@@ -70,7 +72,8 @@ const ExpensesPage = () => {
   };
 
   // Close edit menu when clicking outside
-  useEffect(() => {
+  // 💬 Handle closing dropdown on outside click
+useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setMenuIndex(null);
@@ -84,7 +87,7 @@ const ExpensesPage = () => {
     <div style={{ padding: "1.5rem" }}>
       <h1>💸 Expenses</h1>
       <div className="table-container">
-        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <table style={{ width: "100%" }}>
           <thead>
             <tr style={{ background: "var(--color-muted)", color: "var(--color-text)" }}>
               <th></th>
@@ -103,6 +106,7 @@ const ExpensesPage = () => {
               return (
                 <tr key={index} style={{ borderBottom: "1px solid #ddd" }}>
                   <td style={{ paddingLeft: "0rem", display: "flex", alignItems: "center", position: "relative", textAlign: "center" }}>
+                  <div className="dropdown-anchor">
                     <button
                       onClick={() => toggleMenu(index)}
                       className="btn btn-muted"
@@ -110,24 +114,9 @@ const ExpensesPage = () => {
                     >
                       ✏️
                     </button>
-
+                  </div>
                     {menuIndex === index && (
-                      <div
-                        ref={menuRef}
-                        style={{
-                          position: "absolute",
-                          top: "100%",
-                          left: "0",
-                          background: "var(--color-surface)",
-                          color: "var(--color-text)",
-                          border: "1px solid var(--color-muted)",
-                          borderRadius: "6px",
-                          padding: "0.5rem",
-                          boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-                          zIndex: 100,
-                          minWidth: "140px"
-                        }}
-                      >
+                      <div ref={menuRef} className="dropdown-menu">
                         <button className="dropdown-button" onClick={() => {
                           setPrompt({
                             show: true,
@@ -138,7 +127,7 @@ const ExpensesPage = () => {
                               setPrompt({ show: false });
                             }
                           });
-                        }}>Edit URL</button><br />
+                        }}>Edit URL</button>
                         <button className="dropdown-button" onClick={() => {
                           setPrompt({
                             show: true,
@@ -149,7 +138,7 @@ const ExpensesPage = () => {
                               setPrompt({ show: false });
                             }
                           });
-                        }}>Edit Due Date</button><br />
+                        }}>Edit Due Date</button>
                         <button className="dropdown-button" onClick={() => {
                           setPrompt({
                             show: true,
@@ -161,20 +150,39 @@ const ExpensesPage = () => {
                             }
                           });
                         }}>Edit Confirmation</button>
+                        <button
+                          className="dropdown-button"
+                          onClick={() => {
+                            setPrompt({
+                              show: true,
+                              label: "Are you sure you want to delete this expense?",
+                              initialValue: "",
+                              submitLabel: "Delete",
+                              onSubmit: () => {
+                                const updated = [...monthData.expenses];
+                                updated.splice(index, 1);
+                                dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, expenses: updated } });
+                                setPrompt({ show: false });
+                              }
+                            });
+                          }}
+                        >
+                          Delete
+                        </button>
                       </div>
                     )}
                   </td>
-                  <td>{item.name}</td>
-                  <td>{formatCurrency(item.amount)}</td>
-                  <td>{item.dueDate}</td>
-                  <td>{item.paidDate || "—"}</td>
-                  <td>{item.confirmation || "—"}</td>
-                  <td>{isPaid ? "✅ Paid" : "❌ Unpaid"}</td>
-                  <td>
+                  <td className="align-left">{item.name}</td>
+                  <td className="align-left">{formatCurrency(item.amount)}</td>
+                  <td className="align-center">{item.dueDate}</td>
+                  <td className="align-center">{item.paidDate || "—"}</td>
+                  <td className="align-center">{item.confirmation || "—"}</td>
+                  <td className="align-left">{isPaid ? "✅ Paid" : "❌ Unpaid"}</td>
+                  <td className="align-center">
                     {isPaid ? (
-                      <button className="btn btn-muted" onClick={() => undoPayment(index)}>Undo</button>
+                      <button className="btn btn-muted action-button" onClick={() => undoPayment(index)}>Undo</button>
                     ) : (
-                      <button className="btn btn-primary" onClick={() => markAsPaid(index)}>Mark as Paid</button>
+                      <button className="btn btn-primary action-button" onClick={() => markAsPaid(index)}>Mark as Paid</button>
                     )}
                   </td>
                 </tr>
@@ -185,7 +193,7 @@ const ExpensesPage = () => {
       </div>
 
       <div style={{ marginTop: "1.5rem" }}>
-        <button className="btn btn-primary" onClick={() => setShowAdd(true)}>➕ Add New Bill</button>
+        <button className="btn btn-primary action-button" onClick={() => setShowAdd(true)}>➕ Add New Bill</button>
       </div>
 
       {showAdd && (
@@ -197,8 +205,8 @@ const ExpensesPage = () => {
           <input className="input" placeholder="Confirmation # (optional)" value={newBill.confirmation} onChange={(e) => setNewBill({ ...newBill, confirmation: e.target.value })} />
           <input className="input" placeholder="URL (optional)" value={newBill.url} onChange={(e) => setNewBill({ ...newBill, url: e.target.value })} />
           <div style={{ marginTop: "1rem" }}>
-            <button className="btn btn-primary" onClick={handleAddBill}>Save</button>
-            <button className="btn btn-muted" onClick={() => setShowAdd(false)} style={{ marginLeft: "0.5rem" }}>Cancel</button>
+            <button className="btn btn-primary action-button" onClick={handleAddBill}>Save</button>
+            <button className="btn btn-muted action-button" onClick={() => setShowAdd(false)} style={{ marginLeft: "0.5rem" }}>Cancel</button>
           </div>
         </div>
       )}

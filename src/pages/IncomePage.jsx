@@ -14,17 +14,20 @@ const IncomePage = () => {
   const monthData = state.months[state.currentMonth] || {};
   const income = monthData.income || [];
 
-  const toggleMenu = (index) => {
+  // 💬 Toggle visibility of dropdown
+const toggleMenu = (index) => {
     setMenuIndex(prev => (prev === index ? null : index));
   };
 
-  const updateField = (index, field, value) => {
+  // 💬 Update a specific field for the selected row
+const updateField = (index, field, value) => {
     const updated = [...income];
     updated[index][field] = value;
     dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, income: updated } });
   };
 
-  const handleAddIncome = () => {
+  // 💬 Handle adding a new income entry
+const handleAddIncome = () => {
     const { source, amount, date } = newIncome;
     if (!source.trim() || !amount.toString().trim() || !date.trim()) {
       alert("Source, date, and amount are required.");
@@ -36,7 +39,8 @@ const IncomePage = () => {
     setShowAdd(false);
   };
 
-  useEffect(() => {
+  // 💬 Handle closing dropdown on outside click
+useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setMenuIndex(null);
@@ -50,19 +54,20 @@ const IncomePage = () => {
     <div style={{ padding: "1.5rem" }}>
       <h1>💰 Income</h1>
       <div className="table-container">
-        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <table style={{ width: "100%"}}>
           <thead>
             <tr style={{ background: "var(--color-muted)", color: "var(--color-text)", fontWeight: "600" }}>
-              <th style={{ width: "1px", padding: "0.5rem 0.75rem", textAlign: "left" }}></th>
-              <th style={{ padding: "0.5rem 0.75rem", textAlign: "left" }}>Source</th>
-              <th style={{ padding: "0.5rem 0.75rem", textAlign: "right" }}>Amount</th>
-              <th style={{ padding: "0.5rem 0.75rem", textAlign: "center" }}>Date Received</th>
+              <th></th>
+              <th>Source</th>
+              <th>Amount</th>
+              <th>Date Received</th>
             </tr>
           </thead>
           <tbody>
             {income.map((item, index) => (
               <tr key={index} style={{ borderBottom: "1px solid #ddd", minHeight: "40px" }}>
-                <td style={{ paddingLeft: "0rem", width: "1px" }}>
+                <td style={{ paddingLeft: "0rem", width: "1px", position:"relative" }}>
+                <div className="dropdown-anchor">
                   <button
                     onClick={() => toggleMenu(index)}
                     className="btn btn-muted"
@@ -70,43 +75,47 @@ const IncomePage = () => {
                   >
                     ✏️
                   </button>
+                  </div>
+
                   {menuIndex === index && (
-                    <div
-                      ref={menuRef}
-                      style={{
-                        position: "absolute",
-                        top: "100%",
-                        left: "0",
-                        background: "var(--color-surface)",
-                        color: "var(--color-text)",
-                        border: "1px solid var(--color-muted)",
-                        borderRadius: "6px",
-                        padding: "0.5rem",
-                        boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-                        zIndex: 100,
-                        minWidth: "140px"
-                      }}
+                    <div ref={menuRef} className="dropdown-menu"
                     >
                       <button className="dropdown-button" onClick={() => {
                         setPrompt({ show: true, label: "Edit Source", initialValue: item.source, onSubmit: (val) => {
                           updateField(index, "source", val); setPrompt({ show: false });
                         }});
-                      }}>Edit Source</button><br />
+                      }}>Edit Source</button>
                       <button className="dropdown-button" onClick={() => {
                         setPrompt({ show: true, label: "Edit Amount", initialValue: item.amount, onSubmit: (val) => {
                           updateField(index, "amount", parseFloat(val)); setPrompt({ show: false });
                         }});
-                      }}>Edit Amount</button><br />
+                      }}>Edit Amount</button>
                       <button className="dropdown-button" onClick={() => {
                         setPrompt({ show: true, label: "Edit Date", initialValue: item.date, onSubmit: (val) => {
                           updateField(index, "date", val); setPrompt({ show: false });
                         }});
                       }}>Edit Date</button>
+                      
+<button className="dropdown-button" onClick={() => {
+  setPrompt({
+    show: true,
+    label: "Are you sure you want to delete this income entry?",
+    initialValue: "",
+    submitLabel: "Delete",
+    onSubmit: () => {
+      const updated = [...income];
+      updated.splice(index, 1);
+      dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, income: updated } });
+      setPrompt({ show: false });
+    }
+  });
+}}>Delete</button>
+
                     </div>
                   )}
                 </td>
                 <td style={{ padding: "0.5rem 0.75rem" }}>{item.source}</td>
-                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right" }}>{formatCurrency(item.amount)}</td>
+                <td style={{ padding: "0.5rem 0.75rem", textAlign: "center" }}>{formatCurrency(item.amount)}</td>
                 <td style={{ padding: "0.5rem 0.75rem", textAlign: "center" }}>{item.date}</td>
               </tr>
             ))}
@@ -136,6 +145,7 @@ const IncomePage = () => {
           title="Edit Field"
           label={prompt.label}
           initialValue={prompt.initialValue}
+          submitLabel={prompt.submitLabel}
           onSubmit={prompt.onSubmit}
           onClose={() => setPrompt({ show: false })}
         />

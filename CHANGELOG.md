@@ -1,3 +1,29 @@
+## v3.07
+**Date:** 2025-04-25
+
+### ✨ Added
+- 🗑 Delete option in both Expenses and Income dropdown menus
+- Uses `PromptModal` confirmation for continuity across the app
+
+### 🧼 Changed
+- Updated table cell alignment in Expenses:
+  - Name, Amount, Status = Left-aligned
+  - Due Date, Paid Date, Confirmation #, Action = Center-aligned
+- Action buttons (e.g. Mark as Paid / Undo) now share a uniform width for clean layout
+- Removed `action-button` class from Edit icon for visual consistency
+
+## v3.06
+**Date:** 2025-04-24
+
+### ✨ Added
+- ✏️ Rebuilt dropdown menus for both Income and Expenses using consistent structure
+- 🧭 Anchored dropdowns using `.dropdown-anchor` and styled with `.dropdown-menu`
+- 🪟 Matched Windows-style context menu for improved UX
+
+### 🛠 Fixed
+- JSX alignment and parsing issues in dropdown logic (no more missing tags!)
+- Eliminated duplicate dropdown renders in IncomePage
+
 # 📦 Budget Tracker - Changelog
 
 ---
