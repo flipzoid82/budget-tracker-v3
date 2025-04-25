@@ -4,6 +4,13 @@ A local-first, dark-mode-ready budgeting app built with React + Electron.
 
 ---
 
+## 🚀 Version 3.07 Highlights
+
+- 🗑 Delete option now available in both Expenses and Income edit menus
+- 🔒 Uses reusable `PromptModal` for unified confirmation behavior
+- 📐 Table column alignment cleaned up on Expenses page
+- 📏 Action buttons now share consistent sizing
+
 ## 🚀 Version 3.05 Highlights
 
 - 🎨 Improved contrast for active/inactive tabs in light and dark mode
@@ -61,6 +68,7 @@ npm run dev
 ```
 
 To launch with Electron:
+
 ```bash
 npm run start
 ```
