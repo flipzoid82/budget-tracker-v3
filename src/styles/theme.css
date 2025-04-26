@@ -43,6 +43,155 @@ body {
 }
 
 /* ========================================================
+   🪟 Modal Styles
+======================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: min(100%, 480px);
+  margin: 1rem;
+  padding: 1.5rem;
+  position: relative;
+  box-sizing: border-box;
+  animation: slideUp 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-close svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: currentColor;
+}
+
+.modal-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.modal-title {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.modal-content {
+  max-height: 65vh;
+  overflow-y: auto;
+  padding: 0 0.5rem;
+}
+
+.modal-field {
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.modal-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-muted);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.modal-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Confirmation Modal Variants */
+.modal-confirmation {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.modal-warning-icon {
+  margin-bottom: 1rem;
+}
+
+.modal-confirmation-text {
+  color: var(--color-text);
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+
+/* Error States */
+.input-error {
+  border-color: var(--color-danger) !important;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
+}
+
+.input-error-message {
+  color: var(--color-danger);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.required-asterisk {
+  color: var(--color-danger);
+  margin-left: 0.25rem;
+}
+
+/* ========================================================
    🧱 Components
 ======================================================== */
 .card {
@@ -105,6 +254,25 @@ body.dark-mode .btn-primary {
 body.dark-mode .btn-muted {
   background-color: #555;
   color: white;
+}
+
+/* ========================================================
+   🌀 Animations
+======================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* ========================================================
