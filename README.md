@@ -4,6 +4,13 @@ A local-first, dark-mode-ready budgeting app built with React + Electron.
 
 ---
 
+## Version 3.08 - Modal System Overhaul
+
+- Rebuilt all modal prompts (add, edit, delete) using a unified, clean PromptModal system.
+- Introduced confirmation-only modals for safe delete actions.
+- Added aesthetic improvements: close buttons on modals, better button spacing.
+- Bug fixes to modal behavior, overlay consistency, and dark mode support.
+
 ## 🚀 Version 3.07 Highlights
 
 - 🗑 Delete option now available in both Expenses and Income edit menus
