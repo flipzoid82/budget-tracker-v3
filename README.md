@@ -4,6 +4,14 @@ A local-first, dark-mode-ready budgeting app built with React + Electron.
 
 ---
 
+### v3.09
+
+- Complete PromptModal rebuild with multi-mode support (forms, confirmation-only, date pickers).
+- Synchronized IncomePage and ExpensesPage to new modal framework.
+- Added react-datepicker integration for Due Dates and Income Dates.
+- Improved error handling and validation UX.
+- Maintained strict styling consistency with original project theme.
+
 ## Version 3.08 - Modal System Overhaul
 
 - Rebuilt all modal prompts (add, edit, delete) using a unified, clean PromptModal system.

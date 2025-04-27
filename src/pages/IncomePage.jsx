@@ -1,7 +1,6 @@
-
 import { useState, useRef, useEffect } from "react";
 import { useBudget } from "../core/BudgetProvider";
-import { formatCurrency } from "../utils/formatCurrency";
+import { formatCurrency } from "../utils/format/formatCurrency";
 import PromptModal from "../modals/PromptModal";
 
 const IncomePage = () => {
@@ -31,7 +30,12 @@ const IncomePage = () => {
       fields: [
         { name: "source", label: "Source *", required: true },
         { name: "amount", label: "Amount *", required: true },
-        { name: "date", label: "Date Received (MM/DD/YYYY) *", required: true }
+        { 
+          name: "date", 
+          label: "Date Received *", 
+          type: "date",
+          required: true 
+        }
       ],
       onSubmit: (values) => {
         const updated = [...income, {
@@ -54,6 +58,28 @@ const IncomePage = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Handler generator for edit operations
+  const getEditHandler = (fieldName, fieldLabel, index) => {
+    const isDateField = fieldName === 'date';
+    return {
+      show: true,
+      title: `Edit ${fieldLabel}`,
+      fields: [
+        { 
+          name: fieldName, 
+          label: `${fieldLabel}${isDateField ? '' : ' *'}`, 
+          type: isDateField ? "date" : undefined,
+          required: !isDateField
+        }
+      ],
+      submitLabel: "Save",
+      onSubmit: (values) => {
+        updateField(index, fieldName, isDateField ? values[fieldName] : parseFloat(values[fieldName]));
+        setPrompt({ show: false });
+      }
+    };
+  };
 
   return (
     <div style={{ padding: "1.5rem" }}>
@@ -82,63 +108,44 @@ const IncomePage = () => {
                     </button>
                     {menuIndex === index && (
                       <div ref={menuRef} className="dropdown-menu">
-                        <button className="dropdown-button" onClick={() => {
-                          setPrompt({
-                            show: true,
-                            title: "Edit Source",
-                            fields: [
-                              { name: "source", label: "Source", required: true }
-                            ],
-                            submitLabel: "Save",
-                            onSubmit: (values) => {
-                              updateField(index, "source", values.source);
-                              setPrompt({ show: false });
-                            }
-                          });
-                        }}>Edit Source</button>
-                        <button className="dropdown-button" onClick={() => {
-                          setPrompt({
-                            show: true,
-                            title: "Edit Amount",
-                            fields: [
-                              { name: "amount", label: "Amount", required: true }
-                            ],
-                            submitLabel: "Save",
-                            onSubmit: (values) => {
-                              updateField(index, "amount", parseFloat(values.amount));
-                              setPrompt({ show: false });
-                            }
-                          });
-                        }}>Edit Amount</button>
-                        <button className="dropdown-button" onClick={() => {
-                          setPrompt({
-                            show: true,
-                            title: "Edit Date",
-                            fields: [
-                              { name: "date", label: "Date Received (MM/DD/YYYY)", required: true }
-                            ],
-                            submitLabel: "Save",
-                            onSubmit: (values) => {
-                              updateField(index, "date", values.date);
-                              setPrompt({ show: false });
-                            }
-                          });
-                        }}>Edit Date</button>
-                        <button className="dropdown-button" onClick={() => {
-                          setPrompt({
-                            show: true,
-                            title: "Confirm Delete",
-                            label: "Are you sure you want to delete this income? This action cannot be undone.",
-                            confirmationOnly: true,
-                            submitLabel: "Delete",
-                            onSubmit: () => {
-                              const updated = [...income];
-                              updated.splice(index, 1);
-                              dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, income: updated } });
-                              setPrompt({ show: false });
-                            }
-                          });
-                        }}>Delete</button>
+                        <button 
+                          className="dropdown-button" 
+                          onClick={() => setPrompt(getEditHandler("source", "Source", index))}
+                        >
+                          Edit Source
+                        </button>
+                        <button 
+                          className="dropdown-button" 
+                          onClick={() => setPrompt(getEditHandler("amount", "Amount", index))}
+                        >
+                          Edit Amount
+                        </button>
+                        <button 
+                          className="dropdown-button" 
+                          onClick={() => setPrompt(getEditHandler("date", "Date Received", index))}
+                        >
+                          Edit Date
+                        </button>
+                        <button 
+                          className="dropdown-button" 
+                          onClick={() => {
+                            setPrompt({
+                              show: true,
+                              title: "Confirm Delete",
+                              label: "Are you sure you want to delete this income? This action cannot be undone.",
+                              confirmationOnly: true,
+                              submitLabel: "Delete",
+                              onSubmit: () => {
+                                const updated = [...income];
+                                updated.splice(index, 1);
+                                dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, income: updated } });
+                                setPrompt({ show: false });
+                              }
+                            });
+                          }}
+                        >
+                          Delete
+                        </button>
                       </div>
                     )}
                   </div>
