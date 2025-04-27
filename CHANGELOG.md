@@ -2,18 +2,42 @@
 
 ---
 
+## v3.09 - PromptModal Overhaul + DatePicker Upgrade + Page Sync
+
+**Date:** 2025-04-26
+
+- Refactored PromptModal.jsx to fully support:
+  - Single-field prompts
+  - Multi-field prompts
+  - Calendar date selection via react-datepicker
+  - Delete confirmation modals with warning icon
+- Preserved original modal styling (modal-header, modal-field, modal-footer)
+- Fixed auto-focus behavior depending on confirmation-only vs form modals
+- Added field-specific validation with real-time error clearing
+- Integrated clean loading spinner on submission
+- Updated ExpensesPage.jsx and IncomePage.jsx to:
+  - Use PromptModal for Add/Edit/Delete flows
+  - Correctly pass field types (including `type: "date"`)
+  - Preserve dropdown menu structure and actions
+- Minor CSS improvements for modal overlay, dark mode support, and date picker theming
+- Full alignment to custom design language (Windows 11-lite aesthetic)
+
 ## [v3.08] - Modal Overhaul (Expenses/Income)
+
 ### Added
+
 - Added a close (×) button to the top-right corner of all modals for easier exit.
 - Improved modal spacing: Submit and Cancel buttons now visually separated for clarity.
 
 ### Changed
+
 - Replaced inline "Delete" confirmations with proper floating modals for both Income and Expenses pages.
 - Modals now support 3 modes: single field input, multi-field form, and confirmation-only messages.
 - Delete prompts now show a clear confirmation message ("Are you sure you want to delete this income/expense?") instead of showing empty input fields.
 - True modal overlays with background dimming applied across the app.
 
 ### Fixed
+
 - Fixed delete confirmation rendering incorrectly inside the Expenses table instead of as a modal.
 - Ensured consistent visual style across light and dark modes.
 

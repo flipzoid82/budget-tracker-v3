@@ -1,6 +1,6 @@
 import UpcomingBills from "../components/UpcomingBills";
 import { useBudget } from "../core/BudgetProvider";
-import { formatCurrency } from "../utils/formatCurrency";
+import { formatCurrency } from "../utils/format/formatCurrency";
 
 const Dashboard = () => {
   const { state } = useBudget();

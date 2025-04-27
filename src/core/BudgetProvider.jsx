@@ -1,5 +1,5 @@
 import { createContext, useReducer, useContext, useEffect } from "react";
-import { loadData, saveData } from "../utils/storage";
+import { loadData, saveData } from "../utils/storage/storage";
 
 const BudgetContext = createContext();
 

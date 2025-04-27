@@ -1,13 +1,18 @@
-
 import { useState, useRef, useEffect } from "react";
 import { useBudget } from "../core/BudgetProvider";
-import { formatCurrency } from "../utils/formatCurrency";
+import { formatCurrency } from "../utils/format/formatCurrency";
 import PromptModal from "../modals/PromptModal";
 
 const ExpensesPage = () => {
   const { state, dispatch } = useBudget();
   const [menuIndex, setMenuIndex] = useState(null);
-  const [prompt, setPrompt] = useState({ show: false, title: "", fields: null, submitLabel: "", onSubmit: null });
+  const [prompt, setPrompt] = useState({ 
+    show: false, 
+    title: "", 
+    fields: null, 
+    submitLabel: "", 
+    onSubmit: null 
+  });
   const menuRef = useRef(null);
 
   const monthData = state.months[state.currentMonth] || {};
@@ -20,7 +25,10 @@ const ExpensesPage = () => {
   const updateField = (index, field, value) => {
     const updated = [...expenses];
     updated[index][field] = value;
-    dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, expenses: updated } });
+    dispatch({ 
+      type: "UPDATE_MONTH_DATA", 
+      payload: { ...monthData, expenses: updated } 
+    });
   };
 
   const startAddExpense = () => {
@@ -29,9 +37,22 @@ const ExpensesPage = () => {
       title: "Add New Expense",
       submitLabel: "Save",
       fields: [
-        { name: "name", label: "Bill Name *", required: true },
-        { name: "amount", label: "Amount *", required: true },
-        { name: "dueDate", label: "Due Date (MM/DD/YYYY) *", required: true }
+        { 
+          name: "name", 
+          label: "Bill Name", 
+          required: true 
+        },
+        { 
+          name: "amount", 
+          label: "Amount", 
+          required: true 
+        },
+        { 
+          name: "dueDate", 
+          label: "Due Date", 
+          type: "date",
+          required: true 
+        }
       ],
       onSubmit: (values) => {
         const updated = [...expenses, {
@@ -42,7 +63,49 @@ const ExpensesPage = () => {
           confirmation: "",
           url: ""
         }];
-        dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, expenses: updated } });
+        dispatch({ 
+          type: "UPDATE_MONTH_DATA", 
+          payload: { ...monthData, expenses: updated } 
+        });
+        setPrompt({ show: false });
+      }
+    });
+  };
+
+  const getEditHandler = (fieldName, fieldLabel, index, isDate = false) => {
+    return {
+      show: true,
+      title: `Edit ${fieldLabel}`,
+      fields: [
+        { 
+          name: fieldName, 
+          label: fieldLabel, 
+          type: isDate ? "date" : undefined,
+          required: true 
+        }
+      ],
+      submitLabel: "Save",
+      onSubmit: (values) => {
+        updateField(index, fieldName, values[fieldName]);
+        setPrompt({ show: false });
+      }
+    };
+  };
+
+  const handleDelete = (index) => {
+    setPrompt({
+      show: true,
+      title: "Confirm Delete",
+      label: "Are you sure you want to delete this expense? This action cannot be undone.",
+      confirmationOnly: true,
+      submitLabel: "Delete",
+      onSubmit: () => {
+        const updated = [...expenses];
+        updated.splice(index, 1);
+        dispatch({ 
+          type: "UPDATE_MONTH_DATA", 
+          payload: { ...monthData, expenses: updated } 
+        });
         setPrompt({ show: false });
       }
     });
@@ -89,81 +152,42 @@ const ExpensesPage = () => {
                     </button>
                     {menuIndex === index && (
                       <div ref={menuRef} className="dropdown-menu">
-                        <button className="dropdown-button" onClick={() => {
-                          setPrompt({
-                            show: true,
-                            title: "Edit Name",
-                            fields: [{ name: "name", label: "Bill Name", required: true }],
-                            submitLabel: "Save",
-                            onSubmit: (values) => {
-                              updateField(index, "name", values.name);
-                              setPrompt({ show: false });
-                            }
-                          });
-                        }}>Edit Name</button>
-                        <button className="dropdown-button" onClick={() => {
-                          setPrompt({
-                            show: true,
-                            title: "Edit Amount",
-                            fields: [{ name: "amount", label: "Amount", required: true }],
-                            submitLabel: "Save",
-                            onSubmit: (values) => {
-                              updateField(index, "amount", parseFloat(values.amount));
-                              setPrompt({ show: false });
-                            }
-                          });
-                        }}>Edit Amount</button>
-                        <button className="dropdown-button" onClick={() => {
-                          setPrompt({
-                            show: true,
-                            title: "Edit Due Date",
-                            fields: [{ name: "dueDate", label: "Due Date (MM/DD/YYYY)", required: true }],
-                            submitLabel: "Save",
-                            onSubmit: (values) => {
-                              updateField(index, "dueDate", values.dueDate);
-                              setPrompt({ show: false });
-                            }
-                          });
-                        }}>Edit Due Date</button>
-                        <button className="dropdown-button" onClick={() => {
-                          setPrompt({
-                            show: true,
-                            title: "Edit URL",
-                            fields: [{ name: "url", label: "Link or URL", required: false }],
-                            submitLabel: "Save",
-                            onSubmit: (values) => {
-                              updateField(index, "url", values.url);
-                              setPrompt({ show: false });
-                            }
-                          });
-                        }}>Edit URL</button>
-                        <button className="dropdown-button" onClick={() => {
-                          setPrompt({
-                            show: true,
-                            title: "Edit Confirmation #",
-                            fields: [{ name: "confirmation", label: "Confirmation #", required: false }],
-                            submitLabel: "Save",
-                            onSubmit: (values) => {
-                              updateField(index, "confirmation", values.confirmation);
-                              setPrompt({ show: false });
-                            }
-                          });
-                        }}>Edit Confirmation</button>
-                        <button className="dropdown-button" onClick={() => {
-                          setPrompt({
-                            show: true,
-                            title: "Confirm Delete",
-                            label: "Are you sure you want to delete this expense? This action cannot be undone.",
-                            confirmationOnly: true,
-                            submitLabel: "Delete",
-                            onSubmit: () => {
-                              const updated = [...expenses];
-                              updated.splice(index, 1);
-                              dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, expenses: updated } });
-                              setPrompt({ show: false });
-                            }
-                          });
-                        }}>Delete</button>
+                        <button 
+                          className="dropdown-button" 
+                          onClick={() => setPrompt(getEditHandler("name", "Bill Name", index))}
+                        >
+                          Edit Name
+                        </button>
+                        <button 
+                          className="dropdown-button" 
+                          onClick={() => setPrompt(getEditHandler("amount", "Amount", index))}
+                        >
+                          Edit Amount
+                        </button>
+                        <button 
+                          className="dropdown-button" 
+                          onClick={() => setPrompt(getEditHandler("dueDate", "Due Date", index, true))}
+                        >
+                          Edit Due Date
+                        </button>
+                        <button 
+                          className="dropdown-button" 
+                          onClick={() => setPrompt(getEditHandler("url", "URL", index))}
+                        >
+                          Edit URL
+                        </button>
+                        <button 
+                          className="dropdown-button" 
+                          onClick={() => setPrompt(getEditHandler("confirmation", "Confirmation #", index))}
+                        >
+                          Edit Confirmation
+                        </button>
+                        <button 
+                          className="dropdown-button" 
+                          onClick={() => handleDelete(index)}
+                        >
+                          Delete
+                        </button>
                       </div>
                     )}
                   </div>

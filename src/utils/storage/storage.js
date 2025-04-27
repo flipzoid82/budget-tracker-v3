@@ -2,7 +2,7 @@
 // This module abstracts data loading/saving for flexibility.
 // It starts with JSON but is designed to support SQLite or web APIs later.
 
-import initialData from "../data/InitialData.json";
+import initialData from "../../data/InitialData.json";
 
 let appData = { ...initialData };
 
