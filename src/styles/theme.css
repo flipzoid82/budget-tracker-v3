@@ -30,6 +30,20 @@ body.dark-mode {
   --color-warning: #fdd835;
 }
 
+:root {
+  --color-icon: black;
+  --color-icon-hover: #333;
+  --color-button-bg: #e5e5e5;
+  --color-button-hover: #ccc;
+}
+
+.dark-mode {
+  --color-icon: white;
+  --color-icon-hover: #e0e0e0;
+  --color-button-bg: #2e2e2e;
+  --color-button-hover: #444;
+}
+
 /* ========================================================
    🌍 Base Typography & Layout
 ======================================================== */
@@ -259,6 +273,41 @@ body.dark-mode .btn-muted {
 }
 
 /* ========================================================
+   🔘 Buttons
+======================================================== */
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.icon-button svg {
+  color: var(--color-fg);
+  stroke: currentColor;
+  transition: color 0.3s ease, stroke 0.3s ease;
+}
+
+.icon-button:hover {
+  background-color: var(--color-muted);
+}
+
+.dark-mode .icon-button:hover {
+  background-color: var(--color-button-hover);
+}
+
+.dark-mode .icon-button svg {
+  stroke: white;
+}
+
+/* ========================================================
    🌀 Animations
 ======================================================== */
 @keyframes fadeIn {
@@ -360,11 +409,48 @@ body:not(.dark-mode) .tab-button:not(.active) {
 
 .toolbar-actions {
   background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-muted);
   padding: 0.5rem 1.5rem;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 0.5rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--color-bg);
+  padding: 0.5rem 1.5rem;
+  border-bottom: 1px solid var(--color-muted);
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center; /* 👈 aligns tops */
+  gap: 0.5rem;
+  padding: 0.5rem 2rem;
+}
+
+/* 🎯 Month Selector styling to match toolbar buttons */
+.month-selector {
+  height: 32px; /* match button height */
+  padding: 0 0.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.90rem;
+  border: none;
+  outline: none;
+  background-color: var(--color-muted);
+  color: var(--color-text);
+
+  box-sizing: border-box;
+  vertical-align: middle; /* 🔥 aligns with text */
+}
+
+.month-selector:focus {
+  outline: none;
+  border-color: var(--color-primary);
 }
 
 /* ========================================================
@@ -514,7 +600,7 @@ body:not(.dark-mode) .tab-button:not(.active) {
 
 .react-datepicker__day:hover {
   background: var(--color-primary);
-  color: white;
+  color: rgba(162, 160, 160, 0.452);
 }
 
 .react-datepicker__day--selected {
@@ -548,6 +634,12 @@ body.dark-mode .react-datepicker__day {
 
 body.dark-mode .react-datepicker__day--disabled {
   color: #666;
+}
+
+body.dark-mode select.month-selector {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-muted);
 }
 
 /* Positioning fix */

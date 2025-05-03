@@ -4,6 +4,16 @@ A local-first, dark-mode-ready budgeting app built with React + Electron.
 
 ---
 
+## v3.1.0 Highlights
+
+This release introduces a refined user interface and enhanced user experience:
+
+- **Dark Mode Toggle**: Seamless switch between light and dark themes. The setting is saved automatically.
+- **Improved Toolbar Layout**: Cleaned up the top menu with standardized SVG icons.
+- **Month Selector Integration**: Dropdown now appears on the far left for intuitive access.
+- **Reusable SVG Icons**: Added consistent icon components like `IconEdit`, `IconSave`, `IconPrint`, etc.
+- **Improved Confirmation Prompts**: Clearer and cleaner delete modals for income and expenses.
+
 ### v3.09
 
 - Complete PromptModal rebuild with multi-mode support (forms, confirmation-only, date pickers).
