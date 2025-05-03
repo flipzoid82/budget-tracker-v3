@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useBudget } from "../core/BudgetProvider";
 import { formatCurrency } from "../utils/format/formatCurrency";
 import PromptModal from "../modals/PromptModal";
+import IconEdit from "../components/icons/IconEdit";
 
 const ExpensesPage = () => {
   const { state, dispatch } = useBudget();
@@ -145,10 +146,8 @@ const ExpensesPage = () => {
                   <div className="dropdown-anchor">
                     <button
                       onClick={() => toggleMenu(index)}
-                      className="btn btn-muted"
-                      style={{ padding: "0.2rem", fontSize: "1rem" }}
-                    >
-                      ✏️
+                      className="icon-button">
+                      <IconEdit/>
                     </button>
                     {menuIndex === index && (
                       <div ref={menuRef} className="dropdown-menu">

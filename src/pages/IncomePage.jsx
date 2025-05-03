@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useBudget } from "../core/BudgetProvider";
 import { formatCurrency } from "../utils/format/formatCurrency";
 import PromptModal from "../modals/PromptModal";
+import IconEdit from "../components/icons/IconEdit";
 
 const IncomePage = () => {
   const { state, dispatch } = useBudget();
@@ -88,10 +89,10 @@ const IncomePage = () => {
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ background: "var(--color-muted)", color: "var(--color-text)", fontWeight: "600" }}>
-              <th style={{ width: "1px", padding: "0.5rem 0.75rem", textAlign: "left" }}></th>
-              <th style={{ padding: "0.5rem 0.75rem", textAlign: "left" }}>Source</th>
-              <th style={{ padding: "0.5rem 0.75rem", textAlign: "right" }}>Amount</th>
-              <th style={{ padding: "0.5rem 0.75rem", textAlign: "center" }}>Date Received</th>
+              <th style={{ textAlign: "left" }}></th>
+              <th style={{ textAlign: "left" }}>Source</th>
+              <th style={{ textAlign: "right" }}>Amount</th>
+              <th style={{ textAlign: "center" }}>Date Received</th>
             </tr>
           </thead>
           <tbody>
@@ -101,10 +102,8 @@ const IncomePage = () => {
                   <div className="dropdown-anchor">
                     <button
                       onClick={() => toggleMenu(index)}
-                      className="btn btn-muted"
-                      style={{ padding: "0.2rem", fontSize: "1rem" }}
-                    >
-                      ✏️
+                      className="icon-button">
+                      <IconEdit/>
                     </button>
                     {menuIndex === index && (
                       <div ref={menuRef} className="dropdown-menu">
@@ -150,9 +149,9 @@ const IncomePage = () => {
                     )}
                   </div>
                 </td>
-                <td style={{ padding: "0.5rem 0.75rem" }}>{item.source}</td>
-                <td style={{ padding: "0.5rem 0.75rem", textAlign: "right" }}>{formatCurrency(item.amount)}</td>
-                <td style={{ padding: "0.5rem 0.75rem", textAlign: "center" }}>{item.date}</td>
+                <td style={{ padding: "0", textAlign: "left" }}>{item.source}</td>
+                <td style={{ padding: "0", textAlign: "right" }}>{formatCurrency(item.amount)}</td>
+                <td style={{ padding: "0", textAlign: "center" }}>{item.date}</td>
               </tr>
             ))}
           </tbody>
