@@ -2,7 +2,27 @@
 
 ---
 
-## v3.09 - PromptModal Overhaul + DatePicker Upgrade + Page Sync
+## [v3.1.0] - 2025-05-03
+
+### Added
+
+- Dark mode toggle button with persistent state using `localStorage` and `useEffect`.
+- MonthSelector dropdown aligned left of toolbar, styled to match button height.
+- Toolbar icons replaced with SVG components: Save, Print, Import, Export.
+- SVG-based Edit icon (`IconEdit.jsx`) used across Income and Expenses pages.
+- Delete confirmation modals now use `confirmationOnly` mode and custom prompt message.
+
+### Updated
+
+- `theme.css` styling for `.toolbar`, `.month-selector`, `.icon-button`, and SVG icons.
+- Reusable `Icon` components added for toolbar actions and dark mode states.
+
+### Fixed
+
+- Alignments and sizing of dropdown/button elements within the toolbar.
+- Dark mode SVG color inheritance issues by enforcing `stroke="currentColor"`.
+
+## [v3.09] - PromptModal Overhaul + DatePicker Upgrade + Page Sync
 
 **Date:** 2025-04-26
 
