@@ -23,6 +23,47 @@ const ExpensesPage = () => {
     setMenuIndex((prev) => (prev === index ? null : index));
   };
 
+  const handleMarkPaid = (index) => {
+    const today = new Date().toLocaleDateString("en-US");
+    setPrompt({
+      show: true,
+      title: "Enter Confirmation Number",
+      fields: [{ name: "confirmation", label: "Confirmation #", required: true }],
+      submitLabel: "Save",
+      onSubmit: ({ confirmation }) => {
+        const updated = [...expenses];
+        updated[index].paidDate = today;
+        updated[index].confirmation = confirmation;
+        dispatch({
+          type: "UPDATE_MONTH_DATA",
+          payload: { ...monthData, expenses: updated }
+        });
+        setPrompt((prev) => ({ ...prev, show: false }));
+      }
+    });
+  };
+
+  const handleUndoPaid = (index) => {
+    setPrompt({
+      show: true,
+      title: "Undo Payment?",
+      label: "Are you sure? This will delete the paid date and confirmation #.",
+      confirmationOnly: true,
+      submitLabel: "Undo",
+      onSubmit: () => {
+        const updated = [...expenses];
+        updated[index].paidDate = "";
+        updated[index].confirmation = "";
+        dispatch({
+          type: "UPDATE_MONTH_DATA",
+          payload: { ...monthData, expenses: updated }
+        });
+        setPrompt((prev) => ({ ...prev, show: false }));
+      }
+    });
+  };
+
+
   const updateField = (index, field, value) => {
     const updated = [...expenses];
     updated[index][field] = value;
@@ -200,12 +241,24 @@ const ExpensesPage = () => {
                   {item.paidDate ? "✅ Paid" : "🕗 Unpaid"}
                 </td>
                 <td style={{ textAlign: "center" }}>
-                  <button
-                    className="btn btn-primary"
-                    style={{ minWidth: "90px" }}
-                  >
-                    {item.paidDate ? "Undo" : "Mark Paid"}
-                  </button>
+                  {item.paidDate ? (
+                      <button
+                        className="btn btn-primary"
+                        style={{ minWidth: "90px" }}
+                        onClick={() => handleUndoPaid(item)}
+                      >
+                        Undo
+                      </button>
+                    ) : (
+                      <button
+                      className="btn btn-primary"
+                      style={{ minWidth: "90px" }}
+                        onClick={() => handleMarkPaid(item)}
+                      >
+                        Mark Paid
+                      </button>
+                    )
+                  }
                 </td>
               </tr>
             ))}
