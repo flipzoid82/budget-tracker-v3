@@ -1,5 +1,4 @@
 import { createContext, useReducer, useContext, useEffect } from "react";
-import { loadData, saveData } from "../utils/storage/storage";
 
 const BudgetContext = createContext();
 
@@ -14,14 +13,16 @@ const reducer = (state, action) => {
     case "SET_MONTH":
       return { ...state, currentMonth: action.payload };
     case "UPDATE_MONTH_DATA":
-      const updatedMonths = {
-        ...state.months,
-        [state.currentMonth]: action.payload,
-      };
-      saveData({ currentMonth: state.currentMonth, months: updatedMonths });
       return {
         ...state,
-        months: updatedMonths,
+        months: {
+          ...state.months,
+          [state.currentMonth]: {
+            expenses: action.payload.expenses || [],
+            income: action.payload.income || [],
+            misc: action.payload.misc || [],
+          },
+        },
       };
     default:
       return state;
@@ -34,13 +35,73 @@ export const BudgetProvider = ({ children }) => {
     months: {},
   });
 
+  // Load months and default month data on app load
   useEffect(() => {
     const init = async () => {
-      const data = await loadData();
-      dispatch({ type: "INIT", payload: data });
+      const monthsArray = await window.api.invoke("get-months");
+      if (monthsArray.length > 0) {
+        const currentMonth = monthsArray[0].name;
+
+        const monthsMap = {};
+        monthsArray.forEach((m) => {
+          monthsMap[m.name] = { expenses: [], income: [], misc: [] };
+        });
+
+        dispatch({ type: "INIT", payload: { currentMonth, months: monthsMap } });
+
+        const [rawExpenses, income, misc] = await Promise.all([
+          window.api.invoke("get-expenses", currentMonth),
+          window.api.invoke("get-income", currentMonth),
+          window.api.invoke("get-misc", currentMonth),
+        ]);
+
+        const expenses = rawExpenses.map((e) => ({
+          ...e,
+          dueDate: e.due_date,
+          paidDate: e.paid_date,
+          confirmation: e.confirmation,
+        }));
+
+        dispatch({
+          type: "UPDATE_MONTH_DATA",
+          payload: { expenses, income, misc },
+        });
+
+        console.log("✅ Loaded initial data for", currentMonth);
+      }
     };
+
     init();
   }, []);
+
+  // Load new data when selected month changes
+  useEffect(() => {
+    const fetchMonthData = async () => {
+      if (!state.currentMonth) return;
+
+      const [rawExpenses, income, misc] = await Promise.all([
+        window.api.invoke("get-expenses", state.currentMonth),
+        window.api.invoke("get-income", state.currentMonth),
+        window.api.invoke("get-misc", state.currentMonth),
+      ]);
+
+      const expenses = rawExpenses.map((e) => ({
+        ...e,
+        dueDate: e.due_date,
+        paidDate: e.paid_date,
+        confirmation: e.confirmation,
+      }));
+
+      dispatch({
+        type: "UPDATE_MONTH_DATA",
+        payload: { expenses, income, misc },
+      });
+
+      console.log("🔁 Switched to:", state.currentMonth);
+    };
+
+    fetchMonthData();
+  }, [state.currentMonth]);
 
   return (
     <BudgetContext.Provider value={{ state, dispatch }}>

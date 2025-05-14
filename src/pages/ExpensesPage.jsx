@@ -7,17 +7,23 @@ import IconEdit from "../components/icons/IconEdit";
 const ExpensesPage = () => {
   const { state, dispatch } = useBudget();
   const [menuIndex, setMenuIndex] = useState(null);
-  const [prompt, setPrompt] = useState({ 
-    show: false, 
-    title: "", 
-    fields: null, 
-    submitLabel: "", 
-    onSubmit: null 
+  const [prompt, setPrompt] = useState({
+    show: false,
+    title: "",
+    fields: null,
+    submitLabel: "",
+    onSubmit: null
   });
   const menuRef = useRef(null);
 
   const monthData = state.months[state.currentMonth] || {};
-  const expenses = monthData.expenses || [];
+
+  // Optional normalization in case DB returns snake_case
+  const expenses = (monthData.expenses || []).map((e) => ({
+    ...e,
+    paidDate: e.paidDate || e.paid_date,
+    dueDate: e.dueDate || e.due_date,
+  }));
 
   const toggleMenu = (index) => {
     setMenuIndex((prev) => (prev === index ? null : index));
@@ -32,11 +38,14 @@ const ExpensesPage = () => {
       submitLabel: "Save",
       onSubmit: ({ confirmation }) => {
         const updated = [...expenses];
-        updated[index].paidDate = today;
-        updated[index].confirmation = confirmation;
+        updated[index] = {
+          ...updated[index],
+          paidDate: today,
+          confirmation,
+        };
         dispatch({
           type: "UPDATE_MONTH_DATA",
-          payload: { ...monthData, expenses: updated }
+          payload: { ...monthData, expenses: updated },
         });
         setPrompt((prev) => ({ ...prev, show: false }));
       }
@@ -52,24 +61,26 @@ const ExpensesPage = () => {
       submitLabel: "Undo",
       onSubmit: () => {
         const updated = [...expenses];
-        updated[index].paidDate = "";
-        updated[index].confirmation = "";
+        updated[index] = {
+          ...updated[index],
+          paidDate: "",
+          confirmation: "",
+        };
         dispatch({
           type: "UPDATE_MONTH_DATA",
-          payload: { ...monthData, expenses: updated }
+          payload: { ...monthData, expenses: updated },
         });
         setPrompt((prev) => ({ ...prev, show: false }));
       }
     });
   };
 
-
   const updateField = (index, field, value) => {
     const updated = [...expenses];
     updated[index][field] = value;
-    dispatch({ 
-      type: "UPDATE_MONTH_DATA", 
-      payload: { ...monthData, expenses: updated } 
+    dispatch({
+      type: "UPDATE_MONTH_DATA",
+      payload: { ...monthData, expenses: updated }
     });
   };
 
@@ -79,22 +90,9 @@ const ExpensesPage = () => {
       title: "Add New Expense",
       submitLabel: "Save",
       fields: [
-        { 
-          name: "name", 
-          label: "Bill Name", 
-          required: true 
-        },
-        { 
-          name: "amount", 
-          label: "Amount", 
-          required: true 
-        },
-        { 
-          name: "dueDate", 
-          label: "Due Date", 
-          type: "date",
-          required: true 
-        }
+        { name: "name", label: "Bill Name", required: true },
+        { name: "amount", label: "Amount", required: true },
+        { name: "dueDate", label: "Due Date", type: "date", required: true }
       ],
       onSubmit: (values) => {
         const updated = [...expenses, {
@@ -105,9 +103,9 @@ const ExpensesPage = () => {
           confirmation: "",
           url: ""
         }];
-        dispatch({ 
-          type: "UPDATE_MONTH_DATA", 
-          payload: { ...monthData, expenses: updated } 
+        dispatch({
+          type: "UPDATE_MONTH_DATA",
+          payload: { ...monthData, expenses: updated }
         });
         setPrompt({ show: false });
       }
@@ -119,11 +117,11 @@ const ExpensesPage = () => {
       show: true,
       title: `Edit ${fieldLabel}`,
       fields: [
-        { 
-          name: fieldName, 
-          label: fieldLabel, 
+        {
+          name: fieldName,
+          label: fieldLabel,
           type: isDate ? "date" : undefined,
-          required: true 
+          required: true
         }
       ],
       submitLabel: "Save",
@@ -144,9 +142,9 @@ const ExpensesPage = () => {
       onSubmit: () => {
         const updated = [...expenses];
         updated.splice(index, 1);
-        dispatch({ 
-          type: "UPDATE_MONTH_DATA", 
-          payload: { ...monthData, expenses: updated } 
+        dispatch({
+          type: "UPDATE_MONTH_DATA",
+          payload: { ...monthData, expenses: updated }
         });
         setPrompt({ show: false });
       }
@@ -185,47 +183,27 @@ const ExpensesPage = () => {
               <tr key={index} style={{ borderBottom: "1px solid #ddd" }}>
                 <td style={{ paddingLeft: "0rem", width: "1px" }}>
                   <div className="dropdown-anchor">
-                    <button
-                      onClick={() => toggleMenu(index)}
-                      className="icon-button">
-                      <IconEdit/>
+                    <button onClick={() => toggleMenu(index)} className="icon-button">
+                      <IconEdit />
                     </button>
                     {menuIndex === index && (
                       <div ref={menuRef} className="dropdown-menu">
-                        <button 
-                          className="dropdown-button" 
-                          onClick={() => setPrompt(getEditHandler("name", "Bill Name", index))}
-                        >
+                        <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("name", "Bill Name", index))}>
                           Edit Name
                         </button>
-                        <button 
-                          className="dropdown-button" 
-                          onClick={() => setPrompt(getEditHandler("amount", "Amount", index))}
-                        >
+                        <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("amount", "Amount", index))}>
                           Edit Amount
                         </button>
-                        <button 
-                          className="dropdown-button" 
-                          onClick={() => setPrompt(getEditHandler("dueDate", "Due Date", index, true))}
-                        >
+                        <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("dueDate", "Due Date", index, true))}>
                           Edit Due Date
                         </button>
-                        <button 
-                          className="dropdown-button" 
-                          onClick={() => setPrompt(getEditHandler("url", "URL", index))}
-                        >
+                        <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("url", "URL", index))}>
                           Edit URL
                         </button>
-                        <button 
-                          className="dropdown-button" 
-                          onClick={() => setPrompt(getEditHandler("confirmation", "Confirmation #", index))}
-                        >
+                        <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("confirmation", "Confirmation #", index))}>
                           Edit Confirmation
                         </button>
-                        <button 
-                          className="dropdown-button" 
-                          onClick={() => handleDelete(index)}
-                        >
+                        <button className="dropdown-button" onClick={() => handleDelete(index)}>
                           Delete
                         </button>
                       </div>
@@ -234,7 +212,7 @@ const ExpensesPage = () => {
                 </td>
                 <td style={{ textAlign: "left" }}>{item.name}</td>
                 <td style={{ textAlign: "left" }}>{formatCurrency(item.amount)}</td>
-                <td style={{ textAlign: "center" }}>{item.dueDate}</td>
+                <td style={{ textAlign: "center" }}>{item.dueDate || "-"}</td>
                 <td style={{ textAlign: "center" }}>{item.paidDate || "-"}</td>
                 <td style={{ textAlign: "center" }}>{item.confirmation || "-"}</td>
                 <td style={{ textAlign: "left" }}>
@@ -242,23 +220,14 @@ const ExpensesPage = () => {
                 </td>
                 <td style={{ textAlign: "center" }}>
                   {item.paidDate ? (
-                      <button
-                        className="btn btn-primary"
-                        style={{ minWidth: "90px" }}
-                        onClick={() => handleUndoPaid(item)}
-                      >
-                        Undo
-                      </button>
-                    ) : (
-                      <button
-                      className="btn btn-primary"
-                      style={{ minWidth: "90px" }}
-                        onClick={() => handleMarkPaid(item)}
-                      >
-                        Mark Paid
-                      </button>
-                    )
-                  }
+                    <button className="btn btn-primary" style={{ minWidth: "90px" }} onClick={() => handleUndoPaid(index)}>
+                      Undo
+                    </button>
+                  ) : (
+                    <button className="btn btn-primary" style={{ minWidth: "90px" }} onClick={() => handleMarkPaid(index)}>
+                      Mark Paid
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}

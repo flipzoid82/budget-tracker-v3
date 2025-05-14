@@ -26,7 +26,19 @@ const Layout = ({ toggleDarkMode, darkMode }) => {
     }
   };
 
-  const handleSave = () => console.log("💾 Save triggered");
+  const handleSave = async () => {
+    const monthName = state.currentMonth;
+    const data = state.months[monthName];
+  
+    try {
+      await window.api.invoke("save-month-data", { monthName, data });
+      alert("✅ Budget saved to database!");
+    } catch (err) {
+      console.error("❌ Failed to save:", err);
+      alert("❌ Failed to save data.");
+    }
+  };
+  
   const handlePrint = () => window.print();
   const handleExport = () => {
     const json = JSON.stringify({ currentMonth: state.currentMonth, months: state.months }, null, 2);

@@ -1,14 +1,17 @@
-
 import { useBudget } from "../core/BudgetProvider";
 
-// Helper to convert MM/DD/YYYY into a Date object
+// Helper to convert MM/DD/YYYY into a Date object safely
 const parseDate = (str) => {
-  const [month, day, year] = str.split("/").map(Number);
+  if (!str || typeof str !== "string") return null;
+  const parts = str.split("/").map(Number);
+  if (parts.length !== 3) return null;
+  const [month, day, year] = parts;
   return new Date(year, month - 1, day);
 };
 
 // Determine urgency level based on how many days until due
 const getUrgency = (dueDate) => {
+  if (!dueDate) return "future";
   const today = new Date();
   const daysDiff = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
   if (daysDiff < 0) return "urgent";    // Overdue
@@ -21,7 +24,8 @@ const UpcomingBills = () => {
   const monthData = state.months[state.currentMonth] || {};
   const expenses = monthData.expenses || [];
 
-  const unpaid = expenses.filter((e) => !e.paidDate);
+  // Filter unpaid bills with valid dueDate
+  const unpaid = expenses.filter((e) => !e.paidDate && parseDate(e.dueDate));
   const sorted = unpaid.sort((a, b) => parseDate(a.dueDate) - parseDate(b.dueDate)).slice(0, 6);
 
   const urgentBills = [];
@@ -33,7 +37,19 @@ const UpcomingBills = () => {
     else upcomingBills.push(bill);
   }
 
-  if (urgentBills.length === 0 && upcomingBills.length === 0) return null;
+  if (urgentBills.length === 0 && upcomingBills.length === 0) 
+    return (
+      <div style={{
+        border: "1px solid var(--color-muted)",
+        borderRadius: "8px",
+        padding: "1rem",
+        marginTop: "1rem",
+        background: "rgba(83, 241, 26, 0.15)",
+        color: "var(--color-text)"
+      }}>
+        <h2 style={{ color: "var(--color-text)" }}>🎉 Great job! You're all up to date with your bills.🎉</h2>
+      </div>  
+      );
 
   return (
     <div style={{

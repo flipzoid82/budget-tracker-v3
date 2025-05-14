@@ -2,6 +2,28 @@
 
 ---
 
+## [v3.2.0] – 2025-05-13
+
+### Added
+
+- 🔄 Integrated SQLite as the app's persistent backend storage
+- 💾 Save button now syncs expenses, income, and misc data
+- ✅ Support for editing existing income entries
+- 🗑️ Deletes removed items from the database on save
+- 🔐 IPC secure communication using Electron preload
+- 🧠 Updated PromptModal with reliable input focus handling
+
+### Fixed
+
+- ⚠️ Modal input fields were sometimes unclickable due to render timing
+
+## [v3.1.1] – Expense Payment Polishing
+
+- Unified "Mark Paid" and "Undo" button widths for visual consistency
+- Added confirmation modal when undoing a payment with warning message:
+  _"Are you sure you want to UNDO payment? This will delete the paid date and confirmation #."_
+- Refactored modal prompt to support optional messages in confirmation-only mode
+
 ## [v3.1.0] - 2025-05-03
 
 ### Added

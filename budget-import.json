@@ -1,0 +1,4071 @@
+{
+  "currentMonth": "APR2025",
+  "months": {
+    "JAN2023": {
+      "expenses": [],
+      "income": [],
+      "misc": []
+    },
+    "FEB2023": {
+      "expenses": [],
+      "income": [],
+      "misc": []
+    },
+    "MAR2023": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 1783.8400000000001,
+          "paidDate": "03/05/2023",
+          "dueDate": "03/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 259.87,
+          "paidDate": "02/28/2023",
+          "dueDate": "02/28/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "03/01/2023",
+          "dueDate": "03/08/2023",
+          "confirmation": "p236FMJ8K8"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 64.99,
+          "paidDate": "02/28/2023",
+          "dueDate": "02/28/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 19.99,
+          "paidDate": "03/09/2023",
+          "dueDate": "03/09/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Disney+",
+          "amount": 10.99,
+          "paidDate": "03/06/2023",
+          "dueDate": "03/08/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 516.16,
+          "paidDate": "03/10/2023",
+          "dueDate": "03/16/2023",
+          "confirmation": "806003098638"
+        },
+        {
+          "name": "USAA",
+          "amount": 250.47,
+          "paidDate": "03/01/2023",
+          "dueDate": "03/02/2023",
+          "confirmation": "4593065173"
+        },
+        {
+          "name": "Ally",
+          "amount": 500.0,
+          "paidDate": "03/10/2023",
+          "dueDate": "03/10/2023",
+          "confirmation": "RJ9ENZTV031020231847"
+        },
+        {
+          "name": "Affirm (Walmart)",
+          "amount": 113.95,
+          "paidDate": "03/25/2023",
+          "dueDate": "03/28/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "03/17/2023",
+          "dueDate": "03/20/2023",
+          "confirmation": "242631"
+        },
+        {
+          "name": "NavyFed",
+          "amount": 400.0,
+          "paidDate": "03/01/2023",
+          "dueDate": "03/01/2023",
+          "confirmation": "364029"
+        },
+        {
+          "name": "Commenity",
+          "amount": 100.0,
+          "paidDate": "03/12/2023",
+          "dueDate": "03/16/2023",
+          "confirmation": "AC20230312212943"
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 300.0,
+          "paidDate": "03/12/2023",
+          "dueDate": "03/17/2023",
+          "confirmation": "1NOS9E"
+        },
+        {
+          "name": "CareCredit",
+          "amount": 100.0,
+          "paidDate": "03/01/2023",
+          "dueDate": "03/03/2023",
+          "confirmation": "830342868"
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "03/02/2023",
+          "dueDate": "03/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Capital One",
+          "amount": 150.0,
+          "paidDate": "03/02/2023",
+          "dueDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "03/02/2023",
+          "dueDate": "03/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "US Bank",
+          "amount": 100.0,
+          "paidDate": "03/02/2023",
+          "dueDate": "",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "03/01/2023",
+          "source": "VA Comp",
+          "amount": 3803.09
+        },
+        {
+          "date": "03/03/2023",
+          "source": "UHG/Optum",
+          "amount": 1601.06
+        },
+        {
+          "date": "03/17/2023",
+          "source": "UHG/Optum",
+          "amount": 1582.88
+        },
+        {
+          "date": "03/03/2023",
+          "source": "USPS 05-2023",
+          "amount": 1702.93
+        },
+        {
+          "date": "03/17/2023",
+          "source": "USPS 06-2023",
+          "amount": 1199.2
+        }
+      ],
+      "misc": []
+    },
+    "APR2023": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 634.6500000000001,
+          "paidDate": "04/02/2023",
+          "dueDate": "04/01/2023",
+          "confirmation": "354651688"
+        },
+        {
+          "name": "AT&T",
+          "amount": 259.87,
+          "paidDate": "03/31/2023",
+          "dueDate": "03/28/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "03/31/2023",
+          "dueDate": "04/08/2023",
+          "confirmation": "p236T9MXJP"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 64.99,
+          "paidDate": "03/31/2023",
+          "dueDate": "03/31/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 19.99,
+          "paidDate": "04/08/2023",
+          "dueDate": "04/08/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Disney+",
+          "amount": 100.92,
+          "paidDate": "03/31/2023",
+          "dueDate": "04/05/2023",
+          "confirmation": "Annual Plan"
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 440.04,
+          "paidDate": "04/14/2023",
+          "dueDate": "04/17/2023",
+          "confirmation": "SCEPAY457709708"
+        },
+        {
+          "name": "USAA",
+          "amount": 250.47,
+          "paidDate": "03/31/2023",
+          "dueDate": "04/02/2023",
+          "confirmation": "4659640829"
+        },
+        {
+          "name": "Ally",
+          "amount": 500.0,
+          "paidDate": "04/03/2023",
+          "dueDate": "04/10/2023",
+          "confirmation": "RNIM8YP5040320230201"
+        },
+        {
+          "name": "Affirm (Walmart)",
+          "amount": 113.95,
+          "paidDate": "03/25/2023",
+          "dueDate": "04/28/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "04/14/2023",
+          "dueDate": "04/20/2023",
+          "confirmation": "346467"
+        },
+        {
+          "name": "NavyFed",
+          "amount": 400.0,
+          "paidDate": "03/31/2023",
+          "dueDate": "04/01/2023",
+          "confirmation": "294603"
+        },
+        {
+          "name": "Commenity",
+          "amount": 100.0,
+          "paidDate": "04/14/2023",
+          "dueDate": "04/16/2023",
+          "confirmation": "AC20230414134725"
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 150.0,
+          "paidDate": "04/14/2023",
+          "dueDate": "04/17/2023",
+          "confirmation": "FARIXY"
+        },
+        {
+          "name": "CareCredit",
+          "amount": 100.0,
+          "paidDate": "03/31/2023",
+          "dueDate": "04/03/2023",
+          "confirmation": "3371050567"
+        },
+        {
+          "name": "Amex",
+          "amount": 214.25,
+          "paidDate": "04/01/2023",
+          "dueDate": "04/23/2023",
+          "confirmation": "M1026"
+        },
+        {
+          "name": "Capital One",
+          "amount": 150.0,
+          "paidDate": "04/01/2023",
+          "dueDate": "04/07/2023",
+          "confirmation": "Q036F2J2"
+        },
+        {
+          "name": "Discover",
+          "amount": 150.0,
+          "paidDate": "04/01/2023",
+          "dueDate": "04/14/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "US Bank",
+          "amount": 100.0,
+          "paidDate": "04/01/2023",
+          "dueDate": "04/06/2023",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "03/31/2023",
+          "source": "VA Comp",
+          "amount": 3803.09
+        },
+        {
+          "date": "03/31/2023",
+          "source": "UHG/Optum",
+          "amount": 1567.75
+        },
+        {
+          "date": "04/14/2023",
+          "source": "UHG/Optum",
+          "amount": 1552.07
+        },
+        {
+          "date": "03/31/2023",
+          "source": "USPS 07-2023",
+          "amount": 1349.25
+        },
+        {
+          "date": "04/14/2023",
+          "source": "USPS 08-2023",
+          "amount": 1447.31
+        }
+      ],
+      "misc": []
+    },
+    "MAY2023": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 1850.57,
+          "paidDate": "05/01/2023",
+          "dueDate": "05/01/2023",
+          "confirmation": "See comments"
+        },
+        {
+          "name": "AT&T",
+          "amount": 371.26,
+          "paidDate": "04/19/2023",
+          "dueDate": "04/30/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "04/30/2023",
+          "dueDate": "05/08/2023",
+          "confirmation": "p236TP8627"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "05/01/2023",
+          "dueDate": "04/30/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 17.33,
+          "paidDate": "05/01/2023",
+          "dueDate": "05/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 449.43,
+          "paidDate": "05/12/2023",
+          "dueDate": "05/17/2023",
+          "confirmation": "SCEPAY458233590"
+        },
+        {
+          "name": "USAA",
+          "amount": 250.4,
+          "paidDate": "04/30/2023",
+          "dueDate": "05/02/2023",
+          "confirmation": "4731994111"
+        },
+        {
+          "name": "Ally",
+          "amount": 500.0,
+          "paidDate": "04/30/2023",
+          "dueDate": "05/10/2023",
+          "confirmation": "RSNLJT9W043020231336"
+        },
+        {
+          "name": "Affirm (Walmart)",
+          "amount": 111.84,
+          "paidDate": "05/12/2023",
+          "dueDate": "05/28/2023",
+          "confirmation": "Done!"
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "05/12/2023",
+          "dueDate": "05/20/2023",
+          "confirmation": "341836"
+        },
+        {
+          "name": "NavyFed",
+          "amount": 400.0,
+          "paidDate": "04/30/2023",
+          "dueDate": "05/01/2023",
+          "confirmation": "272996"
+        },
+        {
+          "name": "Commenity",
+          "amount": 100.0,
+          "paidDate": "05/12/2023",
+          "dueDate": "05/16/2023",
+          "confirmation": "AC20230512121218"
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "04/30/2023",
+          "dueDate": "05/17/2023",
+          "confirmation": "9P1AQ4"
+        },
+        {
+          "name": "CareCredit",
+          "amount": 100.0,
+          "paidDate": "04/30/2023",
+          "dueDate": "05/03/2023",
+          "confirmation": "4980138574"
+        },
+        {
+          "name": "Amex",
+          "amount": 300.0,
+          "paidDate": "05/12/2023",
+          "dueDate": "05/23/2023",
+          "confirmation": "W1368"
+        },
+        {
+          "name": "Capital One",
+          "amount": 150.0,
+          "paidDate": "05/01/2023",
+          "dueDate": "05/07/2023",
+          "confirmation": "Q141F295"
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "05/01/2023",
+          "dueDate": "05/14/2023",
+          "confirmation": "LZXG-8D4H-QXGL"
+        },
+        {
+          "name": "US Bank",
+          "amount": 100.0,
+          "paidDate": "04/30/2023",
+          "dueDate": "05/06/2023",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "05/01/2023",
+          "source": "VA Comp",
+          "amount": 3803.09
+        },
+        {
+          "date": "04/28/2023",
+          "source": "UHG/Optum",
+          "amount": 1649.87
+        },
+        {
+          "date": "05/12/2023",
+          "source": "UHG/Optum",
+          "amount": 1563.01
+        },
+        {
+          "date": "04/28/2023",
+          "source": "USPS 09-2023",
+          "amount": 1299.67
+        },
+        {
+          "date": "05/12/2023",
+          "source": "USPS 10-2023",
+          "amount": 1227.08
+        }
+      ],
+      "misc": []
+    },
+    "JUN2023": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 1865.17,
+          "paidDate": "06/01/2023",
+          "dueDate": "06/01/2023",
+          "confirmation": "Read Comments"
+        },
+        {
+          "name": "AT&T",
+          "amount": 196.31,
+          "paidDate": "05/19/2023",
+          "dueDate": "05/19/2023",
+          "confirmation": "7R37EPAYA03X1XL"
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "05/31/2023",
+          "dueDate": "06/08/2023",
+          "confirmation": "p236HMBHCC"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "05/30/2023",
+          "dueDate": "05/30/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 19.99,
+          "paidDate": "06/01/2023",
+          "dueDate": "06/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 434.83,
+          "paidDate": "06/09/2023",
+          "dueDate": "06/13/2023",
+          "confirmation": "SCEPAY458789460"
+        },
+        {
+          "name": "USAA",
+          "amount": 255.61,
+          "paidDate": "05/31/2023",
+          "dueDate": "06/02/2023",
+          "confirmation": "4806640053"
+        },
+        {
+          "name": "Ally",
+          "amount": 444.32,
+          "paidDate": "06/10/2023",
+          "dueDate": "06/10/2023",
+          "confirmation": "RF8TZKAB061020231511"
+        },
+        {
+          "name": "Public Storage",
+          "amount": 158.0,
+          "paidDate": "06/02/2023",
+          "dueDate": "06/04/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "06/09/2023",
+          "dueDate": "06/20/2023",
+          "confirmation": "205833"
+        },
+        {
+          "name": "NavyFed",
+          "amount": 400.0,
+          "paidDate": "05/31/2023",
+          "dueDate": "06/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Commenity",
+          "amount": 100.0,
+          "paidDate": "06/09/2023",
+          "dueDate": "06/16/2023",
+          "confirmation": "Balance left: $97.45"
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "06/09/2023",
+          "dueDate": "06/17/2023",
+          "confirmation": "M2Q9F0"
+        },
+        {
+          "name": "CareCredit",
+          "amount": 100.0,
+          "paidDate": "05/31/2023",
+          "dueDate": "06/03/2023",
+          "confirmation": "1189277625"
+        },
+        {
+          "name": "Amex",
+          "amount": 300.0,
+          "paidDate": "05/31/2023",
+          "dueDate": "06/23/2023",
+          "confirmation": "W4078"
+        },
+        {
+          "name": "Capital One",
+          "amount": 150.0,
+          "paidDate": "06/01/2023",
+          "dueDate": "06/07/2023",
+          "confirmation": "Q357H3X6"
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "06/01/2023",
+          "dueDate": "06/14/2023",
+          "confirmation": "LZXG-8PY8-LQ72"
+        },
+        {
+          "name": "US Bank",
+          "amount": 100.0,
+          "paidDate": "05/31/2023",
+          "dueDate": "06/06/2023",
+          "confirmation": "90760"
+        }
+      ],
+      "income": [
+        {
+          "date": "06/01/2023",
+          "source": "VA Comp",
+          "amount": 3803.09
+        },
+        {
+          "date": "05/26/2023",
+          "source": "UHG/Optum",
+          "amount": 1871.52
+        },
+        {
+          "date": "06/09/2023",
+          "source": "UHG/Optum",
+          "amount": 1986.9
+        },
+        {
+          "date": "05/26/2023",
+          "source": "USPS 11-2023",
+          "amount": 1435.15
+        },
+        {
+          "date": "06/09/2023",
+          "source": "USPS 12-2023",
+          "amount": 1235.82
+        }
+      ],
+      "misc": []
+    },
+    "JUL2023": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 1870.99,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/01/2023",
+          "confirmation": "Read Comments"
+        },
+        {
+          "name": "AT&T",
+          "amount": 215.07,
+          "paidDate": "06/19/2023",
+          "dueDate": "06/19/2023",
+          "confirmation": "7S37EPAYF02KQDP"
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/06/2023",
+          "confirmation": "p236WJZKDJ"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "06/30/2023",
+          "dueDate": "06/30/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 19.99,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 429.01,
+          "paidDate": "07/07/2023",
+          "dueDate": "07/17/2023",
+          "confirmation": "SCEPAY459365038"
+        },
+        {
+          "name": "USAA",
+          "amount": 255.61,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/02/2023",
+          "confirmation": "4883295153"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 59.34,
+          "paidDate": "07/03/2023",
+          "dueDate": "07/03/2023",
+          "confirmation": "Paid"
+        },
+        {
+          "name": "Public Storage",
+          "amount": 158.0,
+          "paidDate": "07/02/2023",
+          "dueDate": "07/02/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/01/2023",
+          "confirmation": "Read Comments"
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "07/12/2023",
+          "dueDate": "07/20/2023",
+          "confirmation": "243025"
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 400.0,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/01/2023",
+          "confirmation": "324909"
+        },
+        {
+          "name": "Commenity",
+          "amount": 103.18,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/16/2023",
+          "confirmation": "AC20230701181206"
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/17/2023",
+          "confirmation": "Y4OLRZ"
+        },
+        {
+          "name": "CareCredit",
+          "amount": 100.0,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/03/2023",
+          "confirmation": "866519703"
+        },
+        {
+          "name": "Amex",
+          "amount": 300.0,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/23/2023",
+          "confirmation": "W2212"
+        },
+        {
+          "name": "Capital One",
+          "amount": 150.0,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/07/2023",
+          "confirmation": "Q263H1K6"
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/14/2023",
+          "confirmation": "LZXG-90NB-MHL5"
+        },
+        {
+          "name": "US Bank",
+          "amount": 100.0,
+          "paidDate": "07/01/2023",
+          "dueDate": "07/06/2023",
+          "confirmation": "32188"
+        }
+      ],
+      "income": [
+        {
+          "date": "06/30/2023",
+          "source": "VA Comp",
+          "amount": 3803.09
+        },
+        {
+          "date": "06/23/2023",
+          "source": "UHG/Optum",
+          "amount": 1925.21
+        },
+        {
+          "date": "07/07/2023",
+          "source": "UHG/Optum",
+          "amount": 1757.25
+        },
+        {
+          "date": "07/21/2023",
+          "source": "UHG/Optum",
+          "amount": 1986.6
+        },
+        {
+          "date": "06/23/2023",
+          "source": "USPS 13-2023",
+          "amount": 1358.62
+        },
+        {
+          "date": "07/07/2023",
+          "source": "USPS 14-2023",
+          "amount": 1312.96
+        },
+        {
+          "date": "07/21/2023",
+          "source": "USPS 15-2023",
+          "amount": 1222.42
+        }
+      ],
+      "misc": []
+    },
+    "AUG2023": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2187.02,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/01/2023",
+          "confirmation": "See comment"
+        },
+        {
+          "name": "AT&T",
+          "amount": 188.17,
+          "paidDate": "07/18/2023",
+          "dueDate": "07/19/2023",
+          "confirmation": "7T27EPAYJ02PGG9"
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/07/2023",
+          "confirmation": "p236K2ZG9B"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "07/30/2023",
+          "dueDate": "07/30/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 19.99,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/01/2023",
+          "confirmation": "49CB4-600B9-31A29-EF5BD"
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 12.98,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/15/2023",
+          "confirmation": "806006997044"
+        },
+        {
+          "name": "USAA",
+          "amount": 255.61,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/02/2023",
+          "confirmation": "4957884249"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 59.34,
+          "paidDate": "08/04/2023",
+          "dueDate": "08/04/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "08/02/2023",
+          "dueDate": "08/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/12/2023",
+          "confirmation": "See comment"
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "08/18/2023",
+          "dueDate": "08/20/2023",
+          "confirmation": "199963"
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 400.0,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/01/2023",
+          "confirmation": "244271"
+        },
+        {
+          "name": "Blue Renewal",
+          "amount": 266.0,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/28/2023",
+          "confirmation": "36169313"
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "08/16/2023",
+          "dueDate": "08/17/2023",
+          "confirmation": "UD2B2N"
+        },
+        {
+          "name": "CareCredit",
+          "amount": 100.0,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/03/2023",
+          "confirmation": "875291099"
+        },
+        {
+          "name": "Amex",
+          "amount": 300.0,
+          "paidDate": "08/18/2023",
+          "dueDate": "08/23/2023",
+          "confirmation": "W2748"
+        },
+        {
+          "name": "Capital One",
+          "amount": 150.0,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/07/2023",
+          "confirmation": "Q173I286"
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "08/04/2023",
+          "dueDate": "08/14/2023",
+          "confirmation": "LZXG-98H6-YHLR"
+        },
+        {
+          "name": "US Bank",
+          "amount": 100.0,
+          "paidDate": "08/01/2023",
+          "dueDate": "08/06/2023",
+          "confirmation": "51973"
+        }
+      ],
+      "income": [
+        {
+          "date": "08/01/2023",
+          "source": "VA Comp",
+          "amount": 3803.09
+        },
+        {
+          "date": "08/04/2023",
+          "source": "UHG/Optum",
+          "amount": 1670.35
+        },
+        {
+          "date": "08/18/2023",
+          "source": "UHG/Optum",
+          "amount": 1702.84
+        },
+        {
+          "date": "08/04/2023",
+          "source": "USPS 16-2023",
+          "amount": 1225.37
+        },
+        {
+          "date": "08/18/2023",
+          "source": "USPS 17-2023",
+          "amount": 1205.19
+        }
+      ],
+      "misc": []
+    },
+    "SEP2023": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2185.47,
+          "paidDate": "09/01/2023",
+          "dueDate": "09/01/2023",
+          "confirmation": "See comments"
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.34,
+          "paidDate": "08/19/2023",
+          "dueDate": "08/19/2023",
+          "confirmation": "7V27EPAYO03YQ82"
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "09/01/2023",
+          "dueDate": "09/05/2023",
+          "confirmation": "p236KPZ9W9"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "09/01/2023",
+          "dueDate": "08/30/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 19.99,
+          "paidDate": "09/01/2023",
+          "dueDate": "09/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "08/21/2023",
+          "dueDate": "08/21/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 14.53,
+          "paidDate": "09/01/2023",
+          "dueDate": "09/13/2023",
+          "confirmation": "806007968533"
+        },
+        {
+          "name": "USAA",
+          "amount": 255.61,
+          "paidDate": "09/01/2023",
+          "dueDate": "09/02/2023",
+          "confirmation": "5033903601"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 58.34,
+          "paidDate": "09/04/2023",
+          "dueDate": "09/04/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "09/02/2023",
+          "dueDate": "09/02/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "09/01/2023",
+          "dueDate": "09/12/2023",
+          "confirmation": "297578"
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "09/15/2023",
+          "dueDate": "09/20/2023",
+          "confirmation": "172043"
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 400.0,
+          "paidDate": "09/01/2023",
+          "dueDate": "09/01/2023",
+          "confirmation": "333081"
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "09/15/2023",
+          "dueDate": "09/17/2023",
+          "confirmation": "85JUUX"
+        },
+        {
+          "name": "CareCredit",
+          "amount": 100.0,
+          "paidDate": "09/01/2023",
+          "dueDate": "09/03/2023",
+          "confirmation": "884603325"
+        },
+        {
+          "name": "Amex",
+          "amount": 300.0,
+          "paidDate": "09/15/2023",
+          "dueDate": "09/23/2023",
+          "confirmation": "W5084"
+        },
+        {
+          "name": "Capital One",
+          "amount": 150.0,
+          "paidDate": "09/01/2023",
+          "dueDate": "09/07/2023",
+          "confirmation": "Q184J5O4"
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "09/12/2023",
+          "dueDate": "09/14/2023",
+          "confirmation": "10X9-0VP4-350C"
+        },
+        {
+          "name": "US Bank",
+          "amount": 100.0,
+          "paidDate": "09/01/2023",
+          "dueDate": "09/06/2023",
+          "confirmation": "26971"
+        },
+        {
+          "name": "US Bank Loan",
+          "amount": 100.0,
+          "paidDate": "09/01/2023",
+          "dueDate": "10/22/2023",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "09/01/2023",
+          "source": "VA Comp",
+          "amount": 3803.09
+        },
+        {
+          "date": "09/01/2023",
+          "source": "UHG/Optum",
+          "amount": 1686.27
+        },
+        {
+          "date": "09/15/2023",
+          "source": "UHG/Optum",
+          "amount": 1760.24
+        },
+        {
+          "date": "09/01/2023",
+          "source": "USPS 18-2023",
+          "amount": 1474.28
+        },
+        {
+          "date": "09/15/2023",
+          "source": "USPS 19-2023",
+          "amount": 938.06
+        }
+      ],
+      "misc": []
+    },
+    "OCT2023": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2183.91,
+          "paidDate": "10/01/2023",
+          "dueDate": "10/01/2023",
+          "confirmation": "See comments"
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.34,
+          "paidDate": "09/19/2023",
+          "dueDate": "09/19/2023",
+          "confirmation": "7W27EPAYT01MTFD"
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "10/01/2023",
+          "dueDate": "10/05/2023",
+          "confirmation": "p236LDCC4T"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "10/03/2023",
+          "dueDate": "10/03/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 19.99,
+          "paidDate": "10/01/2023",
+          "dueDate": "10/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "10/19/2023",
+          "dueDate": "10/21/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 16.09,
+          "paidDate": "10/12/2023",
+          "dueDate": "10/16/2023",
+          "confirmation": "806009280617"
+        },
+        {
+          "name": "USAA",
+          "amount": 255.61,
+          "paidDate": "10/01/2023",
+          "dueDate": "10/02/2023",
+          "confirmation": "5107782973"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 58.34,
+          "paidDate": "10/04/2023",
+          "dueDate": "10/04/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "10/02/2023",
+          "dueDate": "10/02/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "10/01/2023",
+          "dueDate": "10/12/2023",
+          "confirmation": "393143"
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "10/12/2023",
+          "dueDate": "10/20/2023",
+          "confirmation": "212891"
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "10/01/2023",
+          "dueDate": "10/01/2023",
+          "confirmation": "368098"
+        },
+        {
+          "name": "TSP",
+          "amount": 75.0,
+          "paidDate": "10/01/2023",
+          "dueDate": "10/01/2023",
+          "confirmation": "475011056"
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "10/18/2023",
+          "dueDate": "10/17/2023",
+          "confirmation": "WENW1M"
+        },
+        {
+          "name": "CareCredit",
+          "amount": 200.0,
+          "paidDate": "10/01/2023",
+          "dueDate": "10/03/2023",
+          "confirmation": "893440019"
+        },
+        {
+          "name": "Amex",
+          "amount": 300.0,
+          "paidDate": "10/18/2023",
+          "dueDate": "10/23/2023",
+          "confirmation": "W3764"
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "10/18/2023",
+          "dueDate": "10/14/2023",
+          "confirmation": "0RR3-V20H-G3P4"
+        },
+        {
+          "name": "US Bank Loan",
+          "amount": 100.0,
+          "paidDate": "10/01/2023",
+          "dueDate": "10/22/2023",
+          "confirmation": "92993"
+        }
+      ],
+      "income": [
+        {
+          "date": "10/01/2023",
+          "source": "VA Comp",
+          "amount": 3803.09
+        },
+        {
+          "date": "09/29/2023",
+          "source": "UHG/Optum",
+          "amount": 1677.6
+        },
+        {
+          "date": "10/13/2023",
+          "source": "UHG/Optum",
+          "amount": 1700.18
+        },
+        {
+          "date": "09/29/2023",
+          "source": "USPS 20-2023",
+          "amount": 1579.8
+        },
+        {
+          "date": "10/13/2023",
+          "source": "USPS 21-2023",
+          "amount": 1342.02
+        }
+      ],
+      "misc": []
+    },
+    "NOV2023": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2200.0,
+          "paidDate": "11/01/2023",
+          "dueDate": "11/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 188.73,
+          "paidDate": "10/19/2023",
+          "dueDate": "10/19/2023",
+          "confirmation": "7X17EPAYX012S1G"
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "11/01/2023",
+          "dueDate": "11/05/2023",
+          "confirmation": "p236M299BZ"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "11/01/2023",
+          "dueDate": "11/03/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 19.99,
+          "paidDate": "11/02/2023",
+          "dueDate": "11/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "",
+          "dueDate": "11/21/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 255.59,
+          "paidDate": "11/01/2023",
+          "dueDate": "11/02/2023",
+          "confirmation": "5177128259"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 58.34,
+          "paidDate": "11/04/2023",
+          "dueDate": "11/04/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "11/02/2023",
+          "dueDate": "11/02/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "11/10/2023",
+          "dueDate": "11/20/2023",
+          "confirmation": "179086"
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "11/10/2023",
+          "dueDate": "11/24/2023",
+          "confirmation": "225030"
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 400.0,
+          "paidDate": "10/31/2023",
+          "dueDate": "11/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "TSP",
+          "amount": 75.0,
+          "paidDate": "10/31/2023",
+          "dueDate": "11/01/2023",
+          "confirmation": "158811063"
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "11/10/2023",
+          "dueDate": "11/17/2023",
+          "confirmation": "QFGQI6"
+        },
+        {
+          "name": "CareCredit",
+          "amount": 261.72,
+          "paidDate": "11/01/2023",
+          "dueDate": "11/03/2023",
+          "confirmation": "903299697"
+        },
+        {
+          "name": "Amex",
+          "amount": 300.0,
+          "paidDate": "11/13/2023",
+          "dueDate": "11/23/2023",
+          "confirmation": "W3124"
+        },
+        {
+          "name": "Discover",
+          "amount": 400.0,
+          "paidDate": "11/13/2023",
+          "dueDate": "11/14/2023",
+          "confirmation": "0RR3-V792-Q25H"
+        },
+        {
+          "name": "US Bank Loan",
+          "amount": 200.0,
+          "paidDate": "11/01/2023",
+          "dueDate": "11/22/2023",
+          "confirmation": "66328"
+        }
+      ],
+      "income": [
+        {
+          "date": "11/01/2023",
+          "source": "VA Comp",
+          "amount": 3803.09
+        },
+        {
+          "date": "10/27/2023",
+          "source": "UHG/Optum",
+          "amount": 1654.9
+        },
+        {
+          "date": "11/10/2023",
+          "source": "UHG/Optum",
+          "amount": 1704.35
+        },
+        {
+          "date": "10/27/2023",
+          "source": "USPS 22-2023",
+          "amount": 1308.35
+        },
+        {
+          "date": "11/10/2023",
+          "source": "USPS 23-2023",
+          "amount": 1311.28
+        }
+      ],
+      "misc": []
+    },
+    "DEC2023": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2200.0,
+          "paidDate": "12/02/2023",
+          "dueDate": "12/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 252.74,
+          "paidDate": "11/19/2023",
+          "dueDate": "11/19/2023",
+          "confirmation": "7Y17EPAYI0C2042"
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "12/03/2023",
+          "dueDate": "12/05/2023",
+          "confirmation": "p236ZQ8TRM"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "12/03/2023",
+          "dueDate": "12/03/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "12/01/2023",
+          "dueDate": "12/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "12/19/2023",
+          "dueDate": "12/21/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 257.37,
+          "paidDate": "12/02/2023",
+          "dueDate": "12/02/2023",
+          "confirmation": "5257746905"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 58.34,
+          "paidDate": "12/05/2023",
+          "dueDate": "12/04/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "12/02/2023",
+          "dueDate": "12/02/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "12/12/2023",
+          "dueDate": "12/20/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "12/23/2023",
+          "dueDate": "12/24/2023",
+          "confirmation": "321539"
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 400.0,
+          "paidDate": "12/02/2023",
+          "dueDate": "12/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "TSP",
+          "amount": 75.0,
+          "paidDate": "12/01/2023",
+          "dueDate": "12/01/2023",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "12/12/2023",
+          "dueDate": "12/17/2023",
+          "confirmation": "CGO4OZ"
+        },
+        {
+          "name": "Amex",
+          "amount": 400.0,
+          "paidDate": "12/12/2023",
+          "dueDate": "12/23/2023",
+          "confirmation": "W2084"
+        },
+        {
+          "name": "Discover",
+          "amount": 300.0,
+          "paidDate": "12/10/2023",
+          "dueDate": "12/14/2023",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "12/01/2023",
+          "source": "VA Comp",
+          "amount": 3803.09
+        },
+        {
+          "date": "11/24/2023",
+          "source": "UHG/Optum",
+          "amount": 2032.45
+        },
+        {
+          "date": "12/08/2023",
+          "source": "UHG/Optum",
+          "amount": 2307.27
+        },
+        {
+          "date": "12/22/2023",
+          "source": "UHG/Optum",
+          "amount": 1575.7
+        },
+        {
+          "date": "11/24/2023",
+          "source": "USPS 24-2023",
+          "amount": 1374.83
+        },
+        {
+          "date": "12/08/2023",
+          "source": "USPS 25-2023",
+          "amount": 1365.89
+        },
+        {
+          "date": "12/22/2023",
+          "source": "USPS 26-2023",
+          "amount": 1072.41
+        }
+      ],
+      "misc": []
+    },
+    "JAN2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2146.44,
+          "paidDate": "01/01/2024",
+          "dueDate": "01/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.64,
+          "paidDate": "12/31/2023",
+          "dueDate": "12/31/2023",
+          "confirmation": "7ZD7EPAYG02FCJ2"
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "01/02/2024",
+          "dueDate": "01/05/2024",
+          "confirmation": "p24725M4FG"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "01/01/2024",
+          "dueDate": "01/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "01/01/2024",
+          "dueDate": "01/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "01/18/2024",
+          "dueDate": "01/20/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 53.56,
+          "paidDate": "01/09/2024",
+          "dueDate": "01/15/2024",
+          "confirmation": "806011722825"
+        },
+        {
+          "name": "USAA",
+          "amount": 257.37,
+          "paidDate": "01/02/2024",
+          "dueDate": "01/02/2024",
+          "confirmation": "5333711177"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 58.34,
+          "paidDate": "01/04/2024",
+          "dueDate": "01/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "01/02/2024",
+          "dueDate": "01/02/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 300.0,
+          "paidDate": "01/19/2024",
+          "dueDate": "01/20/2024",
+          "confirmation": "325483"
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "01/19/2024",
+          "dueDate": "01/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "01/01/2024",
+          "dueDate": "01/01/2024",
+          "confirmation": "257603"
+        },
+        {
+          "name": "TSP",
+          "amount": 75.0,
+          "paidDate": "01/06/2024",
+          "dueDate": "01/01/2024",
+          "confirmation": "294521088"
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "01/16/2024",
+          "dueDate": "01/17/2024",
+          "confirmation": "N59H4F"
+        },
+        {
+          "name": "Amex",
+          "amount": 400.0,
+          "paidDate": "01/23/2024",
+          "dueDate": "01/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 300.0,
+          "paidDate": "01/14/2024",
+          "dueDate": "12/14/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "01/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "01/05/2024",
+          "source": "UHG/Optum",
+          "amount": 1638.07
+        },
+        {
+          "date": "01/19/2024",
+          "source": "UHG/Optum",
+          "amount": 1598.64
+        },
+        {
+          "date": "01/05/2024",
+          "source": "USPS 01-2024",
+          "amount": 1036.37
+        },
+        {
+          "date": "01/19/2024",
+          "source": "USPS 02-2024",
+          "amount": 1298.9
+        }
+      ],
+      "misc": []
+    },
+    "FEB2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2167.84,
+          "paidDate": "02/01/2024",
+          "dueDate": "02/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.67,
+          "paidDate": "01/31/2024",
+          "dueDate": "01/31/2024",
+          "confirmation": "80D7EPAYL024NLP"
+        },
+        {
+          "name": "Frontier",
+          "amount": 9.99,
+          "paidDate": "02/01/2024",
+          "dueDate": "02/05/2024",
+          "confirmation": "p2472JWPX3"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "02/01/2024",
+          "dueDate": "02/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "02/01/2024",
+          "dueDate": "02/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "",
+          "dueDate": "02/20/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 32.16,
+          "paidDate": "02/12/2024",
+          "dueDate": "02/14/2024",
+          "confirmation": "806012746047"
+        },
+        {
+          "name": "USAA",
+          "amount": 255.61,
+          "paidDate": "02/01/2024",
+          "dueDate": "02/02/2024",
+          "confirmation": "5404354077"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 58.34,
+          "paidDate": "02/04/2024",
+          "dueDate": "02/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "02/05/2024",
+          "dueDate": "02/02/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 300.0,
+          "paidDate": "02/09/2024",
+          "dueDate": "02/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "",
+          "dueDate": "02/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "02/01/2024",
+          "dueDate": "02/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "",
+          "dueDate": "02/17/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amex",
+          "amount": 400.0,
+          "paidDate": "",
+          "dueDate": "02/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 300.0,
+          "paidDate": "",
+          "dueDate": "02/14/2023",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "02/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "02/02/2024",
+          "source": "UHG/Optum",
+          "amount": 1574.93
+        },
+        {
+          "date": "02/16/2024",
+          "source": "UHG/Optum",
+          "amount": 1575.04
+        },
+        {
+          "date": "02/02/2024",
+          "source": "USPS 03-2024",
+          "amount": 1575.51
+        },
+        {
+          "date": "02/16/2024",
+          "source": "USPS 04-2024",
+          "amount": 1179.7
+        }
+      ],
+      "misc": []
+    },
+    "MAR2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2167.71,
+          "paidDate": "03/01/2024",
+          "dueDate": "03/01/2024",
+          "confirmation": "Check comments"
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.67,
+          "paidDate": "02/29/2024",
+          "dueDate": "02/29/2024",
+          "confirmation": "81B7EPAYO01W175"
+        },
+        {
+          "name": "Frontier",
+          "amount": 14.99,
+          "paidDate": "03/01/2024",
+          "dueDate": "03/07/2024",
+          "confirmation": "p2472ZSC7F"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "03/01/2024",
+          "dueDate": "03/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "03/01/2024",
+          "dueDate": "03/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "03/20/2024",
+          "dueDate": "03/20/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 32.29,
+          "paidDate": "03/01/2024",
+          "dueDate": "03/18/2024",
+          "confirmation": "806013326519"
+        },
+        {
+          "name": "USAA",
+          "amount": 255.61,
+          "paidDate": "03/01/2024",
+          "dueDate": "03/02/2024",
+          "confirmation": "5479685439"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 58.34,
+          "paidDate": "03/04/2024",
+          "dueDate": "03/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "03/02/2024",
+          "dueDate": "03/02/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "03/01/2024",
+          "dueDate": "03/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "03/16/2024",
+          "dueDate": "03/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "03/01/2024",
+          "dueDate": "03/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "03/01/2024",
+          "dueDate": "03/17/2024",
+          "confirmation": "GMXYNB"
+        },
+        {
+          "name": "Amex",
+          "amount": 100.0,
+          "paidDate": "03/15/2024",
+          "dueDate": "02/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 250.0,
+          "paidDate": "03/11/2024",
+          "dueDate": "03/14/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "03/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "03/01/2024",
+          "source": "UHG/Optum",
+          "amount": 2469.53
+        },
+        {
+          "date": "03/15/2024",
+          "source": "UHG/Optum",
+          "amount": 1913.18
+        },
+        {
+          "date": "03/01/2024",
+          "source": "USPS 05-2024",
+          "amount": 1320.26
+        },
+        {
+          "date": "03/15/2024",
+          "source": "USPS 06-2024",
+          "amount": 1408.94
+        }
+      ],
+      "misc": []
+    },
+    "APR2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2200.0,
+          "paidDate": "04/01/2024",
+          "dueDate": "04/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 168.16,
+          "paidDate": "03/31/2024",
+          "dueDate": "03/29/2024",
+          "confirmation": "82B7EPAYT01GW7Q"
+        },
+        {
+          "name": "Frontier",
+          "amount": 14.99,
+          "paidDate": "04/01/2024",
+          "dueDate": "04/07/2024",
+          "confirmation": "p2473F45JW"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "04/01/2024",
+          "dueDate": "04/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "04/01/2024",
+          "dueDate": "04/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "04/18/2024",
+          "dueDate": "04/20/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 255.57,
+          "paidDate": "04/01/2024",
+          "dueDate": "04/02/2024",
+          "confirmation": "5549927405"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 58.34,
+          "paidDate": "04/05/2024",
+          "dueDate": "04/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "04/04/2024",
+          "dueDate": "04/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "04/01/2024",
+          "dueDate": "04/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "04/12/2024",
+          "dueDate": "04/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "04/01/2024",
+          "dueDate": "04/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 200.0,
+          "paidDate": "04/01/2024",
+          "dueDate": "04/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "04/12/2024",
+          "dueDate": "04/17/2024",
+          "confirmation": "QP7529"
+        },
+        {
+          "name": "Amex",
+          "amount": 300.0,
+          "paidDate": "04/12/2024",
+          "dueDate": "04/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 300.0,
+          "paidDate": "04/18/2024",
+          "dueDate": "04/14/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "04/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "03/29/2024",
+          "source": "UHG/Optum",
+          "amount": 1890.22
+        },
+        {
+          "date": "04/12/2024",
+          "source": "UHG/Optum",
+          "amount": 1716.65
+        },
+        {
+          "date": "03/29/2024",
+          "source": "USPS 07-2024",
+          "amount": 1197.25
+        },
+        {
+          "date": "04/12/2024",
+          "source": "USPS 08-2024",
+          "amount": 1360.15
+        }
+      ],
+      "misc": []
+    },
+    "MAY2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2200.0,
+          "paidDate": "05/01/2024",
+          "dueDate": "05/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.07,
+          "paidDate": "04/30/2024",
+          "dueDate": "04/30/2024",
+          "confirmation": "8397EPAYX01G0PD"
+        },
+        {
+          "name": "Frontier",
+          "amount": 14.99,
+          "paidDate": "05/02/2024",
+          "dueDate": "05/06/2024",
+          "confirmation": "p2473SX43X"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "04/30/2024",
+          "dueDate": "04/30/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "04/30/2024",
+          "dueDate": "05/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "05/20/2024",
+          "dueDate": "05/18/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 255.57,
+          "paidDate": "04/29/2024",
+          "dueDate": "05/01/2024",
+          "confirmation": "5615671451"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 58.34,
+          "paidDate": "05/04/2024",
+          "dueDate": "05/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "05/04/2024",
+          "dueDate": "05/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "05/11/2024",
+          "dueDate": "05/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "05/11/2024",
+          "dueDate": "05/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "05/01/2024",
+          "dueDate": "05/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 200.0,
+          "paidDate": "05/02/2024",
+          "dueDate": "05/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "05/11/2024",
+          "dueDate": "05/17/2024",
+          "confirmation": "9U21J1"
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "05/11/2024",
+          "dueDate": "05/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "05/11/2024",
+          "dueDate": "05/14/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "US Bank Loan",
+          "amount": 100.0,
+          "paidDate": "05/11/2024",
+          "dueDate": "05/11/2024",
+          "confirmation": "50952"
+        }
+      ],
+      "income": [
+        {
+          "date": "05/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "04/24/2024",
+          "source": "UHG/Optum",
+          "amount": 1724.36
+        },
+        {
+          "date": "05/10/2024",
+          "source": "UHG/Optum",
+          "amount": 1736.27
+        },
+        {
+          "date": "04/24/2024",
+          "source": "USPS 09-2024",
+          "amount": 1343.99
+        },
+        {
+          "date": "05/10/2024",
+          "source": "USPS 10-2024",
+          "amount": 1331.91
+        }
+      ],
+      "misc": []
+    },
+    "JUN2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2200.0,
+          "paidDate": "06/01/2024",
+          "dueDate": "06/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.07,
+          "paidDate": "05/31/2024",
+          "dueDate": "05/31/2024",
+          "confirmation": "8497EPAYC01TQSS"
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "06/03/2024",
+          "dueDate": "06/05/2024",
+          "confirmation": "p2476RQNFW"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "05/30/2024",
+          "dueDate": "05/30/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "06/01/2024",
+          "dueDate": "06/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "",
+          "dueDate": "06/18/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 295.97,
+          "paidDate": "06/01/2024",
+          "dueDate": "06/01/2024",
+          "confirmation": "5702033937"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 58.34,
+          "paidDate": "06/05/2024",
+          "dueDate": "06/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "06/04/2024",
+          "dueDate": "06/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "06/07/2024",
+          "dueDate": "06/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 300.0,
+          "paidDate": "06/21/2024",
+          "dueDate": "06/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "06/01/2024",
+          "dueDate": "06/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 200.0,
+          "paidDate": "06/01/2024",
+          "dueDate": "06/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "06/15/2024",
+          "dueDate": "06/17/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 655.3,
+          "paidDate": "06/07/2024",
+          "dueDate": "06/14/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "06/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "06/14/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "US Bank Loan",
+          "amount": 100.0,
+          "paidDate": "",
+          "dueDate": "06/11/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "06/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "05/24/2024",
+          "source": "UHG/Optum",
+          "amount": 1731.94
+        },
+        {
+          "date": "06/07/2024",
+          "source": "UHG/Optum",
+          "amount": 1748.96
+        },
+        {
+          "date": "06/21/2024",
+          "source": "UHG/Optum",
+          "amount": 1803.0
+        },
+        {
+          "date": "05/24/2024",
+          "source": "USPS 11-2024",
+          "amount": 1124.01
+        },
+        {
+          "date": "06/07/2024",
+          "source": "USPS 12-2024",
+          "amount": 896.51
+        },
+        {
+          "date": "06/21/2024",
+          "source": "USPS 13-2024",
+          "amount": 1404.68
+        }
+      ],
+      "misc": []
+    },
+    "JUL2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2200.0,
+          "paidDate": "07/01/2024",
+          "dueDate": "07/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.07,
+          "paidDate": "06/30/2024",
+          "dueDate": "07/03/2024",
+          "confirmation": "8587EPAYG02DG8G"
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "07/02/2024",
+          "dueDate": "07/05/2024",
+          "confirmation": "p2477DW6XC"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "07/02/2024",
+          "dueDate": "",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "07/02/2024",
+          "dueDate": "07/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "07/22/2024",
+          "dueDate": "07/22/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 294.21,
+          "paidDate": "07/01/2024",
+          "dueDate": "07/02/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 72.66,
+          "paidDate": "07/05/2024",
+          "dueDate": "07/05/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "07/04/2024",
+          "dueDate": "07/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "07/04/2024",
+          "dueDate": "07/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 300.0,
+          "paidDate": "07/23/2024",
+          "dueDate": "07/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "07/01/2024",
+          "dueDate": "07/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 200.0,
+          "paidDate": "07/02/2024",
+          "dueDate": "07/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "07/04/2024",
+          "dueDate": "07/17/2024",
+          "confirmation": "5XLTHP"
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 600.0,
+          "paidDate": "07/04/2024",
+          "dueDate": "07/14/2024",
+          "confirmation": "7638953761"
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "07/08/2024",
+          "dueDate": "07/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "07/08/2024",
+          "dueDate": "07/14/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "07/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "07/05/2024",
+          "source": "UHG/Optum",
+          "amount": 1698.21
+        },
+        {
+          "date": "07/19/2024",
+          "source": "UHG/Optum",
+          "amount": 1847.57
+        },
+        {
+          "date": "07/05/2024",
+          "source": "USPS 14-2024",
+          "amount": 1231.49
+        },
+        {
+          "date": "07/19/2024",
+          "source": "USPS 15-2024",
+          "amount": 1248.95
+        }
+      ],
+      "misc": []
+    },
+    "AUG2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2200.0,
+          "paidDate": "08/01/2024",
+          "dueDate": "08/01/2024",
+          "confirmation": "3189645144"
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.07,
+          "paidDate": "07/31/2024",
+          "dueDate": "07/31/2024",
+          "confirmation": "8687EPAYL013L69"
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "08/07/2024",
+          "dueDate": "08/05/2024",
+          "confirmation": "p24755M9LM"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "07/31/2024",
+          "dueDate": "07/31/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "08/01/2024",
+          "dueDate": "08/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "08/20/2024",
+          "dueDate": "08/22/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 294.21,
+          "paidDate": "08/01/2024",
+          "dueDate": "08/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 72.66,
+          "paidDate": "08/05/2024",
+          "dueDate": "08/05/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 216.0,
+          "paidDate": "08/05/2024",
+          "dueDate": "08/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "08/08/2024",
+          "dueDate": "08/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 300.0,
+          "paidDate": "08/17/2024",
+          "dueDate": "08/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "08/01/2024",
+          "dueDate": "08/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 200.0,
+          "paidDate": "08/01/2024",
+          "dueDate": "08/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 100.0,
+          "paidDate": "08/15/2024",
+          "dueDate": "08/17/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 587.41,
+          "paidDate": "07/24/2024",
+          "dueDate": "08/14/2024",
+          "confirmation": "7686189154"
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "08/08/2024",
+          "dueDate": "08/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "08/08/2024",
+          "dueDate": "08/14/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "08/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "08/02/2024",
+          "source": "UHG/Optum",
+          "amount": 1704.89
+        },
+        {
+          "date": "08/16/2024",
+          "source": "UHG/Optum",
+          "amount": 1909.53
+        },
+        {
+          "date": "08/02/2024",
+          "source": "USPS 16-2024",
+          "amount": 1561.7
+        },
+        {
+          "date": "08/16/2024",
+          "source": "USPS 17-2024",
+          "amount": 1256.26
+        }
+      ],
+      "misc": []
+    },
+    "SEP2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2200.0,
+          "paidDate": "09/01/2024",
+          "dueDate": "09/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.07,
+          "paidDate": "08/31/2024",
+          "dueDate": "08/31/2024",
+          "confirmation": "8787EPAYQ03LJRQ"
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "09/05/2024",
+          "dueDate": "09/05/2024",
+          "confirmation": "p2478M9K6H"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "08/31/2024",
+          "dueDate": "08/31/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "09/01/2024",
+          "dueDate": "09/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Paramount+",
+          "amount": 11.99,
+          "paidDate": "",
+          "dueDate": "09/22/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 294.21,
+          "paidDate": "09/01/2024",
+          "dueDate": "09/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 72.66,
+          "paidDate": "09/05/2024",
+          "dueDate": "09/05/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 285.0,
+          "paidDate": "09/01/2024",
+          "dueDate": "09/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 400.0,
+          "paidDate": "09/16/2024",
+          "dueDate": "09/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 300.0,
+          "paidDate": "09/16/2024",
+          "dueDate": "09/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "09/01/2024",
+          "dueDate": "09/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 200.0,
+          "paidDate": "09/01/2024",
+          "dueDate": "09/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 150.0,
+          "paidDate": "09/15/2024",
+          "dueDate": "09/17/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 369.63,
+          "paidDate": "",
+          "dueDate": "09/14/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "09/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "09/14/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "08/30/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "08/30/2024",
+          "source": "UHG/Optum",
+          "amount": 1769.25
+        },
+        {
+          "date": "09/13/2024",
+          "source": "UHG/Optum",
+          "amount": 1837.86
+        },
+        {
+          "date": "08/30/2024",
+          "source": "USPS 18-2024",
+          "amount": 1117.36
+        },
+        {
+          "date": "09/13/2024",
+          "source": "USPS 19-2024",
+          "amount": 1082.89
+        }
+      ],
+      "misc": []
+    },
+    "OCT2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2188.64,
+          "paidDate": "10/01/2024",
+          "dueDate": "10/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.37,
+          "paidDate": "09/30/2024",
+          "dueDate": "09/30/2024",
+          "confirmation": "8877EPAYU02H4CN"
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "10/08/2024",
+          "dueDate": "10/07/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "10/02/2024",
+          "dueDate": "10/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "10/02/2024",
+          "dueDate": "10/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 11.36,
+          "paidDate": "10/10/2024",
+          "dueDate": "10/15/2024",
+          "confirmation": "807001584353"
+        },
+        {
+          "name": "USAA",
+          "amount": 294.21,
+          "paidDate": "10/01/2024",
+          "dueDate": "10/01/2024",
+          "confirmation": "6007498287"
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 72.66,
+          "paidDate": "10/07/2024",
+          "dueDate": "10/05/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 285.0,
+          "paidDate": "10/04/2024",
+          "dueDate": "10/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 300.0,
+          "paidDate": "10/13/2024",
+          "dueDate": "10/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "10/13/2024",
+          "dueDate": "10/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "10/01/2024",
+          "dueDate": "10/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 200.0,
+          "paidDate": "10/01/2024",
+          "dueDate": "10/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 150.0,
+          "paidDate": "",
+          "dueDate": "10/17/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 715.7,
+          "paidDate": "",
+          "dueDate": "10/14/2024",
+          "confirmation": "7853453040"
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "10/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "10/14/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "10/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "09/27/2024",
+          "source": "UHG/Optum",
+          "amount": 1744.25
+        },
+        {
+          "date": "10/11/2024",
+          "source": "UHG/Optum",
+          "amount": 1717.47
+        },
+        {
+          "date": "09/27/2024",
+          "source": "USPS 20-2024",
+          "amount": 1645.5
+        },
+        {
+          "date": "10/11/2024",
+          "source": "USPS 21-2024",
+          "amount": 1240.03
+        }
+      ],
+      "misc": []
+    },
+    "NOV2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2200.0,
+          "paidDate": "11/01/2024",
+          "dueDate": "11/01/2024",
+          "confirmation": "refer to comments"
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.37,
+          "paidDate": "10/31/2024",
+          "dueDate": "10/31/2024",
+          "confirmation": "8977EPAYZ017P29"
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "11/06/2024",
+          "dueDate": "11/05/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "11/01/2024",
+          "dueDate": "11/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "11/04/2024",
+          "dueDate": "11/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 294.21,
+          "paidDate": "11/04/2024",
+          "dueDate": "11/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 72.66,
+          "paidDate": "11/05/2024",
+          "dueDate": "11/05/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 285.0,
+          "paidDate": "11/04/2024",
+          "dueDate": "11/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 250.0,
+          "paidDate": "11/08/2024",
+          "dueDate": "11/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "11/24/2024",
+          "dueDate": "11/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "11/01/2024",
+          "dueDate": "11/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 200.0,
+          "paidDate": "11/01/2024",
+          "dueDate": "11/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 150.0,
+          "paidDate": "11/17/2024",
+          "dueDate": "11/17/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 715.7,
+          "paidDate": "",
+          "dueDate": "10/14/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "10/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "10/14/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "11/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "10/25/2024",
+          "source": "UHG/Optum",
+          "amount": 1751.87
+        },
+        {
+          "date": "11/08/2024",
+          "source": "UHG/Optum",
+          "amount": 2070.67
+        },
+        {
+          "date": "10/25/2024",
+          "source": "USPS 22-2024",
+          "amount": 1273.76
+        },
+        {
+          "date": "11/08/2024",
+          "source": "USPS 23-2024",
+          "amount": 1493.57
+        }
+      ],
+      "misc": []
+    },
+    "DEC2024": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2200.0,
+          "paidDate": "12/01/2024",
+          "dueDate": "12/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 173.37,
+          "paidDate": "11/30/2024",
+          "dueDate": "11/30/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "12/06/2024",
+          "dueDate": "12/05/2024",
+          "confirmation": "p247BBR7R8"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "12/01/2024",
+          "dueDate": "12/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "12/01/2024",
+          "dueDate": "12/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 292.26,
+          "paidDate": "12/01/2024",
+          "dueDate": "12/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 72.66,
+          "paidDate": "12/04/2024",
+          "dueDate": "12/05/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 285.0,
+          "paidDate": "12/04/2024",
+          "dueDate": "12/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 250.0,
+          "paidDate": "12/16/2024",
+          "dueDate": "12/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "",
+          "dueDate": "12/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "12/01/2024",
+          "dueDate": "12/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 300.0,
+          "paidDate": "12/03/2024",
+          "dueDate": "11/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 150.0,
+          "paidDate": "12/15/2024",
+          "dueDate": "11/17/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 715.7,
+          "paidDate": "",
+          "dueDate": "10/14/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "10/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "10/14/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "12/01/2024",
+          "source": "VA Comp",
+          "amount": 3925.45
+        },
+        {
+          "date": "11/22/2024",
+          "source": "UHG/Optum",
+          "amount": 2050.5
+        },
+        {
+          "date": "12/06/2024",
+          "source": "UHG/Optum",
+          "amount": 2030.32
+        },
+        {
+          "date": "12/20/2024",
+          "source": "UHG/Optum",
+          "amount": 2010.17
+        },
+        {
+          "date": "11/22/2024",
+          "source": "USPS 24-2024",
+          "amount": 1337.02
+        },
+        {
+          "date": "12/06/2024",
+          "source": "USPS 25-2024",
+          "amount": 1372.18
+        },
+        {
+          "date": "12/20/2024",
+          "source": "USPS 26-2024",
+          "amount": 1369.23
+        }
+      ],
+      "misc": []
+    },
+    "JAN2025": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2183.31,
+          "paidDate": "01/01/2025",
+          "dueDate": "01/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 180.75,
+          "paidDate": "01/01/2025",
+          "dueDate": "01/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "01/07/2025",
+          "dueDate": "01/05/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 72.99,
+          "paidDate": "01/02/2025",
+          "dueDate": "12/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "01/01/2025",
+          "dueDate": "01/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 16.69,
+          "paidDate": "01/10/2025",
+          "dueDate": "01/13/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 290.5,
+          "paidDate": "01/01/2025",
+          "dueDate": "12/01/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 72.66,
+          "paidDate": "01/06/2025",
+          "dueDate": "12/05/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 285.0,
+          "paidDate": "01/03/2025",
+          "dueDate": "12/04/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 250.0,
+          "paidDate": "01/18/2025",
+          "dueDate": "12/12/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 400.0,
+          "paidDate": "01/18/2025",
+          "dueDate": "12/24/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "NavyFed (CC)",
+          "amount": 200.0,
+          "paidDate": "01/01/2025",
+          "dueDate": "01/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 300.0,
+          "paidDate": "01/01/2025",
+          "dueDate": "01/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 150.0,
+          "paidDate": "01/17/2025",
+          "dueDate": "01/17/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 715.7,
+          "paidDate": "01/16/2025",
+          "dueDate": "10/14/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "10/23/2024",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "10/14/2024",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "12/30/2024",
+          "source": "VA Comp",
+          "amount": 3925.71
+        },
+        {
+          "date": "01/03/2025",
+          "source": "UHG/Optum",
+          "amount": 2050.5
+        },
+        {
+          "date": "01/17/2025",
+          "source": "UHG/Optum",
+          "amount": 2125.28
+        },
+        {
+          "date": "01/03/2025",
+          "source": "USPS 01-2025",
+          "amount": 1337.02
+        },
+        {
+          "date": "01/17/2025",
+          "source": "USPS 02-2025",
+          "amount": 1181.8
+        },
+        {
+          "date": "",
+          "source": "Paid w NFCUAmex",
+          "amount": 986.57
+        }
+      ],
+      "misc": []
+    },
+    "FEB2025": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 5143.53,
+          "paidDate": "02/01/2025",
+          "dueDate": "02/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 181.23,
+          "paidDate": "01/31/2025",
+          "dueDate": "02/01/2025",
+          "confirmation": "8D67EPAYN01XK8M"
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "02/06/2025",
+          "dueDate": "02/05/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 82.99,
+          "paidDate": "02/03/2025",
+          "dueDate": "02/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "02/03/2025",
+          "dueDate": "02/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 54.67,
+          "paidDate": "02/13/2025",
+          "dueDate": "02/13/2025",
+          "confirmation": "806023788690"
+        },
+        {
+          "name": "USAA",
+          "amount": 290.5,
+          "paidDate": "02/03/2025",
+          "dueDate": "02/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 72.66,
+          "paidDate": "02/05/2025",
+          "dueDate": "02/05/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 312.0,
+          "paidDate": "02/04/2025",
+          "dueDate": "02/04/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 250.0,
+          "paidDate": "02/18/2025",
+          "dueDate": "02/12/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 300.0,
+          "paidDate": "02/18/2025",
+          "dueDate": "02/12/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 300.0,
+          "paidDate": "02/04/2025",
+          "dueDate": "02/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 150.0,
+          "paidDate": "02/13/2025",
+          "dueDate": "02/17/2025",
+          "confirmation": "4SJA3B"
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 1000.0,
+          "paidDate": "02/13/2025",
+          "dueDate": "02/14/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "02/23/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "02/14/2025",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "01/31/2025",
+          "source": "VA Comp",
+          "amount": 3925.71
+        },
+        {
+          "date": "01/31/2025",
+          "source": "UHG/Optum",
+          "amount": 2165.5
+        },
+        {
+          "date": "02/14/2025",
+          "source": "UHG/Optum",
+          "amount": 2185.65
+        },
+        {
+          "date": "01/31/2025",
+          "source": "USPS 03-2025",
+          "amount": 944.56
+        },
+        {
+          "date": "02/14/2025",
+          "source": "USPS 04-2025",
+          "amount": 1437.91
+        },
+        {
+          "date": "",
+          "source": "Paid w NFCUAmex",
+          "amount": 1062.03
+        }
+      ],
+      "misc": []
+    },
+    "MAR2025": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 2155.32,
+          "paidDate": "03/01/2025",
+          "dueDate": "03/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "AT&T",
+          "amount": 181.14,
+          "paidDate": "",
+          "dueDate": "03/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "",
+          "dueDate": "03/05/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 82.99,
+          "paidDate": "",
+          "dueDate": "03/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "",
+          "dueDate": "03/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 44.68,
+          "paidDate": "",
+          "dueDate": "03/17/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 514.05,
+          "paidDate": "",
+          "dueDate": "02/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 72.66,
+          "paidDate": "",
+          "dueDate": "02/05/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 312.0,
+          "paidDate": "",
+          "dueDate": "02/04/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 250.0,
+          "paidDate": "03/21/2025",
+          "dueDate": "02/12/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 300.0,
+          "paidDate": "03/21/2025",
+          "dueDate": "02/12/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 300.0,
+          "paidDate": "03/01/2025",
+          "dueDate": "02/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 150.0,
+          "paidDate": "03/15/2025",
+          "dueDate": "02/17/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 1000.0,
+          "paidDate": "",
+          "dueDate": "02/14/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "02/23/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "02/14/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Rent (zelle - breakdown)",
+          "amount": 655.3200000000002,
+          "paidDate": "",
+          "dueDate": "",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "02/28/2025",
+          "source": "VA Comp",
+          "amount": 3925.71
+        },
+        {
+          "date": "02/28/2025",
+          "source": "UHG/Optum",
+          "amount": 2641.48
+        },
+        {
+          "date": "03/14/2025",
+          "source": "UHG/Optum",
+          "amount": 2237.9
+        },
+        {
+          "date": "02/28/2025",
+          "source": "USPS 05-2025",
+          "amount": 1391.18
+        },
+        {
+          "date": "03/14/2025",
+          "source": "USPS 06-2025",
+          "amount": 1106.03
+        },
+        {
+          "date": "",
+          "source": "Paid w NFCUAmex",
+          "amount": 1275.5
+        }
+      ],
+      "misc": []
+    },
+    "APR2025": {
+      "expenses": [
+        {
+          "name": "Rent",
+          "amount": 5700.0,
+          "paidDate": "04/01/2025",
+          "dueDate": "04/01/2025",
+          "confirmation": "PAID"
+        },
+        {
+          "name": "AT&T",
+          "amount": 181.23,
+          "paidDate": "03/31/2025",
+          "dueDate": "04/01/2025",
+          "confirmation": "8G37EPAYU033Q5X"
+        },
+        {
+          "name": "Frontier",
+          "amount": 44.99,
+          "paidDate": "04/08/2025",
+          "dueDate": "04/07/2025",
+          "confirmation": "p257DL22HF"
+        },
+        {
+          "name": "YouTube TV",
+          "amount": 82.99,
+          "paidDate": "04/08/2025",
+          "dueDate": "04/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Netflix",
+          "amount": 22.99,
+          "paidDate": "04/02/2025",
+          "dueDate": "04/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "SoCal Edison",
+          "amount": 37.39,
+          "paidDate": "",
+          "dueDate": "04/15/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "USAA",
+          "amount": 514.05,
+          "paidDate": "04/02/2025",
+          "dueDate": "04/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Mangkee Insurance",
+          "amount": 72.66,
+          "paidDate": "04/04/2025",
+          "dueDate": "04/05/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Public Storage",
+          "amount": 312.0,
+          "paidDate": "04/04/2025",
+          "dueDate": "04/04/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Blue)",
+          "amount": 250.0,
+          "paidDate": "",
+          "dueDate": "04/12/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Navyfed (Santa Fe)",
+          "amount": 300.0,
+          "paidDate": "",
+          "dueDate": "04/12/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Savings CIT",
+          "amount": 300.0,
+          "paidDate": "04/02/2025",
+          "dueDate": "04/01/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Military StarCard",
+          "amount": 150.0,
+          "paidDate": "",
+          "dueDate": "04/17/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Amazon Card (Chase)",
+          "amount": 750.0,
+          "paidDate": "04/14/2025",
+          "dueDate": "04/14/2025",
+          "confirmation": "8306253217"
+        },
+        {
+          "name": "Amex",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "04/23/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Discover",
+          "amount": 200.0,
+          "paidDate": "",
+          "dueDate": "04/14/2025",
+          "confirmation": ""
+        },
+        {
+          "name": "Rent (zelle - breakdown)",
+          "amount": 4200.0,
+          "paidDate": "",
+          "dueDate": "",
+          "confirmation": ""
+        }
+      ],
+      "income": [
+        {
+          "date": "04/01/2025",
+          "source": "VA Comp",
+          "amount": 3925.71
+        },
+        {
+          "date": "03/28/2025",
+          "source": "UHG/Optum",
+          "amount": 2269.79
+        },
+        {
+          "date": "04/11/2025",
+          "source": "UHG/Optum",
+          "amount": 2269.81
+        },
+        {
+          "date": "03/28/2025",
+          "source": "USPS 07-2025",
+          "amount": 1009.06
+        },
+        {
+          "date": "04/11/2025",
+          "source": "USPS 08-2025",
+          "amount": 1115.54
+        },
+        {
+          "date": "",
+          "source": "Paid w NFCUAmex",
+          "amount": 1268.2999999999997
+        }
+      ],
+      "misc": []
+    }
+  }
+}
