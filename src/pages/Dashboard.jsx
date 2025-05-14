@@ -40,7 +40,10 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <UpcomingBills />
+      {/* Separate Upcoming Bills Section */}
+      <div style={{ marginTop: "2rem" }}>
+        <UpcomingBills />
+      </div>
     </div>
   );
 };

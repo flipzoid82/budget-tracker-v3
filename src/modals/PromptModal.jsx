@@ -96,8 +96,15 @@ const PromptModal = ({
   const inputRef = useRef(null);
 
   useEffect(() => {
-    if (inputRef.current && !confirmationOnly) inputRef.current.focus();
-  }, [confirmationOnly]);
+    if (confirmationOnly) return;
+  
+    const delayFocus = setTimeout(() => {
+      const el = inputRef.current || document.querySelector(".modal-content input");
+      if (el) el.focus();
+    }, 10); // small delay to wait for DOM
+  
+    return () => clearTimeout(delayFocus);
+  }, [fields, confirmationOnly]);
 
   const validateDate = (dateString) => {
     if (!dateString) return true;
