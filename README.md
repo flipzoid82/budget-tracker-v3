@@ -1,105 +1,141 @@
-# 💰 Budget Tracker
+# 💸 Budget Tracker V3
 
-A local-first, dark-mode-ready budgeting app built with React + Electron.
-
----
-
-## v3.1.0 Highlights
-
-This release introduces a refined user interface and enhanced user experience:
-
-- **Dark Mode Toggle**: Seamless switch between light and dark themes. The setting is saved automatically.
-- **Improved Toolbar Layout**: Cleaned up the top menu with standardized SVG icons.
-- **Month Selector Integration**: Dropdown now appears on the far left for intuitive access.
-- **Reusable SVG Icons**: Added consistent icon components like `IconEdit`, `IconSave`, `IconPrint`, etc.
-- **Improved Confirmation Prompts**: Clearer and cleaner delete modals for income and expenses.
-
-### v3.09
-
-- Complete PromptModal rebuild with multi-mode support (forms, confirmation-only, date pickers).
-- Synchronized IncomePage and ExpensesPage to new modal framework.
-- Added react-datepicker integration for Due Dates and Income Dates.
-- Improved error handling and validation UX.
-- Maintained strict styling consistency with original project theme.
-
-## Version 3.08 - Modal System Overhaul
-
-- Rebuilt all modal prompts (add, edit, delete) using a unified, clean PromptModal system.
-- Introduced confirmation-only modals for safe delete actions.
-- Added aesthetic improvements: close buttons on modals, better button spacing.
-- Bug fixes to modal behavior, overlay consistency, and dark mode support.
-
-## 🚀 Version 3.07 Highlights
-
-- 🗑 Delete option now available in both Expenses and Income edit menus
-- 🔒 Uses reusable `PromptModal` for unified confirmation behavior
-- 📐 Table column alignment cleaned up on Expenses page
-- 📏 Action buttons now share consistent sizing
-
-## 🚀 Version 3.05 Highlights
-
-- 🎨 Improved contrast for active/inactive tabs in light and dark mode
-- 🔲 Inactive tabs now have flat bottoms for clean separation
-- 🧼 Fully reorganized and commented `theme.css` for clarity and maintainability
+A local-first, cross-platform **budget tracking desktop app** built with **React + Electron + SQLite**. Organize monthly income, expenses, and miscellaneous transactions with a smooth and modern UI.
 
 ---
 
-## 🚀 Version 3.04 Highlights
+## 🆕 What's New in v3.2.0
 
-- 🔁 Income page now visually and structurally matches Expenses page
-- 🧾 Table headers, row spacing, and edit menus fully unified
-- ✏️ Edit button in Income uses consistent styling (`btn btn-muted`)
-- ➕ Add button now centered and styled identically to Expenses
-
----
-
-## 🚀 Version 3.03 Highlights
-
-- 🎯 Seamless tab + toolbar + layout background alignment
-- 🧱 Tab design split into modular `ToolbarTabs` and `toolbar-actions`
-- 🎨 Unified dark mode color scheme for all header elements
-- 🧼 Removed unnecessary styles and spacing for a flush top UI
-- ✨ Final tab illusion is perfect — active tab shares layout background
+- ✅ Migrated all data from `localStorage` to **SQLite** for persistent, local-first storage
+- 🔄 All saves now handled via secure **IPC communication** with Electron backend
+- 💾 Fully functional **Save** button — persists current month to the database
+- 🧠 Added SQLite schema for `months`, `income`, `expenses`, and `misc`
+- ✏️ Unified modal system with reusable `<PromptModal />` for all inputs
+- 🌑 Polished **dark mode** and tab styles
+- 📊 Enhanced dashboard summaries and urgent bills alerts
+- 🔐 `.gitignore` now protects `budget.sqlite3` to prevent leaking personal data
 
 ---
 
-## 🚀 Version 3.02 Highlights
+## 🗂 File Structure Overview
 
-- 🔧 Modular Toolbar component for easy reuse and clean layout
-- 🌙 Dark Mode Toggle with theme variable support and localStorage persistence
-- ✏️ Expenses Edit Menu UI redesign with pencil icon and better alignment
-- 🧱 Styled dropdown for editing fields (Confirmation, URL, Due Date)
-- 🖱️ Auto-close on outside click for expense menus
-- 🛠️ Clean, theme-compatible updates to all navigation and tables
-- 💄 Flush icon alignment in Expenses table for a polished look
-
----
-
-## 🛠️ Tech Stack
-
-- **React** (Vite)
-- **Electron** (desktop native runtime)
-- **SQLite (coming soon)** for local persistent data
-- **Vitest** for testing
-- **Modular Components**: `ToolbarTabs`, `PromptModal`, `BudgetProvider`
-
----
-
-## 📦 How to Run
-
-```bash
-npm install
-npm run dev
+```
+budget-tracker-v3/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── ToolbarTabs.jsx
+│   │   ├── MonthSelector.jsx
+│   │   └── UpcomingBills.jsx
+│   ├── pages/
+│   │   ├── Dashboard.jsx
+│   │   ├── ExpensesPage.jsx
+│   │   └── IncomePage.jsx
+│   ├── modals/
+│   │   └── PromptModal.jsx
+│   ├── core/
+│   │   └── BudgetProvider.jsx
+│   ├── db/
+│   │   ├── database.js
+│   │   └── dbAccess.js
+│   ├── App.jsx
+│   ├── Layout.jsx
+│   ├── Navigation.jsx
+│   └── theme.css
+├── electron.cjs
+├── preload.js
+├── package.json
+└── budget.sqlite3 (🚫 excluded by .gitignore)
 ```
 
-To launch with Electron:
+---
 
+## 💻 How It Works
+
+### ⚙ Electron Backend
+- Backend runs via `electron.cjs`
+- `preload.js` exposes safe IPC bridges to the React frontend
+- SQLite queries handled via `better-sqlite3` in `dbAccess.js`
+
+### 🧠 State Management
+- App state lives in `BudgetProvider.jsx`
+- `INIT`, `SET_MONTH`, and `UPDATE_MONTH_DATA` control reducer logic
+
+### 🖥️ Frontend
+- Responsive UI built with custom CSS variables in `theme.css`
+- Tabbed layout using `ToolbarTabs.jsx`
+- Modal input system uses `PromptModal.jsx`
+- Expense and income data shown in editable table formats
+- Dark mode toggle and import/export JSON support included
+
+---
+
+## 📁 Database Schema
+
+Tables:
+- `months(id, name)`
+- `income(id, month_id, date, source, amount)`
+- `expenses(id, month_id, name, amount, due_date, paid_date, confirmation)`
+- `misc(id, month_id, description, amount)`
+
+Each table supports full CRUD through centralized access in `dbAccess.js`.
+
+---
+
+## 🧪 Development
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Start App (Electron + React + SQLite)
 ```bash
 npm run start
 ```
 
+### Build Electron App
+```bash
+npm run build
+```
+
+> **Note:** SQLite file is local and will persist across app reloads.
+
 ---
 
-## 📄 License
+## 🚀 Features
 
-MIT
+- [x] Offline desktop budgeting
+- [x] Add, edit, and delete income/expenses/misc
+- [x] "Mark as Paid" logic with confirmation number & undo
+- [x] Monthly rollovers and selectors
+- [x] Responsive UI with print support
+- [x] Import/export `.json` backups
+- [x] Secure and fast local database (no internet needed)
+- [x] Clean dark mode support
+
+---
+
+## 🔒 Security Considerations
+
+- IPC communication is limited to whitelisted actions in `preload.js`
+- All data stored locally in `budget.sqlite3` (excluded from repo)
+- No personal data is sent externally
+
+---
+
+## 📅 Coming Soon
+
+- [ ] Full CRUD for Misc transactions
+- [ ] Month renaming support
+- [ ] Backup/restore via CLI or GUI
+- [ ] SQLite schema migrations
+- [ ] User accounts and password-protected profiles
+- [ ] Optional sync with cloud backup
+
+---
+
+## 🧠 Credits
+
+Developed by [flipzoid82](https://github.com/flipzoid82)  
+MIT License © 2025
