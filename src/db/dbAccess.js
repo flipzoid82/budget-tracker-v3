@@ -21,19 +21,19 @@ function getExpensesByMonth(monthName) {
   return db.prepare("SELECT * FROM expenses WHERE month_id = ?").all(id);
 }
 
-function addExpense({ month_id, name, amount, due_date }) {
+function addExpense({ month_id, name, amount, due_date, url }) {
   return db.prepare(
-    `INSERT INTO expenses (month_id, name, amount, due_date)
-     VALUES (?, ?, ?, ?)`
-  ).run(month_id, name, amount, due_date).lastInsertRowid;
+    `INSERT INTO expenses (month_id, name, amount, due_date, url)
+     VALUES (?, ?, ?, ?, ?)`
+  ).run(month_id, name, amount, due_date, url).lastInsertRowid;
 }
 
-function updateExpense({ id, name, amount, due_date, paid_date, confirmation }) {
+function updateExpense({ id, name, amount, due_date, paid_date, confirmation, url }) {
   return db.prepare(
     `UPDATE expenses
-     SET name = ?, amount = ?, due_date = ?, paid_date = ?, confirmation = ?
+     SET name = ?, amount = ?, due_date = ?, paid_date = ?, confirmation = ?, url = ?
      WHERE id = ?`
-  ).run(name, amount, due_date, paid_date, confirmation, id);
+  ).run(name, amount, due_date, paid_date, confirmation, url, id);
 }
 
 function updateExpensePaidStatus(id, paid_date, confirmation) {

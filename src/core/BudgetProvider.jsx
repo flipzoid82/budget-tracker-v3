@@ -60,6 +60,7 @@ export const BudgetProvider = ({ children }) => {
           dueDate: e.due_date,
           paidDate: e.paid_date,
           confirmation: e.confirmation,
+          url: e.url,
         }));
 
         dispatch({
@@ -90,6 +91,7 @@ export const BudgetProvider = ({ children }) => {
         dueDate: e.due_date,
         paidDate: e.paid_date,
         confirmation: e.confirmation,
+        url: e.url,
       }));
 
       dispatch({

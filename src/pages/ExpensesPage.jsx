@@ -235,7 +235,20 @@ const ExpensesPage = () => {
                     )}
                   </div>
                 </td>
-                <td style={{ textAlign: "left" }}>{item.name}</td>
+                <td style={{ textAlign: "left" }}>
+                  {item.url ? (
+                    <a
+                      href={item.url}
+                      className="expense-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    item.name
+                  )}
+                </td>
                 <td style={{ textAlign: "left" }}>{formatCurrency(item.amount)}</td>
                 <td style={{ textAlign: "center" }}>{item.dueDate || "-"}</td>
                 <td style={{ textAlign: "center" }}>{item.paidDate || "-"}</td>
