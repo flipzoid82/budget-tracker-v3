@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { useBudget } from "../core/BudgetProvider";
+import ErrorModal from "../modals/ErrorModal";
 import { useRef, useState, useEffect } from "react";
 import ToolbarTabs from "./ToolbarTabs";
 import MonthSelector from "../components/MonthSelector";
@@ -11,6 +12,7 @@ import IconMoon from "../components/icons/IconMoon";
 import IconMoonOff from "../components/icons/IconMoonOff";
 
 const Layout = ({ toggleDarkMode, darkMode }) => {
+  const [errorMessage, setErrorMessage] = useState("");
   const { state, dispatch } = useBudget();
   
   useEffect(() => {
@@ -34,8 +36,8 @@ const Layout = ({ toggleDarkMode, darkMode }) => {
       await window.api.invoke("save-month-data", { monthName, data });
       alert("✅ Budget saved to database!");
     } catch (err) {
-      console.error("❌ Failed to save:", err);
-      alert("❌ Failed to save data.");
+    console.error("❌ Failed to save:", err);
+    setErrorMessage("Failed to save data. Please try again.");
     }
   };
   
@@ -61,7 +63,7 @@ const Layout = ({ toggleDarkMode, darkMode }) => {
         dispatch({ type: "INIT", payload: parsed });
         alert("✅ Budget imported successfully!");
       } catch {
-        alert("❌ Failed to import data.");
+        setErrorMessage("Failed to import data. Please make sure the file is valid.");
       }
     };
     reader.readAsText(file);
@@ -106,8 +108,21 @@ const Layout = ({ toggleDarkMode, darkMode }) => {
       </div>
 
       <main style={{ padding: "1.5rem", marginTop: "-1px", backgroundColor: "var(--color-bg)" }}>
-        <Outlet />
+        {state.currentMonth ? (
+          <Outlet />
+        ) : (
+          <p style={{ fontSize: "1.1rem", padding: "1rem" }}>
+            ⏳ Loading budget data...
+          </p>
+        )}
       </main>
+      
+      {errorMessage && (
+        <ErrorModal
+          message={errorMessage}
+          onClose={() => setErrorMessage("")}
+        />
+      )}
     </div>
   );
 };

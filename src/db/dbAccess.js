@@ -1,113 +1,135 @@
 // src/db/dbAccess.js
-import db from "./database.js";
+const db = require("./database.js");
 
-// 🔍 Utility
-function getMonthIdByName(name) {
-  const row = db.prepare("SELECT id FROM months WHERE name = ?").get(name);
-  return row ? row.id : null;
+// Month helpers
+function getMonthIdByName(monthName) {
+  const row = db.prepare("SELECT id FROM months WHERE name = ?").get(monthName);
+  return row?.id || null;
 }
 
-// 📤 MONTHS
 function getAllMonths() {
-  return db.prepare("SELECT * FROM months ORDER BY id DESC").all();
+  return db.prepare("SELECT name FROM months ORDER BY id").all();
 }
 
-function addMonth(name) {
-  return db.prepare("INSERT INTO months (name) VALUES (?)").run(name).lastInsertRowid;
+function addMonth(monthName) {
+  return db.prepare("INSERT INTO months (name) VALUES (?)").run(monthName);
 }
 
-// 📤 EXPENSES
+// Expenses
 function getExpensesByMonth(monthName) {
   const id = getMonthIdByName(monthName);
-  if (!id) return [];
-  return db.prepare("SELECT * FROM expenses WHERE month_id = ? ORDER BY due_date").all(id);
-}
-
-function getExpenseIdsByMonth(monthId) {
-  return db.prepare("SELECT id FROM expenses WHERE month_id = ?").all(monthId).map(row => row.id);
+  return db.prepare("SELECT * FROM expenses WHERE month_id = ?").all(id);
 }
 
 function addExpense({ month_id, name, amount, due_date }) {
-  return db.prepare(`
-    INSERT INTO expenses (month_id, name, amount, due_date)
-    VALUES (?, ?, ?, ?)
-  `).run(month_id, name, amount, due_date).lastInsertRowid;
+  return db.prepare(
+    `INSERT INTO expenses (month_id, name, amount, due_date)
+     VALUES (?, ?, ?, ?)`
+  ).run(month_id, name, amount, due_date).lastInsertRowid;
 }
 
 function updateExpense({ id, name, amount, due_date, paid_date, confirmation }) {
-  return db.prepare(`
-    UPDATE expenses
-    SET name = ?, amount = ?, due_date = ?, paid_date = ?, confirmation = ?
-    WHERE id = ?
-  `).run(name, amount, due_date, paid_date, confirmation, id);
+  return db.prepare(
+    `UPDATE expenses
+     SET name = ?, amount = ?, due_date = ?, paid_date = ?, confirmation = ?
+     WHERE id = ?`
+  ).run(name, amount, due_date, paid_date, confirmation, id);
 }
 
-function updateExpensePaidStatus({ id, paid_date, confirmation }) {
-  return db.prepare("UPDATE expenses SET paid_date = ?, confirmation = ? WHERE id = ?").run(paid_date, confirmation, id);
+function updateExpensePaidStatus(id, paid_date, confirmation) {
+  return db.prepare(
+    `UPDATE expenses SET paid_date = ?, confirmation = ? WHERE id = ?`
+  ).run(paid_date, confirmation, id);
 }
 
 function undoExpensePayment(id) {
-  return db.prepare("UPDATE expenses SET paid_date = NULL, confirmation = NULL WHERE id = ?").run(id);
+  return db.prepare(
+    `UPDATE expenses SET paid_date = NULL, confirmation = NULL WHERE id = ?`
+  ).run(id);
 }
 
 function deleteExpense(id) {
   return db.prepare("DELETE FROM expenses WHERE id = ?").run(id);
 }
 
-// 📤 INCOME
-function getIncomeByMonth(monthName) {
+function getExpenseIdsByMonth(monthName) {
   const id = getMonthIdByName(monthName);
-  if (!id) return [];
-  return db.prepare("SELECT * FROM income WHERE month_id = ? ORDER BY date").all(id);
+  return db.prepare("SELECT id FROM expenses WHERE month_id = ?").all(id).map(r => r.id);
 }
 
-function getIncomeIdsByMonth(monthId) {
-  return db.prepare("SELECT id FROM income WHERE month_id = ?").all(monthId).map(row => row.id);
+// Income
+function getIncomeByMonth(monthName) {
+  const id = getMonthIdByName(monthName);
+  return db.prepare("SELECT * FROM income WHERE month_id = ?").all(id);
 }
 
 function addIncome({ month_id, date, source, amount }) {
-  return db.prepare(`
-    INSERT INTO income (month_id, date, source, amount)
-    VALUES (?, ?, ?, ?)
-  `).run(month_id, date, source, amount).lastInsertRowid;
+  return db.prepare(
+    `INSERT INTO income (month_id, date, source, amount)
+     VALUES (?, ?, ?, ?)`
+  ).run(month_id, date, source, amount);
 }
 
 function updateIncome({ id, date, source, amount }) {
-  return db.prepare(`
-    UPDATE income
-    SET date = ?, source = ?, amount = ?
-    WHERE id = ?
-  `).run(date, source, amount, id);
+  return db.prepare(
+    `UPDATE income SET date = ?, source = ?, amount = ? WHERE id = ?`
+  ).run(date, source, amount, id);
 }
 
 function deleteIncome(id) {
   return db.prepare("DELETE FROM income WHERE id = ?").run(id);
 }
 
-// 📤 MISC
+function getIncomeIdsByMonth(monthName) {
+  const id = getMonthIdByName(monthName);
+  return db.prepare("SELECT id FROM income WHERE month_id = ?").all(id).map(r => r.id);
+}
+
+// Misc
 function getMiscByMonth(monthName) {
   const id = getMonthIdByName(monthName);
-  if (!id) return [];
   return db.prepare("SELECT * FROM misc WHERE month_id = ?").all(id);
 }
 
-function getMiscIdsByMonth(monthId) {
-  return db.prepare("SELECT id FROM misc WHERE month_id = ?").all(monthId).map(row => row.id);
-}
-
-function addMisc({ month_id, description, amount }) {
-  return db.prepare(`
-    INSERT INTO misc (month_id, description, amount)
-    VALUES (?, ?, ?)
-  `).run(month_id, description, amount).lastInsertRowid;
+function addMisc({ month_id, name, amount }) {
+  return db.prepare(
+    `INSERT INTO misc (month_id, name, amount) VALUES (?, ?, ?)`
+  ).run(month_id, name, amount);
 }
 
 function deleteMisc(id) {
   return db.prepare("DELETE FROM misc WHERE id = ?").run(id);
 }
 
-// ✅ Exports
-export {
+function getMiscIdsByMonth(monthName) {
+  const id = getMonthIdByName(monthName);
+  return db.prepare("SELECT id FROM misc WHERE month_id = ?").all(id).map(r => r.id);
+}
+
+// Copy
+function copyMonth(sourceMonthName, targetMonthName) {
+  const sourceId = getMonthIdByName(sourceMonthName);
+  const result = db.prepare("INSERT INTO months (name) VALUES (?)").run(targetMonthName);
+  const targetId = result.lastInsertRowid;
+
+  const income = getIncomeByMonth(sourceMonthName);
+  income.forEach((entry) => {
+    addIncome({ ...entry, month_id: targetId });
+  });
+
+  const expenses = getExpensesByMonth(sourceMonthName);
+  expenses.forEach((entry) => {
+    const { name, amount, due_date } = entry;
+    addExpense({ name, amount, due_date, month_id: targetId });
+  });
+
+  const misc = getMiscByMonth(sourceMonthName);
+  misc.forEach((entry) => {
+    addMisc({ ...entry, month_id: targetId });
+  });
+}
+
+module.exports = {
   getMonthIdByName,
   getAllMonths,
   addMonth,
@@ -126,5 +148,6 @@ export {
   getMiscByMonth,
   addMisc,
   deleteMisc,
-  getMiscIdsByMonth
+  getMiscIdsByMonth,
+  copyMonth,
 };

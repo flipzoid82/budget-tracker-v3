@@ -2,11 +2,13 @@
   "name": "budget-tracker-v3",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "main": "electron.cjs",
   "scripts": {
     "dev": "vite",
-    "electron": "electron electron.cjs",
-    "start": "set ELECTRON_DISABLE_SECURITY_WARNINGS=true && concurrently \"npm run dev\" \"npm run electron\""
+    "build": "vite build && electron-builder",
+    "electron": "electron .",
+    "start": "set ELECTRON_DISABLE_SECURITY_WARNINGS=true && concurrently \"npm run dev\" \"npm run electron\"",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "better-sqlite3": "^11.10.0",
@@ -23,11 +25,29 @@
     "@vitejs/plugin-react": "^4.3.4",
     "concurrently": "^9.1.2",
     "electron": "^36.2.0",
+    "electron-builder": "^24.13.3",
     "electron-rebuild": "^3.2.9",
     "eslint": "^9.22.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
-    "vite": "^6.3.1"
+    "vite": "^6.3.1",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.yourname.budgettracker",
+    "productName": "Budget Tracker",
+    "files": [
+      "dist/**/*",
+      "electron.cjs",
+      "preload.js",
+      "src/db/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis"
+    }
   }
 }

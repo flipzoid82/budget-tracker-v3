@@ -1,13 +1,12 @@
 // src/db/database.js
-import path from "path";
-import Database from "better-sqlite3";
-import { fileURLToPath } from "url";
+const path = require("path");
+const Database = require("better-sqlite3");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+// Path to the SQLite file (assumes it's at the project root)
 const dbPath = path.resolve(__dirname, "../../budget.sqlite3");
+
+// Open or create the SQLite DB
 const db = new Database(dbPath);
 
-// Initialize schema (optional here if already created)
-export default db;
+// Export the raw DB connection for Electron
+module.exports = db;

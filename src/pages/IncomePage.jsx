@@ -82,6 +82,32 @@ const IncomePage = () => {
     };
   };
 
+  //DeleteMonth: Triggers Delete Month
+  const triggerDeleteMonth = () => {
+    setPrompt({
+      show: true,
+      title: "Delete This Month?",
+      label: `Are you sure you want to permanently delete ${state.currentMonth}? This action cannot be undone.`,
+      confirmationOnly: true,
+      submitLabel: "Delete",
+      onSubmit: async () => {
+        const res = await window.api.invoke("delete-month", state.currentMonth);
+        if (res.success && res.months.length) {
+          dispatch({
+            type: "INIT",
+            payload: {
+              currentMonth: res.months[0].name,
+              months: Object.fromEntries(res.months.map(m => [m.name, {}]))
+            }
+          });
+        } else if (res.success && res.months.length === 0) {
+          dispatch({ type: "INIT", payload: { currentMonth: "", months: {} } });
+        }
+        setPrompt({ show: false });
+      }
+    });
+  };
+
   return (
     <div style={{ padding: "1.5rem" }}>
       <h1>💰 Income</h1>
@@ -158,9 +184,11 @@ const IncomePage = () => {
         </table>
       </div>
 
-      <div className="centered" style={{ marginTop: "1.5rem" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", marginTop: "1.5rem" }}>
         <button className="btn btn-primary" onClick={startAddIncome}>➕ Add New Income</button>
+        <button className="btn btn-danger" onClick={triggerDeleteMonth}>🗑 Delete This Month</button>
       </div>
+
 
       {prompt.show && (
         <PromptModal

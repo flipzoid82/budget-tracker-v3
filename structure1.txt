@@ -1,0 +1,48 @@
+budget-tracker-v3/
+├── budget.sqlite3              # ⛔ Git-ignored SQLite DB file (used locally)
+├── electron.cjs                # ⚙️ Electron main process (IPC handlers)
+├── preload.js                  # 🔒 contextBridge for secure renderer access
+├── package.json                # 📦 Project scripts and dependencies
+├── vite.config.js              # ⚡ Vite configuration
+├── index.html
+├── README.md
+
+├── src/
+│   ├── App.jsx                 # 🌐 Root app (handles auth, theme, routing)
+│   ├── main.jsx                # 🧠 React + Vite entry point
+│   ├── index.css               # 🔧 Global base styles
+│
+│   ├── styles/
+│   │   └── theme.css           # 🎨 App theme, dark mode, global UI styling
+│
+│   ├── core/
+│   │   └── BudgetProvider.jsx  # 🧠 App state management via context + reducer
+│
+│   ├── components/
+│   │   ├── Layout.jsx          # 🧱 Main layout container
+│   │   ├── Navigation.jsx      # 🧭 Top nav or sidebar component
+│   │   ├── ToolbarTabs.jsx     # 📑 Tabs for navigating pages
+│   │   ├── MonthSelector.jsx   # 📅 Dropdown with copy/blank month creation
+│   │   ├── UpcomingBills.jsx   # ⏰ Highlights bills due soon
+│   │   └── icons/
+│   │       ├── IconEdit.jsx
+│   │       ├── IconMoon.jsx
+│   │       ├── IconMoonOff.jsx
+│   │       ├── IconPrint.jsx
+│   │       ├── IconSave.jsx
+│   │       ├── IconDownload.jsx
+│   │       └── IconImport.jsx
+│
+│   ├── pages/
+│   │   ├── Dashboard.jsx       # 📊 Summary view: income, expenses, surplus
+│   │   ├── ExpensesPage.jsx    # 💸 Expense list, paid status, dropdown actions
+│   │   └── IncomePage.jsx      # 💰 Income list, inline editing, modal actions
+│
+│   ├── modals/
+│   │   └── PromptModal.jsx     # 💬 General-purpose modal (edit/add/confirm)
+│   │   └── [ErrorModal.jsx]    # ❗ (Optional) For displaying error messages
+│
+│   ├── db/
+│   │   ├── database.js         # 🧩 Initializes SQLite (better-sqlite3)
+│   │   ├── dbAccess.js         # 📚 All SQL logic: get/add/update/delete
+│   │   └── database.sqlite3    # 📦 Raw schema version of DB (often copied or seeded)

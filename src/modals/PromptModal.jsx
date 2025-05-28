@@ -198,7 +198,6 @@ const PromptModal = ({
                   {field.label}
                   {field.required && <span className="required-asterisk">*</span>}
                 </label>
-
                 {field.type === "date" ? (
                   <CustomDatePicker
                     value={formValues[field.name] || ""}
@@ -206,6 +205,14 @@ const PromptModal = ({
                     error={errors[field.name]}
                     id={field.name}
                     label={field.label}
+                  />
+                ) : field.type === "checkbox" ? (
+                  <input
+                    type="checkbox"
+                    id={field.name}
+                    checked={formValues[field.name] || false}
+                    onChange={(e) => handleFieldChange(field.name, e.target.checked)}
+                    disabled={isSubmitting}
                   />
                 ) : (
                   <input

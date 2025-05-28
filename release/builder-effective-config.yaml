@@ -1,0 +1,14 @@
+directories:
+  output: release
+  buildResources: build
+appId: com.yourname.budgettracker
+productName: Budget Tracker
+files:
+  - filter:
+      - dist/**/*
+      - electron.cjs
+      - preload.js
+      - src/db/**/*
+win:
+  target: nsis
+electronVersion: 36.3.1

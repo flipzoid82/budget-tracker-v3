@@ -2,6 +2,27 @@
 
 ---
 
+## [v3.3.0] – 2025-05-26
+
+### ✨ Added
+
+- ❗ **Error Handling Infrastructure**: Introduced a centralized `ErrorModal` component to standardize error messages across the app.
+- 🔁 Predefined fallback messages for known error codes like `SQLITE_CONSTRAINT_UNIQUE`, with support for custom error messaging.
+- 🔍 Specific message for duplicate month creation: _"The month name selected already exists. Please choose a unique name."_
+
+### 🛠 Changed
+
+- ⚙️ `electron.cjs`: Refactored to fully support secure preload usage with `contextIsolation: true` and `preload.js` path set correctly.
+- 📦 Switched Electron launch script to use `electron .` to improve path resolution and debugging.
+- 🔄 Restored and validated IPC-based database calls after refactoring.
+- 🗃️ Added `url` field support to `expenses` table in SQLite schema via manual migration.
+
+### 🐛 Fixed
+
+- 🧩 Addressed `better-sqlite3` and Node.js version mismatch by rebuilding native modules using `electron-rebuild`.
+- 🔒 Fixed contextBridge error by ensuring preload is used only when `contextIsolation` is enabled.
+- 🌐 Resolved `ERR_CONNECTION_REFUSED` during Electron boot by syncing Vite server timing and `loadURL`.
+
 ## [v3.2.0] – 2025-05-13
 
 ### Added
