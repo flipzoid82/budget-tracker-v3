@@ -71,39 +71,40 @@ const Layout = ({ toggleDarkMode, darkMode }) => {
 
   return (
     <div>
-      <ToolbarTabs />
-
-      <div className="toolbar">
-        <div className="toolbar-left">
-          <MonthSelector />
-        </div>
-          <div className="toolbar-actions">
-          <button title="Save" className="icon-button" onClick={handleSave}>
-            <IconSave />
-          </button>
-          <button title="Print" className="icon-button" onClick={handlePrint}>
-            <IconPrint />
-          </button>
-          <button title="Import" className="icon-button" onClick={handleImportClick}>
-            <IconImport />
-          </button>
-          <input
-            ref={importInputRef}
-            type="file"
-            accept=".json"
-            onChange={handleImport}
-            style={{ display: "none" }}
-          />
-          <button title="Export" className="icon-button" onClick={handleExport}>
-            <IconDownload />
-          </button>
-          <button
-            title={darkMode ? "Light Mode" : "Dark Mode"}
-            className="icon-button"
-            onClick={toggleDarkMode}
-          >
-            {darkMode ? <IconMoonOff /> : <IconMoon />}
-          </button>
+      <div className="sticky-header">
+        <ToolbarTabs />
+        <div className="toolbar">
+          <div className="toolbar-left">
+            <MonthSelector />
+          </div>
+            <div className="toolbar-actions">
+            <button title="Save" className="icon-button" onClick={handleSave}>
+              <IconSave />
+            </button>
+            <button title="Print" className="icon-button" onClick={handlePrint}>
+              <IconPrint />
+            </button>
+            <button title="Import" className="icon-button" onClick={handleImportClick}>
+              <IconImport />
+            </button>
+            <input
+              ref={importInputRef}
+              type="file"
+              accept=".json"
+              onChange={handleImport}
+              style={{ display: "none" }}
+            />
+            <button title="Export" className="icon-button" onClick={handleExport}>
+              <IconDownload />
+            </button>
+            <button
+              title={darkMode ? "Light Mode" : "Dark Mode"}
+              className="icon-button"
+              onClick={toggleDarkMode}
+            >
+              {darkMode ? <IconMoonOff /> : <IconMoon />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -116,7 +117,7 @@ const Layout = ({ toggleDarkMode, darkMode }) => {
           </p>
         )}
       </main>
-      
+
       {errorMessage && (
         <ErrorModal
           message={errorMessage}

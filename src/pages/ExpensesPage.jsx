@@ -3,6 +3,8 @@ import { useBudget } from "../core/BudgetProvider";
 import { formatCurrency } from "../utils/format/formatCurrency";
 import PromptModal from "../modals/PromptModal";
 import IconEdit from "../components/icons/IconEdit";
+import UpArrowIcon from "../components/icons/UpArrowIcon";
+import DownArrowIcon from "../components/icons/DownArrowIcon";
 
 const ExpensesPage = () => {
   const { state, dispatch } = useBudget();
@@ -14,8 +16,9 @@ const ExpensesPage = () => {
     submitLabel: "",
     onSubmit: null
   });
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortConfig, setSortConfig] = useState({ key: 'name', direction: 'asc' });
   const menuRef = useRef(null);
-
   const monthData = state.months[state.currentMonth] || {};
 
   // Optional normalization in case DB returns snake_case
@@ -27,6 +30,19 @@ const ExpensesPage = () => {
 
   const toggleMenu = (index) => {
     setMenuIndex((prev) => (prev === index ? null : index));
+  };
+
+  const handleSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const getSortIndicator = (key) => {
+    if (sortConfig.key !== key) return '';
+    return sortConfig.direction === 'asc' ? <UpArrowIcon /> : <DownArrowIcon />;
   };
 
   const handleMarkPaid = (index) => {
@@ -186,89 +202,137 @@ const ExpensesPage = () => {
     });
   };
 
+  const sortedExpenses = [...expenses].sort((a, b) => {
+    const dir = sortConfig.direction === 'asc' ? 1 : -1;
+    if (a[sortConfig.key] < b[sortConfig.key]) return -1 * dir;
+    if (a[sortConfig.key] > b[sortConfig.key]) return 1 * dir;
+    return 0;
+  });
+
+  const filteredExpenses = sortedExpenses.filter(item =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div style={{ padding: "1.5rem" }}>
       <h1>📄 Expenses</h1>
-      <div className="table-container">
+      <div style={{ marginBottom: "1rem" }}>
+        <input
+          type="text"
+          placeholder="Search expenses..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={{
+            padding: "0.4rem 0.75rem",
+            fontSize: "1rem",
+            borderRadius: "4px",
+            border: "1px solid #ccc",
+            width: "100%",
+            maxWidth: "300px"
+          }}
+        />
+      </div>
+      <div className="table-container expenses-table">
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ background: "var(--color-muted)", color: "var(--color-text)", fontWeight: "600" }}>
-              <th style={{ paddingLeft: "0.5rem", textAlign: "left" }}></th>
-              <th style={{ textAlign: "left" }}>Name</th>
-              <th style={{ textAlign: "left" }}>Amount</th>
-              <th style={{ textAlign: "center" }}>Due Date</th>
+              <th
+                style={{ paddingLeft: "4rem", textAlign: "left", cursor: "pointer" }}
+                onClick={() => handleSort("name")}
+              >
+                <span style={{ display: "inline-flex", alignItems: "center" }}>
+                  Name{getSortIndicator("name")}
+                </span>
+              </th>
+              <th
+                style={{ textAlign: "left", cursor: "pointer" }}
+                onClick={() => handleSort("amount")}
+              >
+                <span style={{ display: "inline-flex", alignItems: "center" }}>
+                  Amount {getSortIndicator("amount")}
+                </span>
+              </th>
+              <th
+                style={{ textAlign: "center", cursor: "pointer" }}
+                onClick={() => handleSort("dueDate")}
+              >
+                  <span style={{ display: "inline-flex", alignItems: "center" }}>
+                    Due Date {getSortIndicator("dueDate")}
+                  </span>
+              </th>
               <th style={{ textAlign: "center" }}>Paid Date</th>
               <th style={{ textAlign: "center" }}>Confirmation #</th>
-              <th style={{ textAlign: "left" }}>Status</th>
+              <th style={{ textAlign: "center" }}>Status</th>
               <th style={{ textAlign: "center" }}>Action</th>
             </tr>
           </thead>
           <tbody>
-            {expenses.map((item, index) => (
-              <tr key={index} style={{ borderBottom: "1px solid #ddd" }}>
-                <td style={{ paddingLeft: "0rem", width: "1px" }}>
-                  <div className="dropdown-anchor">
-                    <button onClick={() => toggleMenu(index)} className="icon-button">
-                      <IconEdit />
-                    </button>
-                    {menuIndex === index && (
-                      <div ref={menuRef} className="dropdown-menu">
-                        <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("name", "Bill Name", index))}>
-                          Edit Name
-                        </button>
-                        <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("amount", "Amount", index))}>
-                          Edit Amount
-                        </button>
-                        <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("dueDate", "Due Date", index, true))}>
-                          Edit Due Date
-                        </button>
-                        <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("url", "URL", index))}>
-                          Edit URL
-                        </button>
-                        <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("confirmation", "Confirmation #", index))}>
-                          Edit Confirmation
-                        </button>
-                        <button className="dropdown-button" onClick={() => handleDelete(index)}>
-                          Delete
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </td>
-                <td style={{ textAlign: "left" }}>
-                  {item.url ? (
-                    <a
-                      href={item.url}
-                      className="expense-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.name}
-                    </a>
-                  ) : (
-                    item.name
-                  )}
-                </td>
-                <td style={{ textAlign: "left" }}>{formatCurrency(item.amount)}</td>
-                <td style={{ textAlign: "center" }}>{item.dueDate || "-"}</td>
-                <td style={{ textAlign: "center" }}>{item.paidDate || "-"}</td>
-                <td style={{ textAlign: "center" }}>{item.confirmation || "-"}</td>
-                <td style={{ textAlign: "left" }}>
-                  {item.paidDate ? "✅ Paid" : "🕗 Unpaid"}
-                </td>
-                <td style={{ textAlign: "center" }}>
-                  {item.paidDate ? (
-                    <button className="btn btn-primary" style={{ minWidth: "90px" }} onClick={() => handleUndoPaid(index)}>
-                      Undo
-                    </button>
-                  ) : (
-                    <button className="btn btn-primary" style={{ minWidth: "90px" }} onClick={() => handleMarkPaid(index)}>
-                      Mark Paid
-                    </button>
-                  )}
+            {filteredExpenses.length === 0 ? (
+              <tr>
+                <td colSpan="7" style={{ textAlign: "center", padding: "1rem", fontStyle: "italic" }}>
+                  No matching expenses found.
                 </td>
               </tr>
-            ))}
+            ) : (
+              filteredExpenses.map((item, index) => (
+                <tr key={index}>
+                <td style={{ textAlign: "left" }}>
+                            <div className="expense-row">
+                              <div className="dropdown-anchor">
+                                <button className="icon-button" onClick={() => toggleMenu(index)}>
+                                  <IconEdit />
+                                </button>
+                                {menuIndex === index && (
+                                  <div ref={menuRef} className="dropdown-menu">
+                                    <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("name", "Bill Name", index))}>
+                                      Edit Name
+                                    </button>
+                                    <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("amount", "Amount", index))}>
+                                      Edit Amount
+                                    </button>
+                                    <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("dueDate", "Due Date", index, true))}>
+                                      Edit Due Date
+                                    </button>
+                                    <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("url", "URL", index))}>
+                                      Edit URL
+                                    </button>
+                                    <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("confirmation", "Confirmation #", index))}>
+                                      Edit Confirmation
+                                    </button>
+                                    <button className="dropdown-button" onClick={() => handleDelete(index)}>
+                                      Delete
+                                    </button>
+                                  </div>
+                                )}
+                              </div>
+                              <span style={{ marginLeft: "0.5rem" }}>
+                                {item.url ? (
+                                  <a href={item.url} className="expense-link" target="_blank" rel="noopener noreferrer">{item.name}</a>
+                                ) : item.name}
+                              </span>
+                            </div>
+                          </td>
+                          <td style={{ textAlign: "left" }}>{formatCurrency(item.amount)}</td>
+                          <td style={{ textAlign: "center" }}>{item.dueDate || "-"}</td>
+                          <td style={{ textAlign: "center" }}>{item.paidDate || "-"}</td>
+                          <td style={{ textAlign: "center" }}>{item.confirmation || "-"}</td>
+                          <td style={{ textAlign: "left" }}>
+                            {item.paidDate ? "✅ Paid" : "🕗 Unpaid"}
+                          </td>
+                          <td style={{ textAlign: "center" }}>
+                            {item.paidDate ? (
+                              <button className="btn btn-primary" style={{ minWidth: "90px" }} onClick={() => handleUndoPaid(index)}>
+                                Undo
+                              </button>
+                            ) : (
+                              <button className="btn btn-primary" style={{ minWidth: "90px" }} onClick={() => handleMarkPaid(index)}>
+                                Mark Paid
+                              </button>
+                            )}
+                          </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>

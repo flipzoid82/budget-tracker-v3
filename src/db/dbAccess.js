@@ -8,7 +8,7 @@ function getMonthIdByName(monthName) {
 }
 
 function getAllMonths() {
-  return db.prepare("SELECT name FROM months ORDER BY id").all();
+  return db.prepare("SELECT name FROM months ORDER BY id DESC").all();
 }
 
 function addMonth(monthName) {
