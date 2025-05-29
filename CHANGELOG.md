@@ -2,6 +2,38 @@
 
 ---
 
+## [v3.4.1] - 2025-05-28
+
+### Fixed
+
+- Bug where expense URLs were saved to the wrong item due to filtered index mismatch
+- Now uses expense ID for safe updates
+
+### Improved
+
+- Confirmed database persistence
+- Full round-trip editing verification for expenses
+
+## [v3.4.0] – 2025-05-28
+
+### ✨ Added
+
+- 🔍 **Search Filtering** for Expenses and Income pages with real-time query updates
+- ⬆️⬇️ **Table Sorting** by clicking headers (Name, Amount, Date, etc.)
+- 🧭 **Sticky Toolbar & Tabs**: Navigation bar and toolbar now stay pinned to the top
+- 🔗 Expenses now support an optional **URL** field that hyperlinks the name
+
+### 🧼 Changed
+
+- 📊 Tables visually cleaned for consistency: padding, alignment, and spacing refined
+- 🎨 Sort indicators now use up/down SVG icons (`UpArrowIcon`, `DownArrowIcon`) placed beside header text
+- 🧩 Modularized all icons for import cleanliness and reuse
+
+### 🐛 Fixed
+
+- 🚫 Hydration warning from `<tr>` outside `<tbody>` resolved
+- 🌙 Sticky header background now theme-aware for dark/light mode
+
 ## [v3.3.0] – 2025-05-26
 
 ### ✨ Added

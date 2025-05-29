@@ -3,18 +3,34 @@ import { useBudget } from "../core/BudgetProvider";
 import { formatCurrency } from "../utils/format/formatCurrency";
 import PromptModal from "../modals/PromptModal";
 import IconEdit from "../components/icons/IconEdit";
+import UpArrowIcon from "../components/icons/UpArrowIcon";
+import DownArrowIcon from "../components/icons/DownArrowIcon";
 
 const IncomePage = () => {
   const { state, dispatch } = useBudget();
   const [menuIndex, setMenuIndex] = useState(null);
   const [prompt, setPrompt] = useState({ show: false, title: "", fields: null, onSubmit: null });
+  const [sortConfig, setSortConfig] = useState({ key: 'source', direction: 'asc' });
+  const [searchQuery, setSearchQuery] = useState('');
   const menuRef = useRef(null);
-
   const monthData = state.months[state.currentMonth] || {};
   const income = monthData.income || [];
 
   const toggleMenu = (index) => {
     setMenuIndex(prev => (prev === index ? null : index));
+  };
+
+  const handleSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const getSortIndicator = (key) => {
+    if (sortConfig.key !== key) return '';
+    return sortConfig.direction === 'asc' ? <UpArrowIcon /> : <DownArrowIcon />;
   };
 
   const updateField = (index, field, value) => {
@@ -108,78 +124,124 @@ const IncomePage = () => {
     });
   };
 
+  const sortedIncome = [...income].sort((a, b) => {
+    const dir = sortConfig.direction === 'asc' ? 1 : -1;
+    if (a[sortConfig.key] < b[sortConfig.key]) return -1 * dir;
+    if (a[sortConfig.key] > b[sortConfig.key]) return 1 * dir;
+    return 0;
+  });
+
+  const filteredIncome = sortedIncome.filter(item =>
+    item.source.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div style={{ padding: "1.5rem" }}>
       <h1>💰 Income</h1>
-      <div className="table-container">
+      <div style={{ marginBottom: "1rem" }}>
+        <input
+          type="text"
+          placeholder="Search income..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={{
+            padding: "0.4rem 0.75rem",
+            fontSize: "1rem",
+            borderRadius: "4px",
+            border: "1px solid #ccc",
+            width: "100%",
+            maxWidth: "300px"
+          }}
+        />
+      </div>
+      <div className="table-container income-table">
         <table style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ background: "var(--color-muted)", color: "var(--color-text)", fontWeight: "600" }}>
-              <th style={{ textAlign: "left" }}></th>
-              <th style={{ textAlign: "left" }}>Source</th>
-              <th style={{ textAlign: "right" }}>Amount</th>
-              <th style={{ textAlign: "center" }}>Date Received</th>
+              <th style={{ paddingLeft: "4rem", textAlign: "left",cursor: "pointer" }} onClick={() => handleSort("source")}>
+                <span style={{ display: "inline-flex", alignItems: "center" }}>
+                  Source {getSortIndicator("source")}
+                </span>
+              </th>
+              <th style={{ textAlign: "right", cursor: "pointer" }} onClick={() => handleSort("amount")}>
+                <span style={{ display: "inline-flex", alignItems: "center" }}>
+                  Amount {getSortIndicator("amount")}
+                </span>
+              </th>
+              <th style={{ textAlign: "center", cursor: "pointer" }} onClick={() => handleSort("date")}>
+                <span style={{ display: "inline-flex", alignItems: "center" }}>
+                  Date {getSortIndicator("date")}
+                </span>
+              </th>
             </tr>
           </thead>
           <tbody>
-            {income.map((item, index) => (
-              <tr key={index} style={{ borderBottom: "1px solid #ddd", minHeight: "40px" }}>
-                <td style={{ paddingLeft: "0rem", width: "1px" }}>
-                  <div className="dropdown-anchor">
-                    <button
-                      onClick={() => toggleMenu(index)}
-                      className="icon-button">
-                      <IconEdit/>
-                    </button>
-                    {menuIndex === index && (
-                      <div ref={menuRef} className="dropdown-menu">
-                        <button 
-                          className="dropdown-button" 
-                          onClick={() => setPrompt(getEditHandler("source", "Source", index))}
-                        >
-                          Edit Source
-                        </button>
-                        <button 
-                          className="dropdown-button" 
-                          onClick={() => setPrompt(getEditHandler("amount", "Amount", index))}
-                        >
-                          Edit Amount
-                        </button>
-                        <button 
-                          className="dropdown-button" 
-                          onClick={() => setPrompt(getEditHandler("date", "Date Received", index))}
-                        >
-                          Edit Date
-                        </button>
-                        <button 
-                          className="dropdown-button" 
-                          onClick={() => {
-                            setPrompt({
-                              show: true,
-                              title: "Confirm Delete",
-                              label: "Are you sure you want to delete this income? This action cannot be undone.",
-                              confirmationOnly: true,
-                              submitLabel: "Delete",
-                              onSubmit: () => {
-                                const updated = [...income];
-                                updated.splice(index, 1);
-                                dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, income: updated } });
-                                setPrompt({ show: false });
-                              }
-                            });
-                          }}
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    )}
-                  </div>
+            {filteredIncome.length === 0 ? (
+              <tr>
+                <td colSpan="6" style={{ textAlign: "center", padding: "1rem", fontStyle: "italic" }}>
+                  No matching income found.
                 </td>
-                <td style={{ padding: "0", textAlign: "left" }}>{item.source}</td>
-                <td style={{ padding: "0", textAlign: "right" }}>{formatCurrency(item.amount)}</td>
-                <td style={{ padding: "0", textAlign: "center" }}>{item.date}</td>
               </tr>
-            ))}
+            ) : (
+              filteredIncome.map((item, index) => (
+                <tr key={index}>
+                  <td style={{ textAlign: "left" }}>
+                            <div className="expense-row">
+                              <div className="dropdown-anchor">
+                                <button className="icon-button" onClick={() => toggleMenu(index)}>
+                                  <IconEdit />
+                                </button>
+                                {menuIndex === index && (
+                                  <div ref={menuRef} className="dropdown-menu">
+                                    <button 
+                                      className="dropdown-button" 
+                                      onClick={() => setPrompt(getEditHandler("source", "Source", index))}
+                                    >
+                                      Edit Source
+                                    </button>
+                                    <button 
+                                      className="dropdown-button" 
+                                      onClick={() => setPrompt(getEditHandler("amount", "Amount", index))}
+                                    >
+                                      Edit Amount
+                                    </button>
+                                    <button 
+                                      className="dropdown-button" 
+                                      onClick={() => setPrompt(getEditHandler("date", "Date Received", index))}
+                                    >
+                                      Edit Date
+                                    </button>
+                                    <button 
+                                      className="dropdown-button" 
+                                      onClick={() => {
+                                        setPrompt({
+                                          show: true,
+                                          title: "Confirm Delete",
+                                          label: "Are you sure you want to delete this income? This action cannot be undone.",
+                                          confirmationOnly: true,
+                                          submitLabel: "Delete",
+                                          onSubmit: () => {
+                                            const updated = [...income];
+                                            updated.splice(index, 1);
+                                            dispatch({ type: "UPDATE_MONTH_DATA", payload: { ...monthData, income: updated } });
+                                    setPrompt({ show: false });
+                                  }
+                                });
+                              }}
+                            >
+                              Delete
+                            </button>
+                          </div>
+                          )}
+                        </div>
+                      <span style={{ marginLeft: "0.5rem" }}>{item.source}</span>
+                    </div>
+                  </td>
+                          <td style={{ padding: "0", textAlign: "right" }}>{formatCurrency(item.amount)}</td>
+                          <td style={{ padding: "0", textAlign: "center" }}>{item.date}</td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>

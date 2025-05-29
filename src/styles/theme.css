@@ -1,3 +1,6 @@
+/* ========================================
+   THEME VARIABLES
+======================================== */
 /* ========================================================
    💡 Global Theme Variables
 ======================================================== */
@@ -18,7 +21,6 @@ body {
   --radius: 6px;
   --gap: 1rem;
 }
-
 body.dark-mode {
   --color-bg: #1f1f1f;
   --color-surface: #2a2a2a;
@@ -29,21 +31,18 @@ body.dark-mode {
   --color-success: #81c784;
   --color-warning: #fdd835;
 }
-
 :root {
   --color-icon: black;
   --color-icon-hover: #333;
   --color-button-bg: #e5e5e5;
   --color-button-hover: #ccc;
 }
-
 .dark-mode {
   --color-icon: white;
   --color-icon-hover: #e0e0e0;
   --color-button-bg: #2e2e2e;
   --color-button-hover: #444;
 }
-
 /* ========================================================
    🌍 Base Typography & Layout
 ======================================================== */
@@ -55,25 +54,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
-/* ========================================================
-   🪟 Modal Styles
-======================================================== */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  backdrop-filter: blur(4px);
-  animation: fadeIn 0.2s ease-out;
-}
-
 .modal {
   background: var(--color-surface);
   border-radius: var(--radius);
@@ -86,56 +66,12 @@ body {
   overflow: visible !important;
   animation: slideUp 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-
-.modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.25rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-  z-index: 1000;
-  pointer-events: auto;
-}
-
-.modal-close:hover {
-  opacity: 1;
-}
-
-.modal-close svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  stroke: currentColor;
-}
-
-.modal-header {
-  margin-bottom: 1.5rem;
-  text-align: center;
-  position: relative;
-}
-
 .modal-title {
   margin: 0 0 1rem;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-text);
 }
-
-.modal-content {
-  max-height: 65vh;
-  overflow-y: auto;
-  padding: 0 0.5rem;
-  overflow: visible !important;
-}
-
-.modal-field {
-  margin-bottom: 1.25rem;
-  width: 100%;
-}
-
 .modal-label {
   display: block;
   margin-bottom: 0.5rem;
@@ -143,7 +79,6 @@ body {
   font-weight: 500;
   color: var(--color-text);
 }
-
 .modal-input {
   width: 100%;
   padding: 0.75rem;
@@ -155,58 +90,30 @@ body {
   box-sizing: border-box;
   transition: border-color 0.2s ease;
 }
-
 .modal-input:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
-
-.modal-actions {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: flex-end;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}
-
-/* Confirmation Modal Variants */
-.modal-confirmation {
-  text-align: center;
-  padding: 2rem 1.5rem;
-}
-
-.modal-warning-icon {
-  margin-bottom: 1rem;
-}
-
 .modal-confirmation-text {
   color: var(--color-text);
   line-height: 1.5;
   margin: 0 0 1.5rem;
 }
-
 /* Error States */
 .input-error {
   border-color: var(--color-danger) !important;
 }
-
-.input-error:focus {
-  box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
-}
-
 .input-error-message {
   color: var(--color-danger);
   font-size: 0.875rem;
   margin-top: 0.25rem;
   display: block;
 }
-
 .required-asterisk {
   color: var(--color-danger);
   margin-left: 0.25rem;
 }
-
 /* ========================================================
    🧱 Components
 ======================================================== */
@@ -216,12 +123,17 @@ body {
   border-radius: var(--radius);
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
-
-.table-container {
-  overflow: visible;
-  margin-top: var(--padding-md);
+.table-container table tbody tr:nth-child(even) {
+  background-color: var(--color-muted);
 }
-
+/* Zebra-striped rows */
+.table-container tr:nth-child(even) {
+  background-color: var(--color-muted);
+}
+/* Fix icon hover visibility on striped rows */
+.table-container tr:nth-child(even) .icon-button:hover {
+  background-color: var(--color-surface); /* inverse of muted */
+}
 .modal {
   background: var(--color-surface);
   padding: var(--padding-md);
@@ -230,100 +142,28 @@ body {
   max-width: 500px;
   margin: auto;
 }
-
-/* ========================================================
-   🔘 Buttons
-======================================================== */
-.btn {
-  padding: 0.4rem 0.75rem;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  font-weight: 500;
-}
-
 .btn-primary {
   background-color: var(--color-primary);
   color: white;
 }
-
-.btn-primary:hover {
-  filter: brightness(1.1);
-}
-
 .btn-danger {
   background-color: var(--color-danger);
   color: white;
 }
-
 .btn-muted {
   background-color: var(--color-muted);
   color: #333;
 }
-
-/* Dark mode button adjustments */
-body.dark-mode .btn-primary {
-  background-color: #367cd6;
-  color: white;
-}
-
-body.dark-mode .btn-muted {
-  background-color: #555;
-  color: white;
-}
-
-/* ========================================================
-   🔘 Buttons
-======================================================== */
-.icon-button {
-  background: none;
-  border: none;
-  padding: 0.4rem;
-  border-radius: var(--radius);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  height: 2.4rem;
-  width: 2.4rem;
-}
-
 .icon-button svg {
   color: var(--color-fg);
   stroke: currentColor;
   transition: color 0.3s ease, stroke 0.3s ease;
 }
-
 .icon-button:hover {
   background-color: var(--color-muted);
 }
-
 .dark-mode .icon-button:hover {
   background-color: var(--color-button-hover);
-}
-
-.dark-mode .icon-button svg {
-  stroke: white;
-}
-
-/* ========================================================
-   🌀 Animations
-======================================================== */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 /* ========================================================
@@ -337,7 +177,6 @@ body.dark-mode .btn-muted {
   box-sizing: border-box;
   margin-bottom: 0.5rem;
 }
-
 /* ========================================================
    📑 Tab Navigation
 ======================================================== */
@@ -350,11 +189,9 @@ body.dark-mode .btn-muted {
   cursor: pointer;
   transition: background 0.2s ease;
 }
-
 .tab-button:hover {
   background-color: var(--color-muted);
 }
-
 .tab-button.active {
   background-color: var(--color-bg);
   border-radius: 8px 8px 0 0;
@@ -365,39 +202,6 @@ body.dark-mode .btn-muted {
   z-index: 2;
   position: relative;
 }
-
-/* 🔳 Tab Contrast (Light Mode Only) */
-body:not(.dark-mode) .tab-button {
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 8px 8px 0 0;
-}
-
-body:not(.dark-mode) .tab-button:hover {
-  background-color: #eee;
-}
-
-body:not(.dark-mode) .tab-button.active {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-bottom: none;
-}
-
-body:not(.dark-mode) .tab-button:not(.active) {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-/* 🔳 Tab Contrast (Dark Mode) */
-.dark-mode .tab-button {
-  border-radius: 8px 8px 0 0;
-}
-
-.dark-mode .tab-button:not(.active) {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
 /* ========================================================
    🧰 Toolbars
 ======================================================== */
@@ -406,7 +210,6 @@ body:not(.dark-mode) .tab-button:not(.active) {
   border-bottom: none;
   padding: 1rem 1.5rem 0 1.5rem;
 }
-
 .toolbar-actions {
   background-color: var(--color-bg);
   padding: 0.5rem 1.5rem;
@@ -415,7 +218,6 @@ body:not(.dark-mode) .tab-button:not(.active) {
   align-items: center;
   gap: 0.5rem;
 }
-
 .toolbar {
   display: flex;
   justify-content: space-between;
@@ -424,14 +226,6 @@ body:not(.dark-mode) .tab-button:not(.active) {
   padding: 0.5rem 1.5rem;
   border-bottom: 1px solid var(--color-muted);
 }
-
-.toolbar-left {
-  display: flex;
-  align-items: center; /* 👈 aligns tops */
-  gap: 0.5rem;
-  padding: 0.5rem 2rem;
-}
-
 /* 🎯 Month Selector styling to match toolbar buttons */
 .month-selector {
   height: 32px; /* match button height */
@@ -447,10 +241,21 @@ body:not(.dark-mode) .tab-button:not(.active) {
   box-sizing: border-box;
   vertical-align: middle; /* 🔥 aligns with text */
 }
-
 .month-selector:focus {
   outline: none;
   border-color: var(--color-primary);
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .sticky-header {
+  background-color: #1e1e1e;
 }
 
 /* ========================================================
@@ -468,7 +273,6 @@ body:not(.dark-mode) .tab-button:not(.active) {
   font-family: 'Segoe UI', system-ui, sans-serif;
   z-index: 1000; /* Higher z-index for overlapping tables */
 }
-
 .dropdown-button {
   display: flex;
   align-items: center;
@@ -484,45 +288,14 @@ body:not(.dark-mode) .tab-button:not(.active) {
   margin: 0;
   border-radius: 2px;
 }
-
 .dropdown-button:hover {
   background-color: var(--color-muted);
 }
-
 .dropdown-divider {
   height: 1px;
   background: var(--color-muted);
   margin: 4px 0;
 }
-
-/* ========================================================
-   📍 Dropdown Positioning Anchor (Keep This)
-======================================================== */
-.dropdown-anchor {
-  position: relative;
-  display: inline-block;
-}
-
-/* ========================================
-   📏 Table Cell Alignment Helpers
-======================================== */
-.align-left {
-  text-align: left;
-}
-
-.align-center {
-  text-align: center;
-}
-
-/* ========================================
-   🎯 Fixed Action Button Size
-======================================== */
-.action-button {
-  min-width: 130px; /* consistent width */
-  justify-content: center;
-  text-align: center;
-}
-
 /* ========================================
    🌍 Expense/Income Name Hyperlink
 ======================================== */
@@ -531,35 +304,6 @@ body:not(.dark-mode) .tab-button:not(.active) {
   text-decoration: underline;
   transition: color 0.2s ease;
 }
-
-.expense-link:hover {
-  color: #367cd6; /* Slightly darker shade for hover effect */
-  text-decoration: underline;
-}
-
-/* ========================================
-   🗓️ Date Picker Styles
-======================================== */
-
-.date-field-container {
-  position: relative;
-  width: 100%; /* Ensure full width */
-}
-
-.react-datepicker-wrapper {
-  width: 100% !important; /* Force full width */
-}
-
-.react-datepicker__input-container {
-  width: 100% !important; /* Force full width */
-  display: block !important;
-}
-
-.react-datepicker__input-container input {
-  width: 100% !important; /* Force full width */
-  box-sizing: border-box; /* Include padding in width */
-}
-
 .date-format-hint {
   position: absolute;
   right: 10px;
@@ -572,7 +316,6 @@ body:not(.dark-mode) .tab-button:not(.active) {
   padding: 0 5px;
   border-radius: 0 var(--radius) var(--radius) 0;
 }
-
 .react-datepicker {
   font-family: 'Segoe UI', sans-serif;
   border: 1px solid var(--color-muted);
@@ -581,109 +324,377 @@ body:not(.dark-mode) .tab-button:not(.active) {
   color: var(--color-text);
   z-index: 1001; /* Ensure it appears above modal */
 }
-
-.react-datepicker__triangle {
-  display: none; /* Remove default arrow */
-}
-
 .react-datepicker__header {
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-muted);
   padding-top: 12px; /* Add space at top */
 }
-
 .react-datepicker__current-month,
 .react-datepicker__day-name,
 .react-datepicker__day {
   color: var(--color-text);
 }
-
 .react-datepicker__day:hover {
   background: var(--color-primary);
   color: rgba(162, 160, 160, 0.452);
 }
-
 .react-datepicker__day--selected {
   background: var(--color-primary);
   color: white;
 }
-
 .react-datepicker__navigation {
   top: 10px; /* Fix navigation position */
   color: var(--color-text);
 }
-
 .react-datepicker__navigation:hover {
   color: var(--color-primary);
 }
-
 /* Dark mode specific */
 body.dark-mode .react-datepicker {
   background: var(--color-surface);
   border-color: var(--color-muted);
 }
-
 body.dark-mode .react-datepicker__header {
   background: var(--color-bg);
   border-bottom-color: var(--color-muted);
 }
-
 body.dark-mode .react-datepicker__day {
   color: var(--color-text);
 }
-
-body.dark-mode .react-datepicker__day--disabled {
-  color: #666;
-}
-
 body.dark-mode select.month-selector {
   background-color: var(--color-surface);
   color: var(--color-text);
   border: 1px solid var(--color-muted);
 }
-
-/* Positioning fix */
-.react-datepicker-popper {
-  z-index: 1002 !important;
-  padding-top: 0 !important;
-}
-
-.react-datepicker-popper[data-placement^="bottom"] {
-  padding-top: 10px !important;
-}
-
 /* Month/year dropdowns */
 .react-datepicker__month-dropdown-container,
 .react-datepicker__year-dropdown-container {
   background: var(--color-surface);
   color: var(--color-text);
 }
-
 .react-datepicker__month-read-view--down-arrow,
 .react-datepicker__year-read-view--down-arrow {
   border-top-color: var(--color-text);
 }
 
+/* ========================================
+   GLOBAL BASE
+======================================== */
+/* ========================================================
+   🪟 Modal Styles
+======================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+  pointer-events: auto;
+}
+.modal-close:hover {
+  opacity: 1;
+}
+.modal-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+.modal-content {
+  max-height: 65vh;
+  overflow-y: auto;
+  padding: 0 0.5rem;
+  overflow: visible !important;
+}
+.modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+/* Confirmation Modal Variants */
+.modal-confirmation {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+.input-error:focus {
+  box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
+}
+.table-container {
+  overflow: visible;
+  margin-top: var(--padding-md);
+}
+.table-container td {
+  padding: 0.5rem;
+  vertical-align: middle;
+  padding-left: "0rem"; 
+  width: "1px";
+}
+.dark-mode .table-container tr:nth-child(even) .icon-button:hover {
+  background-color: #666; /* darker than dark-muted */
+}
+th:nth-child(1), td:nth-child(1) {
+  width: 240px;
+}
+.table-container td:nth-child(2),
+.table-container th:nth-child(2) {
+  width: 120px;
+  text-align: right;
+}
+.table-container td:nth-child(3),
+.table-container th:nth-child(3) {
+  width: 140px;
+  text-align: center;
+}
+.expense-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+/* ========================================================
+   🔘 Buttons
+======================================================== */
+.btn {
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+/* Dark mode button adjustments */
+body.dark-mode .btn-primary {
+  background-color: #367cd6;
+  color: white;
+}
+body.dark-mode .btn-muted {
+  background-color: #555;
+  color: white;
+}
+/* ========================================================
+   🔘 Buttons
+======================================================== */
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+/* ========================================================
+   🌀 Animations
+======================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 🔳 Tab Contrast (Light Mode Only) */
+body:not(.dark-mode) .tab-button {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+}
+body:not(.dark-mode) .tab-button:hover {
+  background-color: #eee;
+}
+body:not(.dark-mode) .tab-button.active {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+body:not(.dark-mode) .tab-button:not(.active) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* 🔳 Tab Contrast (Dark Mode) */
+.dark-mode .tab-button {
+  border-radius: 8px 8px 0 0;
+}
+.toolbar-left {
+  display: flex;
+  align-items: center; /* 👈 aligns tops */
+  gap: 0.5rem;
+  padding: 0.5rem 2rem;
+}
+/* ========================================================
+   📍 Dropdown Positioning Anchor (Keep This)
+======================================================== */
+.dropdown-anchor {
+  position: relative;
+  display: inline-block;
+}
+/* ========================================
+   📏 Table Cell Alignment Helpers
+======================================== */
+.align-left {
+  text-align: left;
+}
+/* ========================================
+   🎯 Fixed Action Button Size
+======================================== */
+.action-button {
+  min-width: 130px; /* consistent width */
+  justify-content: center;
+  text-align: center;
+}
+.expense-link:hover {
+  color: #367cd6; /* Slightly darker shade for hover effect */
+  text-decoration: underline;
+}
+/* ========================================
+   🗓️ Date Picker Styles
+======================================== */
+
+.date-field-container {
+  position: relative;
+  width: 100%; /* Ensure full width */
+}
+.react-datepicker-wrapper {
+  width: 100% !important; /* Force full width */
+}
+.react-datepicker__input-container {
+  width: 100% !important; /* Force full width */
+  display: block !important;
+}
+.react-datepicker__input-container input {
+  width: 100% !important; /* Force full width */
+  box-sizing: border-box; /* Include padding in width */
+}
+.react-datepicker__triangle {
+  display: none; /* Remove default arrow */
+}
+body.dark-mode .react-datepicker__day--disabled {
+  color: #666;
+}
+/* Positioning fix */
+.react-datepicker-popper {
+  z-index: 1002 !important;
+  padding-top: 0 !important;
+}
+.react-datepicker-popper[data-placement^="bottom"] {
+  padding-top: 10px !important;
+}
 /* Loading State */
 .spinner {
   display: inline-block;
   margin-right: 8px;
 }
-
 /* Confirmation Modal */
 .confirmation-content {
   text-align: center;
   padding: 1rem;
 }
-
 /* Mobile Responsiveness */
 @media (max-width: 480px) {
   .react-datepicker {
     width: 100%;
     font-size: 0.9rem;
   }
-  
-  .date-format-hint {
+.date-format-hint {
     display: none;
   }
+}
+
+/* === Expenses: Comfortable layout === */
+.expenses-table td,
+.expenses-table th {
+  padding: 0.75rem 1rem;
+}
+.expenses-table .expense-row {
+  gap: 0.5rem;
+}
+/* === Income: Condensed layout === */
+.income-table td,
+.income-table th {
+  padding: 0.5rem 0.75rem;
+}
+.income-table .expense-row {
+  gap: 0.25rem;
+}
+.income-table td:nth-child(2),
+.income-table th:nth-child(2) {
+  width: 120px;
+  text-align: right;
+}
+.income-table td:nth-child(3),
+.income-table th:nth-child(3) {
+  width: 140px;
+  text-align: center;
+}
+
+/* ========================================
+   MODALS
+======================================== */
+.modal-close svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: currentColor;
+}
+.modal-field {
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+.modal-warning-icon {
+  margin-bottom: 1rem;
+}
+
+/* ========================================
+   TABLES
+======================================== */
+.dark-mode .icon-button svg {
+  stroke: white;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+.dark-mode .tab-button:not(.active) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* ========================================
+   UNSORTED
+======================================== */
+.align-center {
+  text-align: center;
 }

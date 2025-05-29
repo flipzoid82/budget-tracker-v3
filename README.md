@@ -4,6 +4,16 @@ A local-first, cross-platform **budget tracking desktop app** built with **React
 
 ---
 
+## 🆕 What's New in v3.4.0
+
+- 🔍 Search filter for Expenses and Income — real-time matching while typing
+- ⬆️ Sort by column (name, amount, etc.) with clickable headers and arrow indicators
+- 📌 Sticky navigation and toolbar for easier access while scrolling
+- 🔗 Expense entries now support URLs that render as clickable links
+- 🎨 Visual cleanup across pages: consistent spacing, padding, and table layout
+- 📁 Icons like Save, Edit, Print, Arrows are now modular components
+- 🚫 Fixed table hydration warning and sticky-bar dark mode styling
+
 ## 🆕 What's New in v3.2.0
 
 - ✅ Migrated all data from `localStorage` to **SQLite** for persistent, local-first storage
@@ -53,15 +63,18 @@ budget-tracker-v3/
 ## 💻 How It Works
 
 ### ⚙ Electron Backend
+
 - Backend runs via `electron.cjs`
 - `preload.js` exposes safe IPC bridges to the React frontend
 - SQLite queries handled via `better-sqlite3` in `dbAccess.js`
 
 ### 🧠 State Management
+
 - App state lives in `BudgetProvider.jsx`
 - `INIT`, `SET_MONTH`, and `UPDATE_MONTH_DATA` control reducer logic
 
 ### 🖥️ Frontend
+
 - Responsive UI built with custom CSS variables in `theme.css`
 - Tabbed layout using `ToolbarTabs.jsx`
 - Modal input system uses `PromptModal.jsx`
@@ -73,6 +86,7 @@ budget-tracker-v3/
 ## 📁 Database Schema
 
 Tables:
+
 - `months(id, name)`
 - `income(id, month_id, date, source, amount)`
 - `expenses(id, month_id, name, amount, due_date, paid_date, confirmation)`
@@ -85,16 +99,19 @@ Each table supports full CRUD through centralized access in `dbAccess.js`.
 ## 🧪 Development
 
 ### Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### Start App (Electron + React + SQLite)
+
 ```bash
 npm run start
 ```
 
 ### Build Electron App
+
 ```bash
 npm run build
 ```

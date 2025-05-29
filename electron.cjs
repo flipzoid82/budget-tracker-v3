@@ -1,3 +1,4 @@
+const { saveMonthData } = require("./src/db/dbAccess");
 const fs = require('fs');
 const path = require('path');
 const { app, BrowserWindow, ipcMain } = require('electron');
@@ -58,6 +59,16 @@ async function createWindow() {
       throw err;
     }
   };
+
+  ipcMain.handle("save-month", async (event, { name, data }) => {
+  try {
+    await saveMonthData(name, data);
+    return { success: true };
+  } catch (error) {
+    console.error("❌ Failed to save month:", error);
+    return { success: false, error: error.message };
+  }
+});
 
   // Event listeners for better debugging
   win.webContents.on('did-finish-load', () => {
