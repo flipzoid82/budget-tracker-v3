@@ -2,6 +2,18 @@
 
 ---
 
+## [v3.4.1] - 2025-05-28
+
+### Fixed
+
+- Bug where expense URLs were saved to the wrong item due to filtered index mismatch
+- Now uses expense ID for safe updates
+
+### Improved
+
+- Confirmed database persistence
+- Full round-trip editing verification for expenses
+
 ## [v3.4.0] – 2025-05-28
 
 ### ✨ Added

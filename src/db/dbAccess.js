@@ -11,6 +11,77 @@ function getAllMonths() {
   return db.prepare("SELECT name FROM months ORDER BY id DESC").all();
 }
 
+function saveMonthData(name, data) {
+  const monthId = getMonthIdByName(name);
+  if (!monthId) throw new Error(`Month not found: ${name}`);
+
+  // === Update Expenses ===
+  const updateExpenseStmt = db.prepare(`
+    UPDATE expenses SET
+      name = ?,
+      amount = ?,
+      due_date = ?,
+      paid_date = ?,
+      confirmation = ?,
+      url = ?
+    WHERE id = ? AND month_id = ?
+  `);
+
+  for (const expense of data.expenses || []) {
+    if (!expense.id) continue;
+    updateExpenseStmt.run(
+      expense.name,
+      expense.amount,
+      expense.due_date || null,
+      expense.paid_date || null,
+      expense.confirmation || null,
+      expense.url || null,
+      expense.id,
+      monthId
+    );
+  }
+
+  // === Update Income ===
+  const updateIncomeStmt = db.prepare(`
+    UPDATE income SET
+      source = ?,
+      amount = ?,
+      date = ?
+    WHERE id = ? AND month_id = ?
+  `);
+
+  for (const income of data.income || []) {
+    if (!income.id) continue;
+    updateIncomeStmt.run(
+      income.source,
+      income.amount,
+      income.date || null,
+      income.id,
+      monthId
+    );
+  }
+
+  // === Update Misc Transactions ===
+  const updateMiscStmt = db.prepare(`
+    UPDATE misc SET
+      description = ?,
+      amount = ?
+    WHERE id = ? AND month_id = ?
+  `);
+
+  for (const misc of data.misc || []) {
+    if (!misc.id) continue;
+    updateMiscStmt.run(
+      misc.description,
+      misc.amount,
+      misc.id,
+      monthId
+    );
+  }
+
+  console.log(`✅ Saved month '${name}' (ID: ${monthId}) to database`);
+}
+
 function addMonth(monthName) {
   return db.prepare("INSERT INTO months (name) VALUES (?)").run(monthName);
 }
@@ -150,4 +221,5 @@ module.exports = {
   deleteMisc,
   getMiscIdsByMonth,
   copyMonth,
+  saveMonthData,
 };

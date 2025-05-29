@@ -91,12 +91,21 @@ const ExpensesPage = () => {
     });
   };
 
-  const updateField = (index, field, value) => {
-    const updated = [...expenses];
-    updated[index][field] = value;
+  const updateField = (id, field, value) => {
+    const updated = expenses.map((exp) =>
+      exp.id === id ? { ...exp, [field]: value } : exp
+    );
+
+    const updatedMonth = { ...monthData, expenses: updated };
+
     dispatch({
       type: "UPDATE_MONTH_DATA",
-      payload: { ...monthData, expenses: updated }
+      payload: updatedMonth
+    });
+
+    window.api.invoke("save-month", {
+      name: state.currentMonth,
+      data: updatedMonth
     });
   };
 
@@ -293,7 +302,7 @@ const ExpensesPage = () => {
                                     <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("dueDate", "Due Date", index, true))}>
                                       Edit Due Date
                                     </button>
-                                    <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("url", "URL", index))}>
+                                    <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("url", "URL", item.id))}>
                                       Edit URL
                                     </button>
                                     <button className="dropdown-button" onClick={() => setPrompt(getEditHandler("confirmation", "Confirmation #", index))}>
